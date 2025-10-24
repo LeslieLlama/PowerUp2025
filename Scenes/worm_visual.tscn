@@ -1,13 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckg2dvjl3xo1t"]
+[gd_scene load_steps=4 format=3 uid="uid://ckg2dvjl3xo1t"]
 
 [ext_resource type="Script" uid="uid://b3ettxjb3l1jx" path="res://Scripts/worm_visual.gd" id="1_3n24x"]
 [ext_resource type="AudioStream" uid="uid://da86gkn8fefeg" path="res://test-audio-9s.mp3" id="2_imfsa"]
+[ext_resource type="Texture2D" uid="uid://dur0kbcm1miqn" path="res://icon.svg" id="3_8wrwa"]
 
 [node name="WormVisual" type="Node2D"]
 script = ExtResource("1_3n24x")
 
 [node name="TestCamera" type="Camera2D" parent="."]
 enabled = false
+zoom = Vector2(2, 2)
 
 [node name="TestAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_imfsa")
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+rotation = -1.5707964
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_8wrwa")
