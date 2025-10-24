@@ -14,7 +14,22 @@ func _init() -> void:
 	tween.parallel().tween_property(self, "rotation_degrees", -1, 0.5)
 
 func _process(delta: float) -> void:
+	pass
+		
+
+	
+func check_worm_state():
 	if is_earwormed == true:
 		$EarwormSprite.visible = true
 	else: 
 		$EarwormSprite.visible = false
+
+func _on_body_entered(body: Node2D) -> void:
+	receive_worm(body)
+	print("collission")
+	
+func receive_worm(body: Node2D):
+	is_earwormed = true
+	check_worm_state()
+	body._stop_movement()
+	

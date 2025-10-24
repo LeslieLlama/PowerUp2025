@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0uyxb63uruxm"]
+
+[ext_resource type="Texture2D" uid="uid://0sr0v37d7dt1" path="res://Sprites/backbutton.png" id="1_28flt"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HomeScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="HomeScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.79607844, 0.85490197, 0.95686275, 1)
+
+[node name="Title" type="Label" parent="HomeScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -187.0
+offset_right = 206.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.13725491, 0.16078432, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "EARWORM"
+
+[node name="StartGameButton" type="Button" parent="HomeScreen"]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 410.0
+offset_right = 655.0
+offset_bottom = 505.0
+text = "Start"
+
+[node name="MapScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelButton" type="Button" parent="MapScreen"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 458.0
+offset_right = 436.0
+offset_bottom = 586.0
+text = "Level 1
+Time : 0.00
+Dudes Rocking: 0/3"
+
+[node name="BackButton" type="Button" parent="MapScreen"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -217.0
+offset_right = 204.0
+grow_vertical = 0
+icon = ExtResource("1_28flt")

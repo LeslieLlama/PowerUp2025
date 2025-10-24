@@ -21,6 +21,9 @@ region_enabled = true
 region_rect = Rect2(0, 0, 250.5, 377)
 
 [node name="EarwormSprite" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-1.0000067, -25.999998)
 scale = Vector2(0.34607846, 0.34607846)
 texture = ExtResource("3_8atu2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
