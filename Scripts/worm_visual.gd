@@ -30,6 +30,10 @@ const OCTAVE_CENTRES: PackedFloat32Array = [
 ]
 const OCTAVE_COUNT: int = 11
 const MIN_DB := 60.0
+# Drawing Parameters
+const POINT_COUNT := 80
+const LENGTH := 160.0
+const MAX_MAGNITUDE := 10.0
 
 
 var current_magnitudes: PackedFloat32Array = []
@@ -83,15 +87,14 @@ func _process(_delta: float) -> void:
 
 
 func _draw() -> void:
-	const POINT_COUNT := 80
-	const LENGTH := 160.0
 	var pts: PackedVector2Array = []
 	pts.resize(POINT_COUNT)
 	for i in POINT_COUNT:
 		pts[i] = Vector2(
 			-LENGTH * i / POINT_COUNT,
-			10 * sample(current_magnitudes, LENGTH * i / POINT_COUNT)
+			MAX_MAGNITUDE * sample(current_magnitudes, LENGTH * i / POINT_COUNT)
 		)
+	# Just a basic polyline for now
 	draw_polyline(
 		pts,
 		Color.WHITE,
