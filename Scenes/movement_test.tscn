@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2g0c6o753n3v"]
+
+[ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="1_txl4c"]
+
+[node name="MovementTest" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -34.0
+offset_top = -19.0
+offset_right = 1197.0
+offset_bottom = 673.0
+color = Color(0.79594964, 0.85621285, 0.9577053, 1)
+
+[node name="Human" parent="." instance=ExtResource("1_txl4c")]
+position = Vector2(220, 419)
+is_earwormed = true
+
+[node name="Human2" parent="." instance=ExtResource("1_txl4c")]
+position = Vector2(725, 297)
