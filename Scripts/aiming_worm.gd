@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var aiming_line : Line2D = $AimingLine
 @onready var sprite_2D : Sprite2D = $Sprite2D
 @onready var cam : Camera2D = $Camera2D
+@onready var visual: WormVisual = $WormVisual
 
 var speed = 300
 var dir = Vector2(0,0)
@@ -31,6 +32,7 @@ func _physics_process(delta: float) -> void:
 		aiming_line.points = [Vector2.ZERO, Vector2.ZERO]
 	
 	var collision = move_and_collide(velocity * delta)
+	visual.move_source(velocity * delta)
 	if collision:
 		# "bounce" is a handy function that reflects the velocity perfectly
 		velocity = velocity.bounce(collision.get_normal())

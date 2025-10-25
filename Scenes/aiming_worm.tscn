@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5y38wroo8svo"]
+[gd_scene load_steps=6 format=3 uid="uid://dqd15smav6in8"]
 
 [ext_resource type="Script" uid="uid://bp5r27cxkdmd6" path="res://Scripts/aiming_worm.gd" id="1_20mua"]
 [ext_resource type="Texture2D" uid="uid://0sr0v37d7dt1" path="res://Sprites/backbutton.png" id="2_d4ipw"]
+[ext_resource type="PackedScene" uid="uid://ckg2dvjl3xo1t" path="res://Scenes/worm_visual.tscn" id="3_d4ipw"]
 
 [sub_resource type="Curve" id="Curve_lcbp4"]
 _data = [Vector2(0, 0.516854), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -36,3 +37,5 @@ text = "V: 0.0"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_speed = 6.0
+
+[node name="WormVisual" parent="." instance=ExtResource("3_d4ipw")]

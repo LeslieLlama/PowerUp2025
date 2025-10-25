@@ -1,4 +1,4 @@
-extends Node2D
+class_name WormVisual extends Node2D
 
 
 const OCTAVE_BORDERS: PackedFloat32Array = [
@@ -117,6 +117,9 @@ func _process(_delta: float) -> void:
 
 
 func _draw() -> void:
+	if pts.size() == 0:
+		pts.resize(point_count)
+		pts.fill(Vector2.ZERO)
 	var draw_pts: PackedVector2Array = pts.duplicate()
 	for i in point_count:
 		var current_dist = worm_length * i / point_count
