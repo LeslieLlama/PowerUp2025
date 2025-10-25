@@ -31,33 +31,43 @@ const OCTAVE_CENTRES: PackedFloat32Array = [
 const OCTAVE_COUNT: int = 11
 const MIN_DB := 60.0
 # Drawing Parameters
-const COLOUR_ALTERNATE_COUNT := 8
 const COLOUR_ONE := Color(0.776, 0.6, 0.639, 1.0)
 const COLOUR_TWO := Color(0.576, 0.353, 0.4, 1.0)
 const COLOUR_BORDER := Color(0.4, 0.239, 0.278, 1.0)
+@export var colour_alternate_count = 8
 
-const POINT_COUNT := 160
-const WORM_LENGTH := 160.0
-const MAX_MAGNITUDE := 20.0
+@export var point_count := 160
+@export var worm_length := 160.0
+@export var max_magnitude := 20.0
 
-const WORM_RADIUS := 6.0
-const BORDER_RADIUS := 3.0
+@export var body_radius := 6.0
+@export var border_radius := 3.0
 
-const INCREASE_MAGN_DIST := 10.0
+const INCREASE_MAGN_DIST := 0.0
 
+@onready var separation := worm_length / point_count
 
 var current_magnitudes: PackedFloat32Array = []
 var spectrum: AudioEffectSpectrumAnalyzerInstance
+
+var pts: PackedVector2Array = []
 
 
 func _ready() -> void:
 	if get_tree().current_scene == self:
 		$TestCamera.enabled = true
 		$TestAudio.playing = true
+		setup(Vector2.LEFT)
 	# WormWiggle Bus, the only SpectrumAnalyzer
 	spectrum = AudioServer.get_bus_effect_instance(1,0)
 	current_magnitudes.resize(OCTAVE_COUNT)
 	current_magnitudes.fill(0.0)
+
+
+func setup(direction: Vector2):
+	pts.resize(point_count)
+	for i in point_count:
+		pts[i] = direction * separation * i
 
 
 func get_current_magnitudes():
@@ -84,7 +94,7 @@ func sample(magnitudes: PackedFloat32Array, t: float):
 	for i in OCTAVE_COUNT:
 		if is_zero_approx(magnitudes[i]):
 			continue
-		total += magnitudes[i] * sin(TAU / OCTAVE_CENTRES[i] * t)
+		total += (-1.0 if i % 2 == 0 else 1.0) * magnitudes[i] * sin(TAU / OCTAVE_CENTRES[i] * t)
 	return total
 
 
@@ -94,40 +104,65 @@ func _process(_delta: float) -> void:
 		current_magnitudes[i] = lerpf(
 			current_magnitudes[i],
 			target_magnitudes[i],
-			0.3
+			0.2
 		)
 	queue_redraw()
+	
+	if get_tree().current_scene != self:
+		return
+	var vel = position.direction_to(get_local_mouse_position())
+	#position += vel
+	move_source(vel)
+	move_source(Vector2.ZERO)
 
 
 func _draw() -> void:
-	var pts: PackedVector2Array = []
-	pts.resize(POINT_COUNT)
-	for i in POINT_COUNT:
-		var current_dist = WORM_LENGTH * i / POINT_COUNT
+	var draw_pts: PackedVector2Array = pts.duplicate()
+	for i in point_count:
+		var current_dist = worm_length * i / point_count
 		var magnitude_mult
 		if current_dist >= INCREASE_MAGN_DIST:
 			magnitude_mult = 1.0
 		else:
 			magnitude_mult = current_dist / INCREASE_MAGN_DIST
 		
-		pts[i] = Vector2(
-			-WORM_LENGTH * i / POINT_COUNT,
-			MAX_MAGNITUDE * sample(current_magnitudes, current_dist) * magnitude_mult
-		)
+		# Normal by magnitude by sin sum
+		draw_pts[i] += get_normal_at_idx(i) * max_magnitude * sample(current_magnitudes, current_dist) * magnitude_mult
 	# Border
-	for i in pts:
-		draw_circle(i, WORM_RADIUS + BORDER_RADIUS, COLOUR_BORDER)
+	for i in draw_pts:
+		draw_circle(i, body_radius + border_radius, COLOUR_BORDER)
 	
 	var remaining := 1
 	var current_colour := COLOUR_ONE
 	# Go backwards for the circles to stack properly
-	for i in range(POINT_COUNT - 1, -1, -1):
+	for i in range(point_count - 1, -1, -1):
 		remaining -= 1
 		if remaining == 0:
-			remaining = COLOUR_ALTERNATE_COUNT
+			remaining = colour_alternate_count
 			if current_colour == COLOUR_ONE:
 				current_colour = COLOUR_TWO
 			else:
 				current_colour = COLOUR_ONE
 		
-		draw_circle(pts[i], WORM_RADIUS, current_colour)
+		draw_circle(draw_pts[i], body_radius, current_colour)
+
+
+func death_anim(time: float):
+	var t := get_tree().create_tween()
+	t.tween_property(self, "worm_length", 0, time)
+
+
+func move_source(distance: Vector2):
+	for i in range(1, len(pts)):
+		pts[i] = (pts[i] - distance).move_toward(
+			pts[i - 1],
+			(pts[i] - distance).distance_to(pts[i - 1]) - separation
+		)
+
+
+func get_normal_at_idx(idx: int) -> Vector2:
+	if idx == 0:
+		return pts[1].direction_to(pts[0]).rotated(TAU / 4)
+	if idx == len(pts) - 1:
+		return pts[-2].direction_to(pts[-1]).rotated(TAU / 4)
+	return pts[idx - 1].direction_to(pts[idx + 1]).rotated(TAU / 4)

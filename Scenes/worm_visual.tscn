@@ -6,6 +6,8 @@
 
 [node name="WormVisual" type="Node2D"]
 script = ExtResource("1_3n24x")
+colour_alternate_count = 10
+point_count = 200
 
 [node name="TestCamera" type="Camera2D" parent="."]
 enabled = false

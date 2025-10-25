@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d2g0c6o753n3v"]
 
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="1_txl4c"]
-[ext_resource type="PackedScene" uid="uid://b5y38wroo8svo" path="res://Scenes/aiming_worm.tscn" id="2_lcbp4"]
+[ext_resource type="PackedScene" path="res://Scenes/aiming_worm.tscn" id="2_lcbp4"]
 [ext_resource type="Texture2D" uid="uid://cuw1et0bfnrte" path="res://Sprites/Earworm_Box.png" id="4_m2jms"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jxyi"]
