@@ -4,6 +4,7 @@ extends Area2D
 var tween
 var human_sprite : Sprite2D
 
+func _ready() -> void:
 	#messy tween animation, can be futzs around with to get a better idle bounce
 	tween = create_tween().bind_node(self).set_trans(Tween.TRANS_BOUNCE).set_loops()
 	tween.tween_property(self, "scale", Vector2(1.05,1.05), 0.5)
@@ -36,6 +37,6 @@ func receive_worm(body: Node2D):
 	# Reset catchiness
 	body.change_catchiness(1.0)
 	body.speed = 300
-	Signals.emit_signal("human_infected")
+	Signals.emit_signal("human_infected", self)
 	
 	

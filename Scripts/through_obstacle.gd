@@ -12,6 +12,7 @@ func _ready() -> void:
 
 
 func apply_effect(b: CharacterBody2D):
+	b.level.obstacles_hit_count += 1
 	b.speed += speed_change
 	b.change_catchiness(catchy_change)
 	if effect:

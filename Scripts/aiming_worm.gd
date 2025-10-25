@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+
+@export var level: LevelInfo
+
 @onready var aiming_line : Line2D = $AimingLine
 @onready var sprite_2D : Sprite2D = $Sprite2D
 @onready var cam : Camera2D = $Camera2D
@@ -18,13 +21,13 @@ const CATCHINESS_DECAY := 0.05 # one twentieth; twenty seconds until full decay
 var tween
 
 func _init() -> void:
+	assert(level != null, "Set the AimingWorm's 'level' property")
 	pass
 
 func _process(_delta: float) -> void:
 	$VelocityLabel.text = str("v: ",velocity)
 		
 func _physics_process(delta: float) -> void:
-		
 	if is_stopped == true:
 		velocity = Vector2(0.0,0.0)
 	if Input.is_action_pressed("fire"):
@@ -40,7 +43,9 @@ func _physics_process(delta: float) -> void:
 	if velocity:
 		change_catchiness(-CATCHINESS_DECAY * delta)
 	if collision:
+		level.obstacles_hit_count += 1
 		if collision.get_collider() is BounceObstacle:
+			level.bounces_count += 1
 			# "bounce" is a handy function that reflects the velocity perfectly
 			velocity = velocity.bounce(collision.get_normal())
 			collision.get_collider().apply_effect(self)
@@ -64,5 +69,4 @@ func change_catchiness(amnt: float):
 	
 	if catchiness == 0.0:
 		# Lose case
-		# TODO
-		pass
+		Signals.cactchiness_gone.emit()
