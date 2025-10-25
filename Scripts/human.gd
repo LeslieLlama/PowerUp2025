@@ -4,7 +4,6 @@ extends Area2D
 var tween
 var human_sprite : Sprite2D
 
-func _init() -> void:
 	#messy tween animation, can be futzs around with to get a better idle bounce
 	tween = create_tween().bind_node(self).set_trans(Tween.TRANS_BOUNCE).set_loops()
 	tween.tween_property(self, "scale", Vector2(1.05,1.05), 0.5)
@@ -13,6 +12,8 @@ func _init() -> void:
 	tween.tween_property(self, "scale", Vector2(1.0,1.0), 0.5)
 	tween.parallel().tween_property(self, "skew", -0.05, 0.5)
 	tween.parallel().tween_property(self, "rotation_degrees", -1, 0.5)
+	
+	await get_tree().create_timer(0.01).timeout
 
 func _process(_delta: float) -> void:
 	pass
@@ -35,3 +36,6 @@ func receive_worm(body: Node2D):
 	# Reset catchiness
 	body.change_catchiness(1.0)
 	body.speed = 300
+	Signals.emit_signal("human_infected")
+	
+	

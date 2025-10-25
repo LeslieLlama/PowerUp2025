@@ -8,8 +8,6 @@ extends CharacterBody2D
 var speed = 300
 var dir = Vector2(0,0)
 var is_stopped = true
-@export var max_collisions := 6
-var collision_count = 0
 
 ## Measure of health. 0 to 1.
 var catchiness = 1.0
