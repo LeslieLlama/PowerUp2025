@@ -43,6 +43,8 @@ const MAX_MAGNITUDE := 20.0
 const WORM_RADIUS := 6.0
 const BORDER_RADIUS := 3.0
 
+const INCREASE_MAGN_DIST := 10.0
+
 
 var current_magnitudes: PackedFloat32Array = []
 var spectrum: AudioEffectSpectrumAnalyzerInstance
@@ -52,7 +54,8 @@ func _ready() -> void:
 	if get_tree().current_scene == self:
 		$TestCamera.enabled = true
 		$TestAudio.playing = true
-	spectrum = AudioServer.get_bus_effect_instance(0,1)
+	# WormWiggle Bus, the only SpectrumAnalyzer
+	spectrum = AudioServer.get_bus_effect_instance(1,0)
 	current_magnitudes.resize(OCTAVE_COUNT)
 	current_magnitudes.fill(0.0)
 
@@ -100,9 +103,16 @@ func _draw() -> void:
 	var pts: PackedVector2Array = []
 	pts.resize(POINT_COUNT)
 	for i in POINT_COUNT:
+		var current_dist = WORM_LENGTH * i / POINT_COUNT
+		var magnitude_mult
+		if current_dist >= INCREASE_MAGN_DIST:
+			magnitude_mult = 1.0
+		else:
+			magnitude_mult = current_dist / INCREASE_MAGN_DIST
+		
 		pts[i] = Vector2(
 			-WORM_LENGTH * i / POINT_COUNT,
-			MAX_MAGNITUDE * sample(current_magnitudes, WORM_LENGTH * i / POINT_COUNT)
+			MAX_MAGNITUDE * sample(current_magnitudes, current_dist) * magnitude_mult
 		)
 	# Border
 	for i in pts:

@@ -1,13 +1,26 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://citq454pq6727"]
-
-[sub_resource type="AudioEffectHighPassFilter" id="AudioEffectHighPassFilter_j3pel"]
-resource_name = "HighPassFilter"
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://citq454pq6727"]
 
 [sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_j3pel"]
 resource_name = "SpectrumAnalyzer"
 
 [resource]
-bus/0/effect/0/effect = SubResource("AudioEffectHighPassFilter_j3pel")
-bus/0/effect/0/enabled = false
-bus/0/effect/1/effect = SubResource("AudioEffectSpectrumAnalyzer_j3pel")
-bus/0/effect/1/enabled = true
+bus/1/name = &"WormWiggle"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectSpectrumAnalyzer_j3pel")
+bus/1/effect/0/enabled = true
+bus/2/name = &"Earworm"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"WormWiggle"
+bus/3/name = &"SFX"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"Master"
