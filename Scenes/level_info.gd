@@ -1,4 +1,4 @@
-class_name LevelInfo extends CanvasLayer
+class_name LevelInfo extends Node2D
 
 var best_time: float = INF
 var level_time: float
@@ -28,7 +28,9 @@ func _on_new_human_infected(human: Area2D):
 	_update_ui()
 
 func _update_ui():
-	$HUD/HumanTrackerLabel.text = str(infected_humans.size(),"/",humans.size())
+	#previous HUD design I'm pretty sure I smoked this for a merge conflict
+	#$HUD/HumanTrackerLabel.text = str(infected_humans.size(),"/",humans.size())
+	pass
 
 func _register_human(human : Area2D):
 	humans.append(human)

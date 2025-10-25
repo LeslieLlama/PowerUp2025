@@ -11,7 +11,6 @@ extends CharacterBody2D
 var speed = 300
 var dir = Vector2(0,0)
 var is_stopped = true
-
 ## Measure of health. 0 to 1.
 var catchiness = 1.0
 ## This variable plays catchup to the one above and is used for display
@@ -19,9 +18,9 @@ var catchiness_display: float = 1.0
 const CATCHINESS_DECAY := 0.05 # one twentieth; twenty seconds until full decay
 
 var tween
-
+var anchor_position : Vector2
 func _init() -> void:
-	assert(level != null, "Set the AimingWorm's 'level' property")
+	#assert(level != null, "Set the AimingWorm's 'level' property")
 	pass
 
 func _process(_delta: float) -> void:
@@ -30,13 +29,17 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if is_stopped == true:
 		velocity = Vector2(0.0,0.0)
+	if Input.is_action_just_pressed("fire"):
+		anchor_position = get_global_mouse_position()
 	if Input.is_action_pressed("fire"):
-		dir = (get_global_mouse_position() - global_position).normalized()
-		aiming_line.points = [Vector2.ZERO, get_local_mouse_position()]
-		is_stopped = false
+		if is_stopped == true:
+			dir = (get_global_mouse_position() - anchor_position).normalized()
+			var canvas_transform = get_global_transform_with_canvas()
+			aiming_line.points = [canvas_transform, clamp_vector(get_global_mouse_position() - anchor_position, Vector2(0,0), 140)]
 	if Input.is_action_just_released("fire"):
 		velocity = dir.normalized()
 		aiming_line.points = [Vector2.ZERO, Vector2.ZERO]
+		is_stopped = false
 	
 	var collision = move_and_collide(velocity * speed * delta)
 	visual.move_source(velocity * speed * delta)
@@ -59,6 +62,12 @@ func _stop_movement(resting_pos : Vector2):
 	tween.parallel().tween_property(cam, "zoom", Vector2(2, 2), 0.5).set_trans(Tween.TRANS_QUART)
 	tween.tween_property(cam, "zoom", Vector2(1, 1), 0.5).set_trans(Tween.TRANS_QUART)
 
+func clamp_vector(vector, clamp_origin, clamp_length):
+	var offset = vector - clamp_origin
+	var offset_length = offset.length()
+	if offset_length <= clamp_length:
+		return vector
+	return clamp_origin + offset * (clamp_length / offset_length)
 
 func change_catchiness(amnt: float):
 	catchiness = clampf(catchiness + amnt, 0.0, 1.0)
