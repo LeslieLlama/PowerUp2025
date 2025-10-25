@@ -26,4 +26,7 @@ position = Vector2(-1.0000067, -25.999998)
 scale = Vector2(0.34607846, 0.34607846)
 texture = ExtResource("3_8atu2")
 
+[node name="Earworm_Position" type="Node2D" parent="."]
+position = Vector2(0, -25)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

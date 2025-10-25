@@ -5,6 +5,7 @@ var tween
 var human_sprite : Sprite2D
 
 func _init() -> void:
+	#messy tween animation, can be futzs around with to get a better idle bounce
 	tween = create_tween().bind_node(self).set_trans(Tween.TRANS_BOUNCE).set_loops()
 	tween.tween_property(self, "scale", Vector2(1.05,1.05), 0.5)
 	tween.parallel().tween_property(self, "skew", 0.05, 0.5)
@@ -13,10 +14,8 @@ func _init() -> void:
 	tween.parallel().tween_property(self, "skew", -0.05, 0.5)
 	tween.parallel().tween_property(self, "rotation_degrees", -1, 0.5)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
-		
-
 	
 func check_worm_state():
 	if is_earwormed == true:
@@ -25,11 +24,12 @@ func check_worm_state():
 		$EarwormSprite.visible = false
 
 func _on_body_entered(body: Node2D) -> void:
-	receive_worm(body)
-	print("collission")
+	if body.is_in_group("worm"):
+		receive_worm(body)
+		print("collission")
 	
 func receive_worm(body: Node2D):
 	is_earwormed = true
 	check_worm_state()
-	body._stop_movement()
+	body._stop_movement($Earworm_Position.global_position)
 	
