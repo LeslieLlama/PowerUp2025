@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://jgijis2gccc5"]
+
+[ext_resource type="Texture2D" uid="uid://clg7vgln2lh17" path="res://Sprites/Level-1/Baground_1.png" id="1_evi0p"]
+[ext_resource type="Script" uid="uid://bejdq8t61ff5w" path="res://through_obstacle.gd" id="3_6444e"]
+[ext_resource type="Texture2D" uid="uid://cp5s3wi113myq" path="res://Sprites/Level-1/Bush1.png" id="3_lsmp6"]
+[ext_resource type="PackedScene" uid="uid://dqd15smav6in8" path="res://Scenes/aiming_worm.tscn" id="4_7p6j4"]
+[ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="5_evi0p"]
+[ext_resource type="Texture2D" uid="uid://d0nh5lnrphmqy" path="res://Sprites/Level-1/tree1.png" id="6_xrdnt"]
+[ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="7_lsmp6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evi0p"]
+size = Vector2(31, 72)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Baground1" type="Sprite2D" parent="."]
+scale = Vector2(0.48299712, 0.48299712)
+texture = ExtResource("1_evi0p")
+centered = false
+
+[node name="AimingWorm" parent="." instance=ExtResource("4_7p6j4")]
+position = Vector2(19, 20)
+
+[node name="Bush" type="Area2D" parent="."]
+position = Vector2(838, 227)
+script = ExtResource("3_6444e")
+
+[node name="Bush1" type="Sprite2D" parent="Bush"]
+scale = Vector2(0.2, 0.20152329)
+texture = ExtResource("3_lsmp6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush"]
+scale = Vector2(0.2, 0.20152329)
+polygon = PackedVector2Array(236, 285, -280, 276, -394, 63, -257, -146, -43, -265, 285, -269, 393, -2)
+
+[node name="Tree2" type="StaticBody2D" parent="."]
+position = Vector2(766, 425)
+script = ExtResource("5_evi0p")
+
+[node name="Tree1" type="Sprite2D" parent="Tree2"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_xrdnt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree2"]
+position = Vector2(-4.5, 75)
+shape = SubResource("RectangleShape2D_evi0p")
+
+[node name="Tree" type="StaticBody2D" parent="."]
+position = Vector2(194, 394)
+script = ExtResource("5_evi0p")
+
+[node name="Tree1" type="Sprite2D" parent="Tree"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_xrdnt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree"]
+position = Vector2(-4.5, 75)
+shape = SubResource("RectangleShape2D_evi0p")
+
+[node name="Human" parent="." instance=ExtResource("7_lsmp6")]
+position = Vector2(308, 658)
+
+[node name="Human3" parent="." instance=ExtResource("7_lsmp6")]
+position = Vector2(946, 758)
+
+[node name="Human2" parent="." instance=ExtResource("7_lsmp6")]
+position = Vector2(1032, 242)

@@ -46,6 +46,8 @@ const COLOUR_BORDER := Color(0.4, 0.239, 0.278, 1.0)
 const INCREASE_MAGN_DIST := 0.0
 
 @onready var separation := worm_length / point_count
+@onready var max_length := worm_length
+@onready var max_points := point_count
 
 var current_magnitudes: PackedFloat32Array = []
 var spectrum: AudioEffectSpectrumAnalyzerInstance
@@ -132,20 +134,16 @@ func _draw() -> void:
 		# Normal by magnitude by sin sum
 		draw_pts[i] += get_normal_at_idx(i) * max_magnitude * sample(current_magnitudes, current_dist) * magnitude_mult
 	# Border
-	for i in draw_pts:
-		draw_circle(i, body_radius + border_radius, COLOUR_BORDER)
+	for i in point_count:
+		draw_circle(draw_pts[i], body_radius + border_radius, COLOUR_BORDER)
 	
-	var remaining := 1
-	var current_colour := COLOUR_ONE
 	# Go backwards for the circles to stack properly
 	for i in range(point_count - 1, -1, -1):
-		remaining -= 1
-		if remaining == 0:
-			remaining = colour_alternate_count
-			if current_colour == COLOUR_ONE:
-				current_colour = COLOUR_TWO
-			else:
-				current_colour = COLOUR_ONE
+		var current_colour: Color
+		if i % (2 * colour_alternate_count) < colour_alternate_count:
+			current_colour = COLOUR_ONE
+		else:
+			current_colour = COLOUR_TWO
 		
 		draw_circle(draw_pts[i], body_radius, current_colour)
 

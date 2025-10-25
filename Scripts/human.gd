@@ -32,4 +32,6 @@ func receive_worm(body: Node2D):
 	is_earwormed = true
 	check_worm_state()
 	body._stop_movement($Earworm_Position.global_position)
-	
+	# Reset catchiness
+	body.change_catchiness(1.0)
+	body.speed = 300

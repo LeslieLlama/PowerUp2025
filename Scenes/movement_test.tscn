@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2g0c6o753n3v"]
+[gd_scene load_steps=7 format=3 uid="uid://d2g0c6o753n3v"]
 
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="1_txl4c"]
-[ext_resource type="PackedScene" path="res://Scenes/aiming_worm.tscn" id="2_lcbp4"]
+[ext_resource type="PackedScene" uid="uid://dqd15smav6in8" path="res://Scenes/aiming_worm.tscn" id="2_lcbp4"]
+[ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="3_m2jms"]
 [ext_resource type="Texture2D" uid="uid://cuw1et0bfnrte" path="res://Sprites/Earworm_Box.png" id="4_m2jms"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jxyi"]
@@ -35,6 +36,7 @@ motion_mode = 1
 
 [node name="Wall" type="StaticBody2D" parent="."]
 position = Vector2(517, 605)
+script = ExtResource("3_m2jms")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 position = Vector2(2.5, 0)
@@ -49,6 +51,7 @@ region_rect = Rect2(422, 25, 282, 261)
 
 [node name="Wall2" type="StaticBody2D" parent="."]
 position = Vector2(538, 385)
+script = ExtResource("3_m2jms")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
 shape = SubResource("RectangleShape2D_lcbp4")
