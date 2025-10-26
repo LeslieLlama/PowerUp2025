@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0uyxb63uruxm"]
+[gd_scene load_steps=3 format=3 uid="uid://b0uyxb63uruxm"]
 
-[ext_resource type="Texture2D" uid="uid://0sr0v37d7dt1" path="res://Sprites/backbutton.png" id="1_28flt"]
+[ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="1_48xlc"]
+[ext_resource type="Script" uid="uid://bev04wp6nqb0u" path="res://Scripts/main_menu.gd" id="2_48xlc"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -9,23 +10,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_48xlc")
+script = ExtResource("2_48xlc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8666667, 0.67058825, 0.67058825, 1)
 
 [node name="HomeScreen" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="HomeScreen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.79607844, 0.85490197, 0.95686275, 1)
 
 [node name="Title" type="Label" parent="HomeScreen"]
 layout_mode = 1
@@ -60,22 +64,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="LevelSelectLabel" type="Label" parent="MapScreen"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 45
+text = "Level Select"
+
 [node name="LevelButton" type="Button" parent="MapScreen"]
 layout_mode = 0
-offset_left = 281.0
-offset_top = 458.0
-offset_right = 436.0
-offset_bottom = 586.0
-text = "Level 1
-Time : 0.00
-Dudes Rocking: 0/3"
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 294.0
+offset_bottom = 165.0
+text = "Level 1"
 
 [node name="BackButton" type="Button" parent="MapScreen"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -217.0
-offset_right = 204.0
+offset_top = -91.0
+offset_right = 137.0
 grow_vertical = 0
-icon = ExtResource("1_28flt")
+text = "Back"
