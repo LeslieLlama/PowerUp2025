@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0uyxb63uruxm"]
+[gd_scene load_steps=6 format=3 uid="uid://b0uyxb63uruxm"]
 
 [ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="1_48xlc"]
 [ext_resource type="Script" uid="uid://bev04wp6nqb0u" path="res://Scripts/main_menu.gd" id="2_48xlc"]
 [ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="3_1ehe0"]
+[ext_resource type="LabelSettings" uid="uid://bcupll0lvff46" path="res://UI/Settings/MainMenuTopLabel.tres" id="3_n45e2"]
 [ext_resource type="PackedScene" uid="uid://d1fw2pm5ymbw2" path="res://Scenes/level_1.tscn" id="4_ce3w2"]
 
 [node name="MainMenu" type="Control"]
@@ -48,6 +49,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.13725491, 0.16078432, 1, 1)
 theme_override_font_sizes/font_size = 80
 text = "EARWORM"
+label_settings = ExtResource("3_n45e2")
 
 [node name="StartGameButton" type="Button" parent="HomeScreen"]
 layout_mode = 0

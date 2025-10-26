@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dnhgm6f445i8s"]
+
+[ext_resource type="FontFile" uid="uid://cyg13lm18wdvo" path="res://UI/Fonts/Gluten-Regular.ttf" id="1_6qeon"]
+
+[resource]
+font = ExtResource("1_6qeon")
+font_size = 24
+font_color = Color(0.35686275, 0.15294118, 0.21568628, 1)
+outline_size = 8
