@@ -17,7 +17,9 @@ func _ready() -> void:
 
 	
 func _on_new_human_infected(human: Area2D):
-	infected_humans.append(human)
+	# Prevents adding two refs of same human to infected_humans
+	if not human in infected_humans:
+		infected_humans.append(human)
 	# Win condition
 	if human == main_target:
 		#Signals.main_target_infected.emit(self)
@@ -25,9 +27,6 @@ func _on_new_human_infected(human: Area2D):
 		$HUD/WinText.visible = true
 		finish()
 		UI_Update()
-	# No double counting
-	#if human in infected_humans:
-		#return
 	
 
 func _register_human(human : Area2D):

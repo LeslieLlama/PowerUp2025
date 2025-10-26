@@ -34,7 +34,7 @@ func receive_worm(body: Node2D):
 
 	# Reset catchiness
 	body.change_catchiness(1.0)
-	body.speed = 300
+	body.speed = body.DEFAULT_SPEED
 	Signals.emit_signal("human_infected", self)
 	
 	
