@@ -9,11 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="7_lsmp6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evi0p"]
-size = Vector2(31, 72)
+size = Vector2(31, 207)
 
-[node name="Level1" type="Node2D" node_paths=PackedStringArray("humans")]
+[node name="Level1" type="Node2D" node_paths=PackedStringArray("humans", "main_target")]
 script = ExtResource("1_xrdnt")
-humans = [NodePath("Human"), NodePath("Human3"), NodePath("Human2")]
+humans = [NodePath("Human"), NodePath("Human2"), NodePath("Human3"), NodePath("Human4")]
+main_target = NodePath("Human4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -28,14 +29,14 @@ centered = false
 
 [node name="Baground2" type="Sprite2D" parent="Background"]
 texture_repeat = 2
-position = Vector2(0, 840)
+position = Vector2(4, -802)
 scale = Vector2(0.48299712, 0.48299712)
 texture = ExtResource("1_evi0p")
 centered = false
 
 [node name="Baground3" type="Sprite2D" parent="Background"]
 texture_repeat = 2
-position = Vector2(-1128, 840)
+position = Vector2(-1132, -802)
 scale = Vector2(0.48299712, 0.48299712)
 texture = ExtResource("1_evi0p")
 centered = false
@@ -56,17 +57,17 @@ centered = false
 
 [node name="Baground6" type="Sprite2D" parent="Background"]
 texture_repeat = 2
-position = Vector2(1129, 821)
+position = Vector2(1140, -822)
 scale = Vector2(0.48299712, 0.48299712)
 texture = ExtResource("1_evi0p")
 centered = false
 
 [node name="AimingWorm" parent="." node_paths=PackedStringArray("level") instance=ExtResource("4_7p6j4")]
-position = Vector2(310, 634)
+position = Vector2(-43, 609)
 level = NodePath("..")
 
 [node name="Bush" type="Area2D" parent="."]
-position = Vector2(838, 227)
+position = Vector2(807, 318)
 
 [node name="Bush1" type="Sprite2D" parent="Bush"]
 scale = Vector2(0.2, 0.20152329)
@@ -77,7 +78,7 @@ scale = Vector2(0.2, 0.20152329)
 polygon = PackedVector2Array(236, 285, -280, 276, -394, 63, -257, -146, -43, -265, 285, -269, 393, -2)
 
 [node name="Tree2" type="StaticBody2D" parent="."]
-position = Vector2(766, 425)
+position = Vector2(489, 532)
 script = ExtResource("5_evi0p")
 
 [node name="Tree1" type="Sprite2D" parent="Tree2"]
@@ -85,7 +86,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_xrdnt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree2"]
-position = Vector2(-4.5, 75)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_evi0p")
 
 [node name="Tree" type="StaticBody2D" parent="."]
@@ -97,14 +98,64 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_xrdnt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree"]
-position = Vector2(-4.5, 75)
+position = Vector2(-4.5, 7.5)
 shape = SubResource("RectangleShape2D_evi0p")
 
 [node name="Human" parent="." instance=ExtResource("7_lsmp6")]
-position = Vector2(308, 658)
+position = Vector2(182, 634)
 
 [node name="Human3" parent="." instance=ExtResource("7_lsmp6")]
-position = Vector2(821, 660)
+position = Vector2(445, 290)
+
+[node name="Human4" parent="." instance=ExtResource("7_lsmp6")]
+position = Vector2(947, 105)
+
+[node name="HumanSprite" parent="Human4" index="1"]
+region_rect = Rect2(262.5, 24, 215, 319)
 
 [node name="Human2" parent="." instance=ExtResource("7_lsmp6")]
 position = Vector2(1055, 343)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Level_Time_Label" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.047058824, 0.09803922, 1, 1)
+theme_override_font_sizes/font_size = 23
+text = "Time : 0.00"
+
+[node name="Humans_Infected_Label" type="Label" parent="HUD"]
+offset_top = 30.0
+offset_right = 119.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.047058824, 0.09803922, 1, 1)
+theme_override_font_sizes/font_size = 23
+text = "Humans : 0/3"
+
+[node name="Bounces" type="Label" parent="HUD"]
+offset_top = 65.0
+offset_right = 146.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0.047058824, 0.09803922, 1, 1)
+theme_override_font_sizes/font_size = 23
+text = "Bounces : 0"
+
+[node name="WinText" type="Label" parent="HUD"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = -31.5
+offset_right = 89.5
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.11764706, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "	WIN!!!!1!"
+
+[editable path="Human4"]

@@ -8,9 +8,9 @@ extends CharacterBody2D
 @onready var cam : Camera2D = $Camera2D
 @onready var visual: WormVisual = $WormVisual
 
-var speed = 450
-var dir = Vector2(0,0)
+var first_shot_taken = false
 var is_stopped = true
+var speed = 450
 
 ## Measure of health. 0 to 1.
 var catchiness = 1.0
@@ -19,6 +19,7 @@ var catchiness_display: float = 1.0
 const CATCHINESS_DECAY := 0.05 # one twentieth; twenty seconds until full decay
 
 var tween
+var dir = Vector2(0,0)
 var anchor_position : Vector2
 func _init() -> void:
 	#assert(level != null, "Set the AimingWorm's 'level' property")
@@ -38,6 +39,9 @@ func _physics_process(delta: float) -> void:
 			var canvas_transform = get_global_transform_with_canvas()
 			aiming_line.points = [canvas_transform, clamp_vector(get_global_mouse_position() - anchor_position, Vector2(0,0), 140)]
 	if Input.is_action_just_released("fire"):
+		if first_shot_taken == false:
+			Signals.emit_signal("first_shot")
+			first_shot_taken = true
 		velocity = dir.normalized()
 		aiming_line.points = [Vector2.ZERO, Vector2.ZERO]
 		is_stopped = false
