@@ -16,6 +16,9 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(0.01).timeout
 
+	Signals.emit_signal("register_human", self)
+
+
 func _process(_delta: float) -> void:
 	pass
 	
@@ -34,9 +37,13 @@ func receive_worm(body: Node2D):
 	is_earwormed = true
 	check_worm_state()
 	body._stop_movement($Earworm_Position.global_position)
+
 	# Reset catchiness
 	body.change_catchiness(1.0)
 	body.speed = 300
 	Signals.emit_signal("human_infected", self)
+
+	Signals.emit_signal("human_infected")
+
 	
 	

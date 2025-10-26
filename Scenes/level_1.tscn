@@ -1,15 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://jgijis2gccc5"]
+[gd_scene load_steps=9 format=3 uid="uid://jgijis2gccc5"]
 
 [ext_resource type="Texture2D" uid="uid://clg7vgln2lh17" path="res://Sprites/Level-1/Baground_1.png" id="1_evi0p"]
-[ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scenes/level_info.gd" id="1_xrdnt"]
-[ext_resource type="Script" path="res://through_obstacle.gd" id="3_6444e"]
+[ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_xrdnt"]
 [ext_resource type="Texture2D" uid="uid://cp5s3wi113myq" path="res://Sprites/Level-1/Bush1.png" id="3_lsmp6"]
 [ext_resource type="PackedScene" uid="uid://dqd15smav6in8" path="res://Scenes/aiming_worm.tscn" id="4_7p6j4"]
 [ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="5_evi0p"]
 [ext_resource type="Texture2D" uid="uid://d0nh5lnrphmqy" path="res://Sprites/Level-1/tree1.png" id="6_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="7_lsmp6"]
-
-[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_lsmp6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evi0p"]
 size = Vector2(31, 72)
@@ -20,19 +17,56 @@ humans = [NodePath("Human"), NodePath("Human3"), NodePath("Human2")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
-[node name="Baground1" type="Sprite2D" parent="."]
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Baground1" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+position = Vector2(0, 11)
+scale = Vector2(0.48299712, 0.48299712)
+texture = ExtResource("1_evi0p")
+centered = false
+
+[node name="Baground2" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+position = Vector2(0, 840)
+scale = Vector2(0.48299712, 0.48299712)
+texture = ExtResource("1_evi0p")
+centered = false
+
+[node name="Baground3" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+position = Vector2(-1128, 840)
+scale = Vector2(0.48299712, 0.48299712)
+texture = ExtResource("1_evi0p")
+centered = false
+
+[node name="Baground4" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+position = Vector2(-1128, 7)
+scale = Vector2(0.48299712, 0.48299712)
+texture = ExtResource("1_evi0p")
+centered = false
+
+[node name="Baground5" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+position = Vector2(1129, 7)
+scale = Vector2(0.48299712, 0.48299712)
+texture = ExtResource("1_evi0p")
+centered = false
+
+[node name="Baground6" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+position = Vector2(1129, 821)
 scale = Vector2(0.48299712, 0.48299712)
 texture = ExtResource("1_evi0p")
 centered = false
 
 [node name="AimingWorm" parent="." node_paths=PackedStringArray("level") instance=ExtResource("4_7p6j4")]
-position = Vector2(19, 20)
+position = Vector2(310, 634)
 level = NodePath("..")
 
 [node name="Bush" type="Area2D" parent="."]
 position = Vector2(838, 227)
-script = ExtResource("3_6444e")
-effect = SubResource("AudioEffectDistortion_lsmp6")
 
 [node name="Bush1" type="Sprite2D" parent="Bush"]
 scale = Vector2(0.2, 0.20152329)
@@ -70,7 +104,7 @@ shape = SubResource("RectangleShape2D_evi0p")
 position = Vector2(308, 658)
 
 [node name="Human3" parent="." instance=ExtResource("7_lsmp6")]
-position = Vector2(946, 758)
+position = Vector2(821, 660)
 
 [node name="Human2" parent="." instance=ExtResource("7_lsmp6")]
-position = Vector2(1032, 242)
+position = Vector2(1055, 343)

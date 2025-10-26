@@ -70,3 +70,28 @@ region_enabled = true
 region_rect = Rect2(422, 25, 282, 261)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="LevelInfo" type="CanvasLayer" parent="."]
+script = ExtResource("4_5jxyi")
+
+[node name="HUD" type="Control" parent="LevelInfo"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelTimerLabel" type="Label" parent="LevelInfo/HUD"]
+modulate = Color(0.21960784, 0.2901961, 0.8156863, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Time 0.00"
+
+[node name="HumanTrackerLabel" type="Label" parent="LevelInfo/HUD"]
+modulate = Color(0.21960784, 0.2901961, 0.8156863, 1)
+layout_mode = 0
+offset_top = 22.0
+offset_right = 75.0
+offset_bottom = 45.0
+text = "Humans : 0/3"

@@ -8,6 +8,7 @@ extends Node
 #signal PopupMessage(textToSay : String, pos : Vector2, move_to : Vector2, textColour : Color)
 
 signal register_human(human : Area2D)
+
 signal human_infected(human: Area2D)
-signal main_target_infected(level: LevelInfo)
+#signal main_target_infected(level: LevelInfo)
 signal cactchiness_gone()

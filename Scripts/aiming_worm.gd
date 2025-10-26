@@ -8,9 +8,10 @@ extends CharacterBody2D
 @onready var cam : Camera2D = $Camera2D
 @onready var visual: WormVisual = $WormVisual
 
-var speed = 300
+var speed = 450
 var dir = Vector2(0,0)
 var is_stopped = true
+
 ## Measure of health. 0 to 1.
 var catchiness = 1.0
 ## This variable plays catchup to the one above and is used for display
