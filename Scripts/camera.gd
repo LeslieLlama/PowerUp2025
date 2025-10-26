@@ -7,9 +7,9 @@ var scout_mode:bool = true
 @onready var level: LevelInfo = $".."
 
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		switch_to_follow()
+func _ready() -> void:
+	Signals.first_shot.connect(switch_to_follow)
+		#switch_to_follow()
 
 
 func update(approach: Vector2) -> void:
