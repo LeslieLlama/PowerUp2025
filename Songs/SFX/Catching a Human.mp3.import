@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bg4rid3pmruyl"
+path="res://.godot/imported/Catching a Human.mp3-11fcef8dd3f5aa787d47def34ff6d09a.mp3str"
+
+[deps]
+
+source_file="res://Songs/SFX/Catching a Human.mp3"
+dest_files=["res://.godot/imported/Catching a Human.mp3-11fcef8dd3f5aa787d47def34ff6d09a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cvlujpalcymg0"
+path="res://.godot/imported/mouse hover.mp3-506632f6b2e291c94af94e5f6ca68dd1.mp3str"
+
+[deps]
+
+source_file="res://Songs/SFX/mouse hover.mp3"
+dest_files=["res://.godot/imported/mouse hover.mp3-506632f6b2e291c94af94e5f6ca68dd1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

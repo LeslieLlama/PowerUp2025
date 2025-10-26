@@ -1,8 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bewilwety7of5"]
+[gd_scene load_steps=11 format=3 uid="uid://bewilwety7of5"]
 
 [ext_resource type="Script" uid="uid://dx20nfrkb0sqn" path="res://Scripts/human.gd" id="1_073c6"]
 [ext_resource type="Texture2D" uid="uid://dm2kuj5uh82b4" path="res://Sprites/PlaceholderGuys.png" id="2_42mg8"]
 [ext_resource type="Texture2D" uid="uid://cg3jh3a0i4ji2" path="res://Sprites/Powerup2025_wave.png" id="3_8atu2"]
+[ext_resource type="Texture2D" uid="uid://uc6wmfh1y3vw" path="res://Sprites/Level-1/CharacterLevel1.png" id="4_42mg8"]
+[ext_resource type="Texture2D" uid="uid://cwbbvufckxchg" path="res://Sprites/Level-1/NPC.png" id="4_iensj"]
+[ext_resource type="Texture2D" uid="uid://ckuo0aybkxxev" path="res://Sprites/Level-1/Character_Hater.png" id="5_p0utn"]
+[ext_resource type="Texture2D" uid="uid://bshmuiwmrjop8" path="res://Sprites/Level-1/Character_Hater_Anger.png" id="6_uwpdh"]
+[ext_resource type="Texture2D" uid="uid://bgmyl136uhw0t" path="res://Sprites/Level-Water/DiverNPC.png" id="7_s6v5g"]
+[ext_resource type="Texture2D" uid="uid://oieefhn1ygbj" path="res://Sprites/Level-Water/YellowSubmarine.png" id="8_lq0mj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuftd"]
 size = Vector2(68, 108)
@@ -10,23 +16,58 @@ size = Vector2(68, 108)
 [node name="Human" type="Area2D"]
 script = ExtResource("1_073c6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -2)
-shape = SubResource("RectangleShape2D_tuftd")
+[node name="Sprites" type="Node2D" parent="."]
 
-[node name="HumanSprite" type="Sprite2D" parent="."]
+[node name="HumanSprite" type="Sprite2D" parent="Sprites"]
 scale = Vector2(0.36, 0.33819628)
 texture = ExtResource("2_42mg8")
 region_enabled = true
 region_rect = Rect2(0, 0, 250.5, 377)
 
-[node name="EarwormSprite" type="Sprite2D" parent="."]
+[node name="NPCBlue" type="Sprite2D" parent="Sprites"]
+visible = false
+scale = Vector2(0.0742981, 0.07638649)
+texture = ExtResource("4_42mg8")
+
+[node name="NPCRed" type="Sprite2D" parent="Sprites"]
+visible = false
+scale = Vector2(0.0742981, 0.07638649)
+texture = ExtResource("4_iensj")
+
+[node name="ParkHater" type="Sprite2D" parent="Sprites"]
+visible = false
+position = Vector2(0.49999762, -0.8079157)
+scale = Vector2(0.07919621, 0.079196215)
+texture = ExtResource("5_p0utn")
+
+[node name="Diver" type="Sprite2D" parent="Sprites"]
+visible = false
+position = Vector2(-3.500002, 3.4608936)
+scale = Vector2(0.079462096, 0.079462126)
+texture = ExtResource("7_s6v5g")
+
+[node name="WaterHater" type="Sprite2D" parent="Sprites"]
+visible = false
+position = Vector2(-25.229918, -37.499985)
+scale = Vector2(0.21408181, 0.21408184)
+texture = ExtResource("8_lq0mj")
+
+[node name="ParkHaterAngry" type="Sprite2D" parent="Sprites"]
+visible = false
+position = Vector2(-3.7228158, -2.2455263)
+scale = Vector2(0.08436555, 0.084365554)
+texture = ExtResource("6_uwpdh")
+
+[node name="EarwormSprite" type="Sprite2D" parent="Sprites"]
 visible = false
 position = Vector2(-1.0000067, -25.999998)
 scale = Vector2(0.34607846, 0.34607846)
 texture = ExtResource("3_8atu2")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tuftd")
+
 [node name="Earworm_Position" type="Node2D" parent="."]
-position = Vector2(0, -25)
+position = Vector2(0, -24)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

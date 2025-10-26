@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c85is3ko6w61s"
+path="res://.godot/imported/Hit the Bush.mp3-e371d0b414deb0427c49c773494a5e32.mp3str"
+
+[deps]
+
+source_file="res://Songs/SFX/Hit the Bush.mp3"
+dest_files=["res://.godot/imported/Hit the Bush.mp3-e371d0b414deb0427c49c773494a5e32.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
