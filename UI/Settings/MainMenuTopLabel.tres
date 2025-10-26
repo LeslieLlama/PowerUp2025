@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bcupll0lvff46"]
+
+[ext_resource type="FontFile" uid="uid://cu6xwrle4qenm" path="res://UI/Fonts/Gluten-ExtraBold.ttf" id="1_v6cvo"]
+
+[resource]
+font = ExtResource("1_v6cvo")
+font_size = 73
+font_color = Color(0.99607843, 0.9843137, 0.98039216, 1)
+shadow_size = 18
+shadow_color = Color(0.35686275, 0.15294118, 0.21568628, 1)

@@ -5,9 +5,15 @@ class_name ThroughObstacle extends Area2D
 ## How much catchiness is lost or gained when worm hits this material
 @export var catchy_change: float = -0.2
 @export var speed_change = -100
+@export var sfx: AudioStream
+var player: AudioStreamPlayer
 
 
 func _ready() -> void:
+	player = AudioStreamPlayer.new()
+	add_child(player)
+	player.bus = &"SFX"
+	player.stream = sfx
 	body_entered.connect(_on_body_entered)
 
 

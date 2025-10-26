@@ -55,7 +55,8 @@ func receive_worm(body: Node2D):
 	is_earwormed = true
 	check_worm_state()
 	body._stop_movement($Earworm_Position.global_position)
-
+	if sprite_option != Sprites.ParkHater and sprite_option != Sprites.WaterHater:
+		$CaughtEffect.play()
 	# Reset catchiness
 	body.change_catchiness(1.0)
 	body.speed = body.DEFAULT_SPEED
