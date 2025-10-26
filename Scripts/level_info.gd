@@ -8,16 +8,31 @@ var bounces_count: int = 0
 var obstacles_hit_count: int = 0
 @export var humans: Array[Area2D] = []
 @export var main_target: Area2D
+@export var stream_player: AudioStreamPlayer
+@export var level_rect_extents: Node2D
+@export var cam: Camera2D
 var infected_humans: Array[Area2D] = []
+
 #this is the code for the level to be saved in the save system, level 1 should be 0, level 2 should be 1, so on and so on. 
 @export var level_number : int
+
+var level_rect: Rect2
+
+
 
 func _ready() -> void:
 	Signals.human_infected.connect(_on_new_human_infected)
 	Signals.first_shot.connect(start)
+	UI_Update()
+	level_rect = Rect2()
+	for i in level_rect_extents.get_children():
+		level_rect = level_rect.expand(i.position)
+	cam.fill_level_rect()
 
-	
+
 func _on_new_human_infected(human: Area2D):
+	for i in AudioServer.get_bus_effect_count(2):
+		AudioServer.remove_bus_effect(2, i)
 	# Prevents adding two refs of same human to infected_humans
 	if not human in infected_humans:
 		infected_humans.append(human)
@@ -49,6 +64,7 @@ func start():
 	infected_humans = []
 	level_time = 0.0
 	timer_running = true
+	stream_player.play()
 
 func _process(delta: float) -> void:
 	#reset button
@@ -63,6 +79,7 @@ func _process(delta: float) -> void:
 
 func finish():
 	timer_running = false
+	stream_player.stop()
 	if level_time < best_time:
 		best_time = level_time
 	return level_time

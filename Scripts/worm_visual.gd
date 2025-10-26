@@ -28,7 +28,8 @@ const OCTAVE_CENTRES: PackedFloat32Array = [
 	8000,
 	16000,
 ]
-const OCTAVE_COUNT: int = 11
+const THETA_FACTOR: float = 1 / OCTAVE_CENTRES[-1]
+const OCTAVE_COUNT: int = len(OCTAVE_CENTRES)
 const MIN_DB := 60.0
 # Drawing Parameters
 const COLOUR_ONE := Color(0.776, 0.6, 0.639, 1.0)
@@ -96,7 +97,7 @@ func sample(magnitudes: PackedFloat32Array, t: float):
 	for i in OCTAVE_COUNT:
 		if is_zero_approx(magnitudes[i]):
 			continue
-		total += (-1.0 if i % 2 == 0 else 1.0) * magnitudes[i] * sin(TAU / OCTAVE_CENTRES[i] * t)
+		total += (-1.0 if i % 2 == 0 else 1.0) * magnitudes[i] * sin(TAU * OCTAVE_CENTRES[i] * t * THETA_FACTOR)
 	return total
 
 

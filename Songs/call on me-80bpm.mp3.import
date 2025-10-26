@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjdq6vdirbk05"
+path="res://.godot/imported/call on me-80bpm.mp3-060262c3ca970a2911a3d138f9845ef4.mp3str"
+
+[deps]
+
+source_file="res://Songs/call on me-80bpm.mp3"
+dest_files=["res://.godot/imported/call on me-80bpm.mp3-060262c3ca970a2911a3d138f9845ef4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
