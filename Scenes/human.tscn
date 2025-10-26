@@ -73,6 +73,7 @@ position = Vector2(0, -24)
 
 [node name="CaughtEffect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_p0utn")
+volume_db = -10.0
 bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

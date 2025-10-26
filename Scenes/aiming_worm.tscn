@@ -51,10 +51,12 @@ autostart = true
 
 [node name="DeathSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ueoqq")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="WinSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_qr3uj")
+volume_db = -10.0
 bus = &"SFX"
 
 [connection signal="timeout" from="ClickBufferTimer" to="." method="_on_click_buffer_timer_timeout"]
