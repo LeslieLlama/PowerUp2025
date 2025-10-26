@@ -51,6 +51,7 @@ cam = NodePath("Camera2D")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_af3po")
+volume_db = -8.0
 bus = &"Earworm"
 
 [node name="Background" type="Node2D" parent="."]
