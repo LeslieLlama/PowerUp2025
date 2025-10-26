@@ -11,6 +11,7 @@ _data = [Vector2(0, 0.9101124), 0.0, 0.0, 0, 0, Vector2(1, 0.22471917), 0.0, 0.0
 point_count = 2
 
 [node name="AimingWorm" type="CharacterBody2D" groups=["worm"]]
+z_index = 5
 script = ExtResource("1_20mua")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -23,6 +23,7 @@ var level_rect: Rect2
 func _ready() -> void:
 	Signals.human_infected.connect(_on_new_human_infected)
 	Signals.first_shot.connect(start)
+	Signals.player_death.connect(_player_death)
 	UI_Update()
 	level_rect = Rect2()
 	for i in level_rect_extents.get_children():
@@ -95,3 +96,6 @@ func _on_retry_button_pressed() -> void:
 	
 func _on_home_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	
+func _player_death():
+	$HUD/DeathSCreen.visible = true

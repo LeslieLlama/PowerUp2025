@@ -21,3 +21,5 @@ signal game_started()
 
 #fires when the game is loaded by the autoload script SaveSystem
 signal game_loaded()
+
+signal player_death()

@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var visual: WormVisual = $WormVisual
 
 #buffer to stop the player from immediately clicking to start the level
-var level_start_input_buffer : bool = true
+var lock_movement : bool = true
 
 var first_shot_taken = false
 var is_stopped = true
@@ -25,14 +25,15 @@ const CATCHINESS_DECAY := 0.05 # one twentieth; twenty seconds until full decay
 var tween
 var dir = Vector2(0,0)
 var anchor_position : Vector2
-func _init() -> void:
-	pass
+
+func _ready() -> void:
+	Signals.player_death.connect(_player_death)
 
 func _process(_delta: float) -> void:
 	$VelocityLabel.text = str("v: ",velocity)
 		
 func _physics_process(delta: float) -> void:
-	if level_start_input_buffer == true:
+	if lock_movement == true:
 		return
 	if is_stopped == true:
 		velocity = Vector2(0.0,0.0)
@@ -93,4 +94,10 @@ func change_catchiness(amnt: float):
 		Signals.cactchiness_gone.emit()
 
 func _on_click_buffer_timer_timeout() -> void:
-	level_start_input_buffer = false
+	lock_movement = false
+	
+func _player_death():
+	is_stopped = true
+	lock_movement = true
+	#some kind of death/explosion visual?
+	

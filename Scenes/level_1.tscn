@@ -1,17 +1,22 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1fw2pm5ymbw2"]
+[gd_scene load_steps=18 format=3 uid="uid://d1fw2pm5ymbw2"]
 
 [ext_resource type="Texture2D" uid="uid://clg7vgln2lh17" path="res://Sprites/Level-1/Baground_1.png" id="1_evi0p"]
 [ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_xrdnt"]
 [ext_resource type="AudioStream" uid="uid://musm0fgce63p" path="res://Songs/baby shark-70bpm.mp3" id="2_af3po"]
 [ext_resource type="Texture2D" uid="uid://cp5s3wi113myq" path="res://Sprites/Level-1/Bush1.png" id="3_lsmp6"]
 [ext_resource type="Script" uid="uid://b8ik6voe1b5cu" path="res://Scripts/camera.gd" id="3_xrdnt"]
+[ext_resource type="Script" uid="uid://bsb0ty77btptn" path="res://Scripts/kill_bar.gd" id="4_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://dqd15smav6in8" path="res://Scenes/aiming_worm.tscn" id="4_7p6j4"]
-[ext_resource type="Script" uid="uid://bejdq8t61ff5w" path="res://Scripts/through_obstacle.gd" id="5_chwpn"]
+[ext_resource type="Script" path="res://Scripts/through_obstacle.gd" id="5_chwpn"]
 [ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="5_evi0p"]
 [ext_resource type="Texture2D" uid="uid://d0nh5lnrphmqy" path="res://Sprites/Level-1/tree1.png" id="6_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="7_lsmp6"]
-[ext_resource type="Theme" uid="uid://d383fpe3rti48" path="res://simple_pink_theme.tres" id="9_wrinw"]
+[ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="9_wrinw"]
+[ext_resource type="Texture2D" uid="uid://uc6wmfh1y3vw" path="res://Sprites/Level-1/CharacterLevel1.png" id="11_6r07y"]
 [ext_resource type="Texture2D" uid="uid://jng2c4g45ogc" path="res://Sprites/Level-1/Radio2Level1.png" id="12_uy8f0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oovug"]
+size = Vector2(3439, 76.5)
 
 [sub_resource type="AudioEffectHighPassFilter" id="AudioEffectHighPassFilter_af3po"]
 
@@ -31,6 +36,12 @@ stream = ExtResource("2_af3po")
 
 [node name="Background" type="Node2D" parent="."]
 z_index = -128
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_left = -2896.0
+offset_top = -2068.0
+offset_right = 4257.0
+offset_bottom = 3067.0
 
 [node name="Baground1" type="Sprite2D" parent="Background"]
 texture_repeat = 2
@@ -73,6 +84,57 @@ position = Vector2(1140, -822)
 scale = Vector2(0.48299712, 0.48299712)
 texture = ExtResource("1_evi0p")
 centered = false
+
+[node name="Baground7" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+position = Vector2(10, 821)
+scale = Vector2(0.48299712, 0.48299712)
+texture = ExtResource("1_evi0p")
+centered = false
+
+[node name="Baground8" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+position = Vector2(-1126, 821)
+scale = Vector2(0.48299712, 0.48299712)
+texture = ExtResource("1_evi0p")
+centered = false
+
+[node name="Baground9" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+position = Vector2(1146, 801)
+scale = Vector2(0.48299712, 0.48299712)
+texture = ExtResource("1_evi0p")
+centered = false
+
+[node name="KillBar" type="Area2D" parent="."]
+position = Vector2(594, 1609)
+script = ExtResource("4_6ioyp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBar"]
+shape = SubResource("RectangleShape2D_oovug")
+
+[node name="KillBar2" type="Area2D" parent="."]
+position = Vector2(571, -780)
+script = ExtResource("4_6ioyp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBar2"]
+shape = SubResource("RectangleShape2D_oovug")
+
+[node name="KillBar3" type="Area2D" parent="."]
+position = Vector2(-1170, 447)
+rotation = -1.5708961
+script = ExtResource("4_6ioyp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBar3"]
+shape = SubResource("RectangleShape2D_oovug")
+
+[node name="KillBar4" type="Area2D" parent="."]
+position = Vector2(2341, 424)
+rotation = -1.5708961
+script = ExtResource("4_6ioyp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBar4"]
+shape = SubResource("RectangleShape2D_oovug")
 
 [node name="AimingWorm" parent="." node_paths=PackedStringArray("level", "cam") instance=ExtResource("4_7p6j4")]
 position = Vector2(61, 593)
@@ -131,11 +193,29 @@ shape = SubResource("RectangleShape2D_evi0p")
 [node name="Human" parent="." instance=ExtResource("7_lsmp6")]
 position = Vector2(278, 634)
 
+[node name="HumanSprite" parent="Human" index="1"]
+position = Vector2(0.4999982, -0.9999826)
+scale = Vector2(0.08263474, 0.071687184)
+texture = ExtResource("11_6r07y")
+region_rect = Rect2(0, 0, 835.6665, 1381.5084)
+
 [node name="Human2" parent="." instance=ExtResource("7_lsmp6")]
-position = Vector2(1151, 343)
+position = Vector2(922, 463)
+
+[node name="HumanSprite" parent="Human2" index="1"]
+position = Vector2(0.4999982, -0.9999826)
+scale = Vector2(0.08263474, 0.071687184)
+texture = ExtResource("11_6r07y")
+region_rect = Rect2(0, 0, 835.6665, 1381.5084)
 
 [node name="Human3" parent="." instance=ExtResource("7_lsmp6")]
-position = Vector2(541, 290)
+position = Vector2(577, 189)
+
+[node name="HumanSprite" parent="Human3" index="1"]
+position = Vector2(0.4999982, -0.9999826)
+scale = Vector2(0.08263474, 0.071687184)
+texture = ExtResource("11_6r07y")
+region_rect = Rect2(0, 0, 835.6665, 1381.5084)
 
 [node name="Human4" parent="." instance=ExtResource("7_lsmp6")]
 position = Vector2(1043, 105)
@@ -224,13 +304,78 @@ grow_vertical = 0
 theme = ExtResource("9_wrinw")
 text = "Menu"
 
+[node name="DeathSCreen" type="Control" parent="HUD"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WinText" type="Label" parent="HUD/DeathSCreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 466.5
+offset_top = 272.5
+offset_right = 645.5
+offset_bottom = 335.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.11764706, 0.078431375, 1)
+theme_override_font_sizes/font_size = 70
+text = "YOU DIED"
+
+[node name="RetryButton" type="Button" parent="HUD/DeathSCreen"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 888.0
+offset_top = 449.0
+offset_right = 1112.0
+offset_bottom = 526.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("9_wrinw")
+text = "Retry (R)"
+
+[node name="HomeButton" type="Button" parent="HUD/DeathSCreen"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 888.0
+offset_top = 531.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("9_wrinw")
+text = "Menu"
+
 [node name="Radio2Level1" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(54.000004, 588)
 scale = Vector2(0.07118696, 0.07118697)
 texture = ExtResource("12_uy8f0")
 
+[connection signal="body_entered" from="KillBar" to="KillBar" method="_on_body_entered"]
+[connection signal="body_entered" from="KillBar2" to="KillBar2" method="_on_body_entered"]
+[connection signal="body_entered" from="KillBar3" to="KillBar3" method="_on_body_entered"]
+[connection signal="body_entered" from="KillBar4" to="KillBar4" method="_on_body_entered"]
 [connection signal="pressed" from="HUD/WinScreen/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="HUD/WinScreen/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="HUD/DeathSCreen/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="HUD/DeathSCreen/HomeButton" to="." method="_on_home_button_pressed"]
 
+[editable path="Human"]
+[editable path="Human2"]
+[editable path="Human3"]
 [editable path="Human4"]

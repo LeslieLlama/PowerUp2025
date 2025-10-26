@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="1_48xlc"]
 [ext_resource type="Script" uid="uid://bev04wp6nqb0u" path="res://Scripts/main_menu.gd" id="2_48xlc"]
 [ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="3_1ehe0"]
-[ext_resource type="PackedScene" uid="uid://jgijis2gccc5" path="res://Scenes/level_1.tscn" id="4_ce3w2"]
+[ext_resource type="PackedScene" uid="uid://d1fw2pm5ymbw2" path="res://Scenes/level_1.tscn" id="4_ce3w2"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -95,7 +95,7 @@ offset_left = 5.0
 offset_top = 77.0
 offset_right = 294.0
 offset_bottom = 165.0
-text = "Level 1"
+text = "Sketch"
 script = ExtResource("3_1ehe0")
 scene_to_load = ExtResource("4_ce3w2")
 
@@ -115,7 +115,7 @@ offset_left = 5.0
 offset_top = 169.0
 offset_right = 294.0
 offset_bottom = 257.0
-text = "Level 2"
+text = "Paint"
 
 [node name="ScoreLabel" type="Label" parent="MapScreen/LevelButton2"]
 layout_mode = 0
