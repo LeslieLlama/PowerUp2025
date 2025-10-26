@@ -18,6 +18,7 @@ func _ready() -> void:
 
 	Signals.emit_signal("register_human", self)
 
+	Signals.emit_signal("register_human", self)
 
 func _process(_delta: float) -> void:
 	pass
@@ -45,5 +46,6 @@ func receive_worm(body: Node2D):
 
 	Signals.emit_signal("human_infected")
 
+	Signals.emit_signal("human_infected")
 	
 	
