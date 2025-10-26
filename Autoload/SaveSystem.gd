@@ -10,6 +10,7 @@ func _ready() -> void:
 	load_game()
 	print(SaveSystem.level_times)
 	
+	
 func _game_started():
 	await get_tree().create_timer(0.01).timeout
 	load_game()
@@ -36,7 +37,8 @@ func save_game():
 #Call this whenever you'd like to load the game!
 func load_game():
 	if not FileAccess.file_exists("user://OBH.save"):
-		return
+		#create a fresh save file
+		clear_save()
 	var save_file = FileAccess.open("user://OBH.save", FileAccess.READ)
 	var node_data
 	while save_file.get_position() < save_file.get_length():
