@@ -1,18 +1,20 @@
-[gd_scene load_steps=17 format=3 uid="uid://d1fw2pm5ymbw2"]
+[gd_scene load_steps=19 format=3 uid="uid://d1fw2pm5ymbw2"]
 
 [ext_resource type="Texture2D" uid="uid://clg7vgln2lh17" path="res://Sprites/Level-1/Baground_1.png" id="1_evi0p"]
 [ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_xrdnt"]
 [ext_resource type="AudioStream" uid="uid://musm0fgce63p" path="res://Songs/baby shark-70bpm.mp3" id="2_af3po"]
 [ext_resource type="Texture2D" uid="uid://cp5s3wi113myq" path="res://Sprites/Level-1/Bush1.png" id="3_lsmp6"]
 [ext_resource type="Script" uid="uid://b8ik6voe1b5cu" path="res://Scripts/camera.gd" id="3_xrdnt"]
-[ext_resource type="Script" path="res://Scripts/kill_bar.gd" id="4_6ioyp"]
+[ext_resource type="Script" uid="uid://bsb0ty77btptn" path="res://Scripts/kill_bar.gd" id="4_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://dqd15smav6in8" path="res://Scenes/aiming_worm.tscn" id="4_7p6j4"]
 [ext_resource type="Script" uid="uid://bejdq8t61ff5w" path="res://Scripts/through_obstacle.gd" id="5_chwpn"]
-[ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="5_evi0p"]
+[ext_resource type="Script" path="res://Scripts/bounce_obstacle.gd" id="5_evi0p"]
 [ext_resource type="Texture2D" uid="uid://d0nh5lnrphmqy" path="res://Sprites/Level-1/tree1.png" id="6_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="7_lsmp6"]
 [ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="9_wrinw"]
+[ext_resource type="LabelSettings" uid="uid://dnhgm6f445i8s" path="res://UI/Settings/LabelSettingsOverlay.tres" id="12_6ioyp"]
 [ext_resource type="Texture2D" uid="uid://jng2c4g45ogc" path="res://Sprites/Level-1/Radio2Level1.png" id="12_uy8f0"]
+[ext_resource type="LabelSettings" uid="uid://c6nwraqkky545" path="res://UI/Settings/Win-Lose_overlayOverlay.tres" id="13_oovug"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oovug"]
 size = Vector2(3439, 76.5)
@@ -38,10 +40,10 @@ bus = &"Earworm"
 z_index = -128
 
 [node name="ColorRect" type="ColorRect" parent="Background"]
-offset_left = -2896.0
-offset_top = -2068.0
-offset_right = 4257.0
-offset_bottom = 3067.0
+offset_left = -2779.0
+offset_top = -2128.0
+offset_right = 4374.0
+offset_bottom = 3007.0
 
 [node name="Baground1" type="Sprite2D" parent="Background"]
 texture_repeat = 2
@@ -214,6 +216,7 @@ offset_bottom = 23.0
 theme_override_colors/font_color = Color(0.047058824, 0.09803922, 1, 1)
 theme_override_font_sizes/font_size = 23
 text = "Time : 0.00"
+label_settings = ExtResource("12_6ioyp")
 
 [node name="Humans_Infected_Label" type="Label" parent="HUD"]
 offset_top = 30.0
@@ -222,6 +225,7 @@ offset_bottom = 62.0
 theme_override_colors/font_color = Color(0.047058824, 0.09803922, 1, 1)
 theme_override_font_sizes/font_size = 23
 text = "Humans : 0/3"
+label_settings = ExtResource("12_6ioyp")
 
 [node name="Bounces" type="Label" parent="HUD"]
 offset_top = 65.0
@@ -230,6 +234,7 @@ offset_bottom = 97.0
 theme_override_colors/font_color = Color(0.047058824, 0.09803922, 1, 1)
 theme_override_font_sizes/font_size = 23
 text = "Bounces : 0"
+label_settings = ExtResource("12_6ioyp")
 
 [node name="WinScreen" type="Control" parent="HUD"]
 visible = false
@@ -253,7 +258,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.11764706, 1, 1)
 theme_override_font_sizes/font_size = 45
-text = "Everyones Groovin!"
+text = "Everyones
+Groovin!"
+label_settings = ExtResource("13_oovug")
+horizontal_alignment = 1
 
 [node name="RetryButton" type="Button" parent="HUD/WinScreen"]
 layout_mode = 1
@@ -310,6 +318,8 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.11764706, 0.078431375, 1)
 theme_override_font_sizes/font_size = 70
 text = "YOU DIED"
+label_settings = ExtResource("13_oovug")
+horizontal_alignment = 1
 
 [node name="RetryButton" type="Button" parent="HUD/DeathSCreen"]
 layout_mode = 1

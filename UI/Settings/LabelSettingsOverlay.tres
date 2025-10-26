@@ -7,3 +7,4 @@ font = ExtResource("1_6qeon")
 font_size = 24
 font_color = Color(0.35686275, 0.15294118, 0.21568628, 1)
 outline_size = 8
+shadow_size = 5
