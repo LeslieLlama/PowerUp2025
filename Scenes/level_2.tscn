@@ -1,23 +1,21 @@
-[gd_scene load_steps=25 format=3 uid="uid://ba34ys0a5gqdt"]
+[gd_scene load_steps=23 format=3 uid="uid://ba34ys0a5gqdt"]
 
 [ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_hj5x7"]
 [ext_resource type="AudioStream" uid="uid://bs5edkabyba83" path="res://Songs/Beethoven-90bpm.mp3" id="2_yvrk7"]
-[ext_resource type="Texture2D" path="res://Sprites/Level-2/Baground2_SeeLevel.png" id="3_yvrk7"]
+[ext_resource type="Texture2D" uid="uid://cystq4fpwcwc7" path="res://Sprites/Level-2/Baground2_SeeLevel.png" id="3_yvrk7"]
 [ext_resource type="Script" uid="uid://bsb0ty77btptn" path="res://Scripts/kill_bar.gd" id="4_i6dbo"]
 [ext_resource type="PackedScene" uid="uid://dqd15smav6in8" path="res://Scenes/aiming_worm.tscn" id="5_e2piv"]
 [ext_resource type="Script" uid="uid://b8ik6voe1b5cu" path="res://Scripts/camera.gd" id="6_ijtdf"]
 [ext_resource type="Script" path="res://Scripts/through_obstacle.gd" id="7_c5xoi"]
-[ext_resource type="Texture2D" path="res://Sprites/Level-2/Dory.png" id="8_fhuy1"]
+[ext_resource type="Texture2D" uid="uid://d2b788mx26ubg" path="res://Sprites/Level-2/Dory.png" id="8_fhuy1"]
 [ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="9_4k5rq"]
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="11_d42f2"]
-[ext_resource type="Texture2D" path="res://Sprites/Level-2/Botle.png" id="11_fhuy1"]
-[ext_resource type="Texture2D" uid="uid://cg3jh3a0i4ji2" path="res://Sprites/Powerup2025_wave.png" id="13_e2piv"]
-[ext_resource type="Texture2D" path="res://Sprites/Level-2/YellowSubmarine.png" id="13_fhuy1"]
-[ext_resource type="Texture2D" path="res://Sprites/Level-2/DiverNPC.png" id="13_i6dbo"]
+[ext_resource type="Texture2D" uid="uid://b8gepx1131b3" path="res://Sprites/Level-2/Botle.png" id="11_fhuy1"]
 [ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="13_kjoi8"]
 [ext_resource type="Texture2D" uid="uid://c2qu0xkm2tkj1" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_1.png" id="14_nuasi"]
 [ext_resource type="Texture2D" uid="uid://bnip747ywl77q" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_3.png" id="15_kwf64"]
 [ext_resource type="Texture2D" uid="uid://jng2c4g45ogc" path="res://Sprites/Level-1/Radio2Level1.png" id="16_5s1wx"]
+[ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="16_hj5x7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oovug"]
 size = Vector2(3439, 76.5)
@@ -30,14 +28,14 @@ size = Vector2(31, 207)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6dbo"]
 size = Vector2(389, 163)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pjppf"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yvrk7"]
 texture = ExtResource("14_nuasi")
 texture_margin_left = 30.0
 texture_margin_top = 30.0
 texture_margin_right = 30.0
 texture_margin_bottom = 30.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yltlr"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fhuy1"]
 texture = ExtResource("15_kwf64")
 texture_margin_left = 30.0
 texture_margin_top = 30.0
@@ -333,135 +331,64 @@ shape = SubResource("RectangleShape2D_evi0p")
 [node name="Human" parent="." instance=ExtResource("11_d42f2")]
 position = Vector2(-394, 825)
 
-[node name="CollisionShape2D" parent="Human" index="0"]
+[node name="CollisionShape2D" parent="Human" index="1"]
 position = Vector2(2, -2)
 
-[node name="HumanSprite" parent="Human" index="1"]
-position = Vector2(0.4999982, -0.9999826)
-scale = Vector2(0.08263474, 0.071687184)
-texture = ExtResource("13_i6dbo")
-region_enabled = true
-region_rect = Rect2(0, 0, 835.6665, 1381.5084)
-
-[node name="EarwormSprite" parent="Human" index="2"]
-visible = false
-position = Vector2(-1.0000067, -25.999998)
-scale = Vector2(0.34607846, 0.34607846)
-texture = ExtResource("13_e2piv")
-
-[node name="Earworm_Position" parent="Human" index="3"]
+[node name="Earworm_Position" parent="Human" index="2"]
 position = Vector2(0, -25)
 
 [node name="Human2" parent="." instance=ExtResource("11_d42f2")]
 position = Vector2(117.58203, 640.8935)
 
-[node name="CollisionShape2D" parent="Human2" index="0"]
+[node name="CollisionShape2D" parent="Human2" index="1"]
 position = Vector2(2, -2)
 
-[node name="HumanSprite" parent="Human2" index="1"]
-position = Vector2(0.4999982, -0.9999826)
-scale = Vector2(0.08263474, 0.071687184)
-texture = ExtResource("13_i6dbo")
-region_enabled = true
-region_rect = Rect2(0, 0, 835.6665, 1381.5084)
-
-[node name="EarwormSprite" parent="Human2" index="2"]
-visible = false
-position = Vector2(-1.0000067, -25.999998)
-scale = Vector2(0.34607846, 0.34607846)
-texture = ExtResource("13_e2piv")
-
-[node name="Earworm_Position" parent="Human2" index="3"]
+[node name="Earworm_Position" parent="Human2" index="2"]
 position = Vector2(0, -25)
 
 [node name="Human3" parent="." instance=ExtResource("11_d42f2")]
 position = Vector2(257.05963, 1166.7671)
 
-[node name="CollisionShape2D" parent="Human3" index="0"]
+[node name="CollisionShape2D" parent="Human3" index="1"]
 position = Vector2(2, -2)
 
-[node name="HumanSprite" parent="Human3" index="1"]
-position = Vector2(0.4999982, -0.9999826)
-scale = Vector2(0.08263474, 0.071687184)
-texture = ExtResource("13_i6dbo")
-region_enabled = true
-region_rect = Rect2(0, 0, 835.6665, 1381.5084)
-
-[node name="EarwormSprite" parent="Human3" index="2"]
-visible = false
-position = Vector2(-1.0000067, -25.999998)
-scale = Vector2(0.34607846, 0.34607846)
-texture = ExtResource("13_e2piv")
-
-[node name="Earworm_Position" parent="Human3" index="3"]
+[node name="Earworm_Position" parent="Human3" index="2"]
 position = Vector2(0, -25)
 
 [node name="Human4" parent="." instance=ExtResource("11_d42f2")]
 position = Vector2(676.73254, 806.38574)
 
-[node name="CollisionShape2D" parent="Human4" index="0"]
+[node name="CollisionShape2D" parent="Human4" index="1"]
 position = Vector2(2, -2)
 
-[node name="HumanSprite" parent="Human4" index="1"]
-position = Vector2(0.4999982, -0.9999826)
-scale = Vector2(0.08263474, 0.071687184)
-texture = ExtResource("13_i6dbo")
-region_enabled = true
-region_rect = Rect2(0, 0, 835.6665, 1381.5084)
-
-[node name="EarwormSprite" parent="Human4" index="2"]
-visible = false
-position = Vector2(-1.0000067, -25.999998)
-scale = Vector2(0.34607846, 0.34607846)
-texture = ExtResource("13_e2piv")
-
-[node name="Earworm_Position" parent="Human4" index="3"]
+[node name="Earworm_Position" parent="Human4" index="2"]
 position = Vector2(0, -25)
 
 [node name="Human5" parent="." instance=ExtResource("11_d42f2")]
 position = Vector2(1169.6678, 734.9381)
 
-[node name="CollisionShape2D" parent="Human5" index="0"]
+[node name="CollisionShape2D" parent="Human5" index="1"]
 position = Vector2(2, -2)
 
-[node name="HumanSprite" parent="Human5" index="1"]
-position = Vector2(0.4999982, -0.9999826)
-scale = Vector2(0.08263474, 0.071687184)
-texture = ExtResource("13_i6dbo")
-region_enabled = true
-region_rect = Rect2(0, 0, 835.6665, 1381.5084)
-
-[node name="EarwormSprite" parent="Human5" index="2"]
-visible = false
-position = Vector2(-1.0000067, -25.999998)
-scale = Vector2(0.34607846, 0.34607846)
-texture = ExtResource("13_e2piv")
-
-[node name="Earworm_Position" parent="Human5" index="3"]
+[node name="Earworm_Position" parent="Human5" index="2"]
 position = Vector2(0, -25)
 
 [node name="Hater" parent="." instance=ExtResource("11_d42f2")]
 position = Vector2(1457.0719, 1179.6774)
 
-[node name="CollisionShape2D" parent="Hater" index="0"]
+[node name="CollisionShape2D" parent="Hater" index="1"]
 position = Vector2(16.5, 67.5)
 shape = SubResource("RectangleShape2D_i6dbo")
 
-[node name="HumanSprite" parent="Hater" index="1"]
-position = Vector2(-2.0000381, 41.99994)
-scale = Vector2(0.20100003, 0.18882631)
-texture = ExtResource("13_fhuy1")
-region_enabled = true
-region_rect = Rect2(16.442871, 1.9526672, 1848.82, 1044.241)
-
-[node name="EarwormSprite" parent="Hater" index="2"]
-visible = false
-position = Vector2(18.999992, 51)
-scale = Vector2(0.34607846, 0.34607846)
-texture = ExtResource("13_e2piv")
-
-[node name="Earworm_Position" parent="Hater" index="3"]
+[node name="Earworm_Position" parent="Hater" index="2"]
 position = Vector2(0, -25)
+
+[node name="Radio2Level1" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-730.00006, 1089.0001)
+rotation = -0.57751703
+scale = Vector2(0.07118696, 0.07118697)
+texture = ExtResource("16_5s1wx")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -469,14 +396,14 @@ position = Vector2(0, -25)
 offset_right = 169.0
 offset_bottom = 56.0
 theme = ExtResource("13_kjoi8")
-theme_override_styles/panel = SubResource("StyleBoxTexture_pjppf")
+theme_override_styles/panel = SubResource("StyleBoxTexture_yvrk7")
 
 [node name="Panel2" type="Panel" parent="HUD"]
 offset_top = 58.0
 offset_right = 170.0
 offset_bottom = 114.0
 theme = ExtResource("13_kjoi8")
-theme_override_styles/panel = SubResource("StyleBoxTexture_yltlr")
+theme_override_styles/panel = SubResource("StyleBoxTexture_fhuy1")
 
 [node name="Level_Time_Label" type="Label" parent="HUD"]
 offset_left = 19.0
@@ -526,9 +453,65 @@ offset_right = 645.5
 offset_bottom = 335.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0.11764706, 1, 1)
+theme_override_colors/font_color = Color(0.9647059, 0.6862745, 0.7137255, 1)
+theme_override_colors/font_shadow_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
+theme_override_colors/font_outline_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 6
 theme_override_font_sizes/font_size = 45
-text = "Everyones Groovin!"
+text = "Song stuck in targets Head!"
+
+[node name="BestTimeText" type="Label" parent="HUD/WinScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 264.0
+offset_top = 331.0
+offset_right = 854.0
+offset_bottom = 394.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9647059, 0.6862745, 0.7137255, 1)
+theme_override_colors/font_shadow_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
+theme_override_colors/font_outline_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "+New Best Time!"
+horizontal_alignment = 1
+
+[node name="AllHumansInfectedText" type="Label" parent="HUD/WinScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 265.0
+offset_top = 368.0
+offset_right = 855.0
+offset_bottom = 431.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9647059, 0.6862745, 0.7137255, 1)
+theme_override_colors/font_shadow_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
+theme_override_colors/font_outline_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "+Everyones Groovin!"
+horizontal_alignment = 1
 
 [node name="RetryButton" type="Button" parent="HUD/WinScreen"]
 layout_mode = 1
@@ -561,6 +544,23 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("13_kjoi8")
 text = "Menu"
+
+[node name="NextLevelButton" type="Button" parent="HUD/WinScreen"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 886.0
+offset_top = 367.0
+offset_right = 1110.0
+offset_bottom = 444.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("13_kjoi8")
+text = "Next Level"
+script = ExtResource("16_hj5x7")
 
 [node name="DeathSCreen" type="Control" parent="HUD"]
 visible = false
@@ -618,21 +618,13 @@ grow_vertical = 0
 theme = ExtResource("13_kjoi8")
 text = "Menu"
 
-[node name="Radio2Level1" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(-730.00006, 1089.0001)
-rotation = -0.57751703
-scale = Vector2(0.07118696, 0.07118697)
-texture = ExtResource("16_5s1wx")
-
 [connection signal="body_entered" from="KillBar" to="KillBar" method="_on_body_entered"]
 [connection signal="body_entered" from="KillBar2" to="KillBar2" method="_on_body_entered"]
 [connection signal="body_entered" from="KillBar3" to="KillBar3" method="_on_body_entered"]
 [connection signal="body_entered" from="KillBar4" to="KillBar4" method="_on_body_entered"]
 [connection signal="pressed" from="HUD/WinScreen/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="HUD/WinScreen/HomeButton" to="." method="_on_home_button_pressed"]
-[connection signal="pressed" from="HUD/DeathSCreen/RetryButton" to="." method="_on_retry_button_pressed"]
-[connection signal="pressed" from="HUD/DeathSCreen/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="HUD/WinScreen/NextLevelButton" to="HUD/WinScreen/NextLevelButton" method="_on_pressed"]
 
 [editable path="Human"]
 [editable path="Human2"]

@@ -1,18 +1,21 @@
-[gd_scene load_steps=17 format=3 uid="uid://d1fw2pm5ymbw2"]
+[gd_scene load_steps=22 format=3 uid="uid://d1fw2pm5ymbw2"]
 
 [ext_resource type="Texture2D" uid="uid://clg7vgln2lh17" path="res://Sprites/Level-1/Baground_1.png" id="1_evi0p"]
 [ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_xrdnt"]
 [ext_resource type="AudioStream" uid="uid://musm0fgce63p" path="res://Songs/baby shark-70bpm.mp3" id="2_af3po"]
 [ext_resource type="Texture2D" uid="uid://cp5s3wi113myq" path="res://Sprites/Level-1/Bush1.png" id="3_lsmp6"]
 [ext_resource type="Script" uid="uid://b8ik6voe1b5cu" path="res://Scripts/camera.gd" id="3_xrdnt"]
-[ext_resource type="Script" path="res://Scripts/kill_bar.gd" id="4_6ioyp"]
+[ext_resource type="Script" uid="uid://bsb0ty77btptn" path="res://Scripts/kill_bar.gd" id="4_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://dqd15smav6in8" path="res://Scenes/aiming_worm.tscn" id="4_7p6j4"]
-[ext_resource type="Script" uid="uid://bejdq8t61ff5w" path="res://Scripts/through_obstacle.gd" id="5_chwpn"]
+[ext_resource type="Script" path="res://Scripts/through_obstacle.gd" id="5_chwpn"]
 [ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="5_evi0p"]
 [ext_resource type="Texture2D" uid="uid://d0nh5lnrphmqy" path="res://Sprites/Level-1/tree1.png" id="6_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="7_lsmp6"]
 [ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="9_wrinw"]
 [ext_resource type="Texture2D" uid="uid://jng2c4g45ogc" path="res://Sprites/Level-1/Radio2Level1.png" id="12_uy8f0"]
+[ext_resource type="Texture2D" uid="uid://c2qu0xkm2tkj1" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_1.png" id="14_8i23i"]
+[ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="15_8i23i"]
+[ext_resource type="Texture2D" uid="uid://bnip747ywl77q" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_3.png" id="15_8yhm2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oovug"]
 size = Vector2(3439, 76.5)
@@ -22,7 +25,21 @@ size = Vector2(3439, 76.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evi0p"]
 size = Vector2(31, 207)
 
-[node name="Level1" type="Node2D" node_paths=PackedStringArray("humans", "main_target", "stream_player", "level_rect_extents", "cam")]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oovug"]
+texture = ExtResource("14_8i23i")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8i23i"]
+texture = ExtResource("15_8yhm2")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+
+[node name="Level2" type="Node2D" node_paths=PackedStringArray("humans", "main_target", "stream_player", "level_rect_extents", "cam")]
 script = ExtResource("1_xrdnt")
 humans = [NodePath("Human"), NodePath("Human2"), NodePath("Human3"), NodePath("Human4")]
 main_target = NodePath("Human4")
@@ -208,22 +225,40 @@ sprite_option = 3
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
+[node name="Panel" type="Panel" parent="HUD"]
+offset_right = 169.0
+offset_bottom = 56.0
+theme = ExtResource("9_wrinw")
+theme_override_styles/panel = SubResource("StyleBoxTexture_oovug")
+
+[node name="Panel2" type="Panel" parent="HUD"]
+offset_top = 58.0
+offset_right = 170.0
+offset_bottom = 114.0
+theme = ExtResource("9_wrinw")
+theme_override_styles/panel = SubResource("StyleBoxTexture_8i23i")
+
 [node name="Level_Time_Label" type="Label" parent="HUD"]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.047058824, 0.09803922, 1, 1)
+offset_left = 19.0
+offset_top = 12.0
+offset_right = 147.0
+offset_bottom = 44.0
+theme = ExtResource("9_wrinw")
+theme_override_colors/font_color = Color(0.9647059, 0.6862745, 0.7137255, 1)
 theme_override_font_sizes/font_size = 23
 text = "Time : 0.00"
 
 [node name="Humans_Infected_Label" type="Label" parent="HUD"]
-offset_top = 30.0
-offset_right = 119.0
-offset_bottom = 62.0
-theme_override_colors/font_color = Color(0.047058824, 0.09803922, 1, 1)
+offset_left = 12.0
+offset_top = 69.0
+offset_right = 158.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(1, 0.9764706, 0.96862745, 1)
 theme_override_font_sizes/font_size = 23
 text = "Humans : 0/3"
 
 [node name="Bounces" type="Label" parent="HUD"]
+visible = false
 offset_top = 65.0
 offset_right = 146.0
 offset_bottom = 97.0
@@ -251,9 +286,65 @@ offset_right = 645.5
 offset_bottom = 335.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0.11764706, 1, 1)
+theme_override_colors/font_color = Color(0.9647059, 0.6862745, 0.7137255, 1)
+theme_override_colors/font_shadow_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
+theme_override_colors/font_outline_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 6
 theme_override_font_sizes/font_size = 45
-text = "Everyones Groovin!"
+text = "Song stuck in targets Head!"
+
+[node name="BestTimeText" type="Label" parent="HUD/WinScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 264.0
+offset_top = 331.0
+offset_right = 854.0
+offset_bottom = 394.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9647059, 0.6862745, 0.7137255, 1)
+theme_override_colors/font_shadow_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
+theme_override_colors/font_outline_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "+New Best Time!"
+horizontal_alignment = 1
+
+[node name="AllHumansInfectedText" type="Label" parent="HUD/WinScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 265.0
+offset_top = 368.0
+offset_right = 855.0
+offset_bottom = 431.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9647059, 0.6862745, 0.7137255, 1)
+theme_override_colors/font_shadow_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
+theme_override_colors/font_outline_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "+Everyones Groovin!"
+horizontal_alignment = 1
 
 [node name="RetryButton" type="Button" parent="HUD/WinScreen"]
 layout_mode = 1
@@ -286,6 +377,23 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("9_wrinw")
 text = "Menu"
+
+[node name="NextLevelButton" type="Button" parent="HUD/WinScreen"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 886.0
+offset_top = 367.0
+offset_right = 1110.0
+offset_bottom = 444.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("9_wrinw")
+text = "Next Level"
+script = ExtResource("15_8i23i")
 
 [node name="DeathSCreen" type="Control" parent="HUD"]
 visible = false
@@ -355,5 +463,6 @@ texture = ExtResource("12_uy8f0")
 [connection signal="body_entered" from="KillBar4" to="KillBar4" method="_on_body_entered"]
 [connection signal="pressed" from="HUD/WinScreen/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="HUD/WinScreen/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="HUD/WinScreen/NextLevelButton" to="HUD/WinScreen/NextLevelButton" method="_on_pressed"]
 [connection signal="pressed" from="HUD/DeathSCreen/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="HUD/DeathSCreen/HomeButton" to="." method="_on_home_button_pressed"]

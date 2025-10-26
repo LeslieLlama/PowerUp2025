@@ -18,8 +18,6 @@ var infected_humans: Array[Area2D] = []
 
 var level_rect: Rect2
 
-
-
 func _ready() -> void:
 	Signals.human_infected.connect(_on_new_human_infected)
 	Signals.first_shot.connect(start)
@@ -42,6 +40,8 @@ func _on_new_human_infected(human: Area2D):
 		#Signals.main_target_infected.emit(self)
 		Signals.emit_signal("main_target_infected")
 		$HUD/WinScreen.visible = true
+		if infected_humans.size() == humans.size():
+			$HUD/WinScreen/AllHumansInfectedText.visible = true
 		finish()
 		UI_Update()
 		
@@ -49,6 +49,7 @@ func _on_new_human_infected(human: Area2D):
 		if level_time < SaveSystem.level_times[level_number]:
 			SaveSystem.level_times[level_number] = level_time
 			SaveSystem.save_game()
+			$HUD/WinScreen/BestTimeText.visible = true
 	
 
 func _reload_scene():
