@@ -2,14 +2,15 @@ extends CharacterBody2D
 
 
 @export var level: LevelInfo
+@export var cam: Camera2D
 
 @onready var aiming_line : Line2D = $AimingLine
 @onready var sprite_2D : Sprite2D = $Sprite2D
-@onready var cam : Camera2D = $Camera2D
 @onready var visual: WormVisual = $WormVisual
 
 var first_shot_taken = false
 var is_stopped = true
+const DEFAULT_SPEED := 400.0
 var speed = 450
 
 ## Measure of health. 0 to 1.
@@ -22,7 +23,6 @@ var tween
 var dir = Vector2(0,0)
 var anchor_position : Vector2
 func _init() -> void:
-	#assert(level != null, "Set the AimingWorm's 'level' property")
 	pass
 
 func _process(_delta: float) -> void:
@@ -42,12 +42,14 @@ func _physics_process(delta: float) -> void:
 		if first_shot_taken == false:
 			Signals.emit_signal("first_shot")
 			first_shot_taken = true
-		velocity = dir.normalized()
-		aiming_line.points = [Vector2.ZERO, Vector2.ZERO]
-		is_stopped = false
+		if is_stopped == true:
+			velocity = dir.normalized()
+			aiming_line.points = [Vector2.ZERO, Vector2.ZERO]
+			is_stopped = false
 	
 	var collision = move_and_collide(velocity * speed * delta)
 	visual.move_source(velocity * speed * delta)
+	cam.update(global_position + velocity * speed * delta)
 	if velocity:
 		change_catchiness(-CATCHINESS_DECAY * delta)
 	if collision:
