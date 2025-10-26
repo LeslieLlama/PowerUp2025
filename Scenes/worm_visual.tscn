@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ckg2dvjl3xo1t"]
 
 [ext_resource type="Script" uid="uid://b3ettxjb3l1jx" path="res://Scripts/worm_visual.gd" id="1_3n24x"]
-[ext_resource type="AudioStream" uid="uid://bs5edkabyba83" path="res://Songs/Beethoven-90bpm.mp3" id="2_8wrwa"]
+[ext_resource type="AudioStream" uid="uid://musm0fgce63p" path="res://Songs/baby shark-70bpm.mp3" id="2_8wrwa"]
 [ext_resource type="Texture2D" uid="uid://dur0kbcm1miqn" path="res://icon.svg" id="3_8wrwa"]
 
 [node name="WormVisual" type="Node2D"]

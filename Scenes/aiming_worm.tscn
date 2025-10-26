@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqd15smav6in8"]
+[gd_scene load_steps=8 format=3 uid="uid://dqd15smav6in8"]
 
 [ext_resource type="Script" uid="uid://bp5r27cxkdmd6" path="res://Scripts/aiming_worm.gd" id="1_20mua"]
 [ext_resource type="Texture2D" uid="uid://0sr0v37d7dt1" path="res://Sprites/backbutton.png" id="2_d4ipw"]
 [ext_resource type="PackedScene" uid="uid://ckg2dvjl3xo1t" path="res://Scenes/worm_visual.tscn" id="3_d4ipw"]
+[ext_resource type="AudioStream" uid="uid://dd6uerhavlnct" path="res://Songs/SFX/Losing.mp3" id="4_ueoqq"]
+[ext_resource type="AudioStream" uid="uid://qq8jnhcspstg" path="res://Songs/SFX/Winning.mp3" id="5_qr3uj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5jxyi"]
 
@@ -46,5 +48,13 @@ end_cap_mode = 2
 wait_time = 0.5
 one_shot = true
 autostart = true
+
+[node name="DeathSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ueoqq")
+bus = &"SFX"
+
+[node name="WinSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qr3uj")
+bus = &"SFX"
 
 [connection signal="timeout" from="ClickBufferTimer" to="." method="_on_click_buffer_timer_timeout"]

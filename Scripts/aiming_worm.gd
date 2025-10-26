@@ -14,7 +14,7 @@ var lock_movement : bool = true
 var first_shot_taken = false
 var is_stopped = true
 const DEFAULT_SPEED := 400.0
-var speed = 450
+var speed := 450.0
 
 ## Measure of health. 0 to 1.
 var catchiness = 1.0
@@ -28,6 +28,7 @@ var anchor_position : Vector2
 
 func _ready() -> void:
 	Signals.player_death.connect(_player_death)
+	Signals.main_target_infected.connect(_on_main_target_infected)
 
 func _process(_delta: float) -> void:
 	$VelocityLabel.text = str("v: ",velocity)
@@ -100,4 +101,8 @@ func _player_death():
 	is_stopped = true
 	lock_movement = true
 	#some kind of death/explosion visual?
+	visual.death_anim(0.5)
+	$DeathSFX.play()
 	
+func _on_main_target_infected():
+	$WinSFX.play()
