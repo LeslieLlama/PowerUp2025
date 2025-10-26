@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://jgijis2gccc5"]
+[gd_scene load_steps=11 format=3 uid="uid://jgijis2gccc5"]
 
 [ext_resource type="Texture2D" uid="uid://clg7vgln2lh17" path="res://Sprites/Level-1/Baground_1.png" id="1_evi0p"]
 [ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_xrdnt"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="5_evi0p"]
 [ext_resource type="Texture2D" uid="uid://d0nh5lnrphmqy" path="res://Sprites/Level-1/tree1.png" id="6_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="7_lsmp6"]
+[ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="9_wrinw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evi0p"]
 size = Vector2(31, 207)
@@ -147,21 +148,63 @@ theme_override_colors/font_color = Color(0.047058824, 0.09803922, 1, 1)
 theme_override_font_sizes/font_size = 23
 text = "Bounces : 0"
 
-[node name="WinText" type="Label" parent="HUD"]
+[node name="WinScreen" type="Control" parent="HUD"]
 visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WinText" type="Label" parent="HUD/WinScreen"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -89.5
-offset_top = -31.5
-offset_right = 89.5
-offset_bottom = 31.5
+offset_left = 466.5
+offset_top = 272.5
+offset_right = 645.5
+offset_bottom = 335.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.11764706, 1, 1)
 theme_override_font_sizes/font_size = 45
-text = "	WIN!!!!1!"
+text = "Everyones Groovin!"
+
+[node name="RetryButton" type="Button" parent="HUD/WinScreen"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 888.0
+offset_top = 449.0
+offset_right = 1112.0
+offset_bottom = 526.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("9_wrinw")
+text = "Retry (R)"
+
+[node name="HomeButton" type="Button" parent="HUD/WinScreen"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 888.0
+offset_top = 531.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("9_wrinw")
+text = "Menu"
+
+[connection signal="pressed" from="HUD/WinScreen/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="HUD/WinScreen/HomeButton" to="." method="_on_home_button_pressed"]
 
 [editable path="Human4"]

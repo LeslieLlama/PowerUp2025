@@ -15,3 +15,9 @@ signal cactchiness_gone()
 
 #trigger when the player fires the first shot from the starting human, signal to start the level timer 
 signal first_shot()
+
+#fires when the game begins
+signal game_started()
+
+#fires when the game is loaded by the autoload script SaveSystem
+signal game_loaded()

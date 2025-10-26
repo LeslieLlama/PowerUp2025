@@ -9,7 +9,8 @@ var obstacles_hit_count: int = 0
 @export var humans: Array[Area2D] = []
 @export var main_target: Area2D
 var infected_humans: Array[Area2D] = []
-
+#this is the code for the level to be saved in the save system, level 1 should be 0, level 2 should be 1, so on and so on. 
+@export var level_number : int
 
 func _ready() -> void:
 	Signals.human_infected.connect(_on_new_human_infected)
@@ -24,10 +25,18 @@ func _on_new_human_infected(human: Area2D):
 	if human == main_target:
 		#Signals.main_target_infected.emit(self)
 		Signals.emit_signal("main_target_infected")
-		$HUD/WinText.visible = true
+		$HUD/WinScreen.visible = true
 		finish()
 		UI_Update()
+		
+		#if time is lower than saved time, update save file
+		if level_time < SaveSystem.level_times[level_number]:
+			SaveSystem.level_times[level_number] = level_time
+			SaveSystem.save_game()
 	
+
+func _reload_scene():
+	pass
 
 func _register_human(human : Area2D):
 	humans.append(human)
@@ -42,6 +51,10 @@ func start():
 	timer_running = true
 
 func _process(delta: float) -> void:
+	#reset button
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
+	
 	if game_started == false or timer_running == false:
 		return
 	level_time += delta
@@ -59,3 +72,9 @@ func UI_Update():
 	$HUD/Level_Time_Label.text = str("Time : ",str("%0.2f" % level_time))
 	$HUD/Humans_Infected_Label.text = str("Humans : ",infected_humans.size(),"/",humans.size())
 	$HUD/Bounces.text = str("bounces : ",bounces_count)
+	
+func _on_retry_button_pressed() -> void:
+	get_tree().reload_current_scene()
+	
+func _on_home_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

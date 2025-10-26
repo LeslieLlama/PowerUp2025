@@ -8,6 +8,9 @@ extends CharacterBody2D
 @onready var sprite_2D : Sprite2D = $Sprite2D
 @onready var visual: WormVisual = $WormVisual
 
+#buffer to stop the player from immediately clicking to start the level
+var level_start_input_buffer : bool = true
+
 var first_shot_taken = false
 var is_stopped = true
 const DEFAULT_SPEED := 400.0
@@ -29,6 +32,8 @@ func _process(_delta: float) -> void:
 	$VelocityLabel.text = str("v: ",velocity)
 		
 func _physics_process(delta: float) -> void:
+	if level_start_input_buffer == true:
+		return
 	if is_stopped == true:
 		velocity = Vector2(0.0,0.0)
 	if Input.is_action_just_pressed("fire"):
@@ -86,3 +91,6 @@ func change_catchiness(amnt: float):
 	if catchiness == 0.0:
 		# Lose case
 		Signals.cactchiness_gone.emit()
+
+func _on_click_buffer_timer_timeout() -> void:
+	level_start_input_buffer = false
