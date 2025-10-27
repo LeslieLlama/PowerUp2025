@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d1fw2pm5ymbw2"]
+[gd_scene load_steps=27 format=3 uid="uid://d1fw2pm5ymbw2"]
 
 [ext_resource type="Texture2D" uid="uid://clg7vgln2lh17" path="res://Sprites/Level-1/Baground_1.png" id="1_evi0p"]
 [ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_xrdnt"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bsb0ty77btptn" path="res://Scripts/kill_bar.gd" id="4_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://dqd15smav6in8" path="res://Scenes/aiming_worm.tscn" id="4_7p6j4"]
 [ext_resource type="Script" uid="uid://bejdq8t61ff5w" path="res://Scripts/through_obstacle.gd" id="5_chwpn"]
-[ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="5_evi0p"]
+[ext_resource type="Script" path="res://Scripts/bounce_obstacle.gd" id="5_evi0p"]
 [ext_resource type="Texture2D" uid="uid://d0nh5lnrphmqy" path="res://Sprites/Level-1/tree1.png" id="6_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="7_lsmp6"]
 [ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="9_wrinw"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bnip747ywl77q" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_3.png" id="15_8yhm2"]
 [ext_resource type="FontFile" uid="uid://cu6xwrle4qenm" path="res://UI/Fonts/Gluten-ExtraBold.ttf" id="16_yltlr"]
 [ext_resource type="PackedScene" uid="uid://c0wav3j8gt2h3" path="res://Scenes/level_2.tscn" id="19_6ssoq"]
+[ext_resource type="AudioStream" uid="uid://ca0c7m4d6ed2w" path="res://Songs/SFX/Park bg.mp3" id="21_imks0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oovug"]
 size = Vector2(3439, 76.5)
@@ -470,6 +471,13 @@ z_index = -1
 position = Vector2(54.000004, 588)
 scale = Vector2(0.07118696, 0.07118697)
 texture = ExtResource("12_uy8f0")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_imks0")
+volume_db = -30.0
+autoplay = true
+bus = &"SFX"
+parameters/looping = true
 
 [connection signal="body_entered" from="KillBar" to="KillBar" method="_on_body_entered"]
 [connection signal="body_entered" from="KillBar2" to="KillBar2" method="_on_body_entered"]
