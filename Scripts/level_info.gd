@@ -50,7 +50,9 @@ func _on_new_human_infected(human: Area2D):
 			SaveSystem.level_times[level_number] = level_time
 			SaveSystem.save_game()
 			$HUD/WinScreen/BestTimeText.visible = true
-	
+		if infected_humans.size() > SaveSystem.level_number_of_infected_humans[level_number]:
+			SaveSystem.level_number_of_infected_humans[level_number] = infected_humans.size()
+			SaveSystem.save_game()
 
 func _reload_scene():
 	pass

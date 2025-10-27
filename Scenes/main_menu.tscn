@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0uyxb63uruxm"]
+[gd_scene load_steps=10 format=3 uid="uid://b0uyxb63uruxm"]
 
 [ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="1_48xlc"]
 [ext_resource type="Script" uid="uid://bev04wp6nqb0u" path="res://Scripts/main_menu.gd" id="2_48xlc"]
 [ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="3_1ehe0"]
 [ext_resource type="LabelSettings" uid="uid://bcupll0lvff46" path="res://UI/Settings/MainMenuTopLabel.tres" id="3_n45e2"]
 [ext_resource type="PackedScene" uid="uid://d1fw2pm5ymbw2" path="res://Scenes/level_1.tscn" id="4_ce3w2"]
-[ext_resource type="PackedScene" uid="uid://ba34ys0a5gqdt" path="res://Scenes/level_2.tscn" id="6_opfnp"]
+[ext_resource type="PackedScene" uid="uid://c0wav3j8gt2h3" path="res://Scenes/level_2.tscn" id="6_opfnp"]
+[ext_resource type="Texture2D" uid="uid://dku85iohte2wg" path="res://Sprites/UI PACK PNG/UI Icons/Icon_Check.png" id="6_trj04"]
 [ext_resource type="AudioStream" uid="uid://bnjv4g0hsq6ii" path="res://Songs/Main Theme.mp3" id="7_cp0ys"]
+[ext_resource type="PackedScene" uid="uid://bcx7qgjgpabp3" path="res://Scenes/level_3.tscn" id="7_yhxw7"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -28,6 +30,7 @@ grow_vertical = 2
 color = Color(0.8666667, 0.67058825, 0.67058825, 1)
 
 [node name="HomeScreen" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,7 +83,6 @@ offset_bottom = 632.0
 text = "Clear Save"
 
 [node name="MapScreen" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,7 +95,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 45
-text = "Level Select"
+text = "Medium Select"
 
 [node name="Level1Button" type="Button" parent="MapScreen"]
 layout_mode = 0
@@ -101,7 +103,7 @@ offset_left = 5.0
 offset_top = 77.0
 offset_right = 294.0
 offset_bottom = 165.0
-text = "Sketch"
+text = "Sketching"
 script = ExtResource("3_1ehe0")
 scene_to_load = ExtResource("4_ce3w2")
 
@@ -115,13 +117,33 @@ theme_override_font_sizes/font_size = 30
 text = "Time : NA
 Humans : 0/4"
 
+[node name="TimeStar" type="TextureRect" parent="MapScreen/Level1Button"]
+visible = false
+layout_mode = 0
+offset_left = 511.0
+offset_top = 11.0
+offset_right = 540.1045
+offset_bottom = 37.0
+texture = ExtResource("6_trj04")
+expand_mode = 1
+
+[node name="HumanStar" type="TextureRect" parent="MapScreen/Level1Button"]
+visible = false
+layout_mode = 0
+offset_left = 512.0
+offset_top = 53.0
+offset_right = 541.1045
+offset_bottom = 79.0
+texture = ExtResource("6_trj04")
+expand_mode = 1
+
 [node name="LevelButton2" type="Button" parent="MapScreen"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 169.0
 offset_right = 294.0
 offset_bottom = 257.0
-text = "Paint"
+text = "Painting"
 script = ExtResource("3_1ehe0")
 scene_to_load = ExtResource("6_opfnp")
 
@@ -134,6 +156,106 @@ offset_bottom = 43.0
 theme_override_font_sizes/font_size = 30
 text = "Time : NA
 Humans : 0/4"
+
+[node name="TimeStar" type="TextureRect" parent="MapScreen/LevelButton2"]
+visible = false
+layout_mode = 0
+offset_left = 511.0
+offset_top = 11.0
+offset_right = 540.1045
+offset_bottom = 37.0
+texture = ExtResource("6_trj04")
+expand_mode = 1
+
+[node name="HumanStar" type="TextureRect" parent="MapScreen/LevelButton2"]
+visible = false
+layout_mode = 0
+offset_left = 512.0
+offset_top = 53.0
+offset_right = 541.1045
+offset_bottom = 79.0
+texture = ExtResource("6_trj04")
+expand_mode = 1
+
+[node name="LevelButton3" type="Button" parent="MapScreen"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 261.0
+offset_right = 294.0
+offset_bottom = 349.0
+text = "Spriting"
+script = ExtResource("3_1ehe0")
+scene_to_load = ExtResource("7_yhxw7")
+
+[node name="ScoreLabel" type="Label" parent="MapScreen/LevelButton3"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 1.0
+offset_right = 442.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 30
+text = "Time : NA
+Humans : 0/4"
+
+[node name="TimeStar" type="TextureRect" parent="MapScreen/LevelButton3"]
+visible = false
+layout_mode = 0
+offset_left = 511.0
+offset_top = 11.0
+offset_right = 540.1045
+offset_bottom = 37.0
+texture = ExtResource("6_trj04")
+expand_mode = 1
+
+[node name="HumanStar" type="TextureRect" parent="MapScreen/LevelButton3"]
+visible = false
+layout_mode = 0
+offset_left = 512.0
+offset_top = 53.0
+offset_right = 541.1045
+offset_bottom = 79.0
+texture = ExtResource("6_trj04")
+expand_mode = 1
+
+[node name="LevelButton4" type="Button" parent="MapScreen"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 356.0
+offset_right = 294.0
+offset_bottom = 444.0
+text = "Photography"
+script = ExtResource("3_1ehe0")
+scene_to_load = ExtResource("7_yhxw7")
+
+[node name="ScoreLabel" type="Label" parent="MapScreen/LevelButton4"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 1.0
+offset_right = 442.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 30
+text = "Time : NA
+Humans : 0/4"
+
+[node name="TimeStar" type="TextureRect" parent="MapScreen/LevelButton4"]
+visible = false
+layout_mode = 0
+offset_left = 511.0
+offset_top = 11.0
+offset_right = 540.1045
+offset_bottom = 37.0
+texture = ExtResource("6_trj04")
+expand_mode = 1
+
+[node name="HumanStar" type="TextureRect" parent="MapScreen/LevelButton4"]
+visible = false
+layout_mode = 0
+offset_left = 512.0
+offset_top = 53.0
+offset_right = 541.1045
+offset_bottom = 79.0
+texture = ExtResource("6_trj04")
+expand_mode = 1
 
 [node name="BackButton" type="Button" parent="MapScreen"]
 layout_mode = 1
@@ -155,4 +277,6 @@ parameters/looping = false
 [connection signal="pressed" from="HomeScreen/ClearSaveButton" to="." method="_on_clear_save_button_pressed"]
 [connection signal="pressed" from="MapScreen/Level1Button" to="MapScreen/Level1Button" method="_on_pressed"]
 [connection signal="pressed" from="MapScreen/LevelButton2" to="MapScreen/LevelButton2" method="_on_pressed"]
+[connection signal="pressed" from="MapScreen/LevelButton3" to="MapScreen/LevelButton3" method="_on_pressed"]
+[connection signal="pressed" from="MapScreen/LevelButton4" to="MapScreen/LevelButton4" method="_on_pressed"]
 [connection signal="pressed" from="MapScreen/BackButton" to="." method="back"]

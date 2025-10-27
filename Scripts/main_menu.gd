@@ -10,6 +10,7 @@ func _enter_level_select():
 	#SaveSystem.level_times[0]
 	
 func _ready() -> void:
+	await get_tree().create_timer(0.01).timeout
 	_update_UI()
 	
 func _on_clear_save_button_pressed() -> void:
@@ -17,11 +18,52 @@ func _on_clear_save_button_pressed() -> void:
 	_update_UI()
 
 func _update_UI():
+	#print(SaveSystem.level_number_of_infected_humans[1])
 	#absolutely decroded implementation that isnt reasonably scalable but we're doing like 5 levels max, something to fix up in post
 	$MapScreen/Level1Button/ScoreLabel.text = str(
 		#str("Time : ",str("%0.2f" % level_time))
 		"Time : ",str("%0.2f" % SaveSystem.level_times[0]),
-		"\nHumans : 0/4")
+		"\n",
+		"Humans : ",int(SaveSystem.level_number_of_infected_humans[0]),"/",int(SaveSystem.level_number_of_humans[0]))
 	$MapScreen/LevelButton2/ScoreLabel.text = str(
 		"Time : ",str("%0.2f" % SaveSystem.level_times[1]),
-		"\nHumans : 0/4")
+		"\n",
+		"Humans : ",int(SaveSystem.level_number_of_infected_humans[1]),"/",int(SaveSystem.level_number_of_humans[1]))
+	$MapScreen/LevelButton3/ScoreLabel.text = str(
+		"Time : ",str("%0.2f" % SaveSystem.level_times[2]),
+		"\n",
+		"Humans : ",int(SaveSystem.level_number_of_infected_humans[2]),"/",int(SaveSystem.level_number_of_humans[2]))
+	$MapScreen/LevelButton4/ScoreLabel.text = str(
+		"Time : ",str("%0.2f" % SaveSystem.level_times[3]),
+		"\n",
+		"Humans : ",int(SaveSystem.level_number_of_infected_humans[3]),"/",int(SaveSystem.level_number_of_humans[3]))
+
+#Lock level if previous levels time hasnt been set
+	if SaveSystem.level_times[0] == 60:
+		$MapScreen/LevelButton2.disabled = true
+	if SaveSystem.level_times[1] == 60:
+		$MapScreen/LevelButton3.disabled = true
+	if SaveSystem.level_times[2] == 60:
+		$MapScreen/LevelButton4.disabled = true
+		
+#award stars if save file meets level requirements
+	if SaveSystem.level_times[0] < 5.5:
+		$MapScreen/Level1Button/TimeStar.visible = true
+	if SaveSystem.level_number_of_infected_humans[0] == SaveSystem.level_number_of_humans[0]:
+		$MapScreen/Level1Button/HumanStar.visible = true
+		
+	if SaveSystem.level_times[1] < 9.0:
+		$MapScreen/LevelButton2/TimeStar.visible = true
+	if SaveSystem.level_number_of_infected_humans[1] == SaveSystem.level_number_of_humans[1]:
+		$MapScreen/LevelButton2/HumanStar.visible = true
+		
+	if SaveSystem.level_times[2] < 9.0:
+		$MapScreen/LevelButton3/TimeStar.visible = true
+	if SaveSystem.level_number_of_infected_humans[2] == SaveSystem.level_number_of_humans[2]:
+		$MapScreen/LevelButton3/HumanStar.visible = true
+	
+	if SaveSystem.level_times[3] < 9.0:
+		$MapScreen/LevelButton4/TimeStar.visible = true
+	if SaveSystem.level_number_of_infected_humans[3] == SaveSystem.level_number_of_humans[3]:
+		$MapScreen/LevelButton4/HumanStar.visible = true
+	

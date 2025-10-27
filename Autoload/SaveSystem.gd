@@ -16,13 +16,19 @@ func _game_started():
 	load_game()
 
 func clear_save():
+	#reset the level times and # of infected humans to their default 
 	level_times = [60,60,60,60,60,60,60]
+	level_number_of_infected_humans = [0,0,0,0,0,0,0,0]
+	#This figure never changes and is hardcoded based on the number of humans in the level, but needs to be set up when the game is first initialized
+	level_number_of_humans = [4,6,6,5,4,4,4,4,4,4]
 	save_game()
 
 #don't call this, it's used by the actual save function save_game
 func save():
 	var save_dict = {
-		"levelTimes" : level_times
+		"levelTimes" : level_times,
+		"levelNumberOfHumans" : level_number_of_humans,
+		"levelNumberOfInfectedHumans" : level_number_of_infected_humans
 	}
 	return save_dict
 	
@@ -55,5 +61,7 @@ func load_game():
 		#else:
 			#number_of_powerups += 1
 	level_times = node_data["levelTimes"]
+	level_number_of_humans = node_data["levelNumberOfHumans"]
+	level_number_of_infected_humans = node_data["levelNumberOfInfectedHumans"]
 	Signals.emit_signal("game_loaded")
 	
