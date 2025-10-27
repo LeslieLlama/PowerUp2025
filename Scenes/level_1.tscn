@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d1fw2pm5ymbw2"]
+[gd_scene load_steps=26 format=3 uid="uid://d1fw2pm5ymbw2"]
 
 [ext_resource type="Texture2D" uid="uid://clg7vgln2lh17" path="res://Sprites/Level-1/Baground_1.png" id="1_evi0p"]
 [ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_xrdnt"]
@@ -19,7 +19,6 @@
 [ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="15_8i23i"]
 [ext_resource type="Texture2D" uid="uid://bnip747ywl77q" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_3.png" id="15_8yhm2"]
 [ext_resource type="FontFile" uid="uid://cu6xwrle4qenm" path="res://UI/Fonts/Gluten-ExtraBold.ttf" id="16_yltlr"]
-[ext_resource type="PackedScene" uid="uid://c0wav3j8gt2h3" path="res://Scenes/level_2.tscn" id="19_6ssoq"]
 [ext_resource type="AudioStream" uid="uid://ca0c7m4d6ed2w" path="res://Songs/SFX/Park bg.mp3" id="21_imks0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oovug"]
@@ -406,7 +405,7 @@ grow_vertical = 0
 theme = ExtResource("9_wrinw")
 text = "Next Level"
 script = ExtResource("15_8i23i")
-scene_to_load = ExtResource("19_6ssoq")
+path_to_scene_to_load = "res://Scenes/level_2.tscn"
 
 [node name="DeathSCreen" type="Control" parent="HUD"]
 visible = false

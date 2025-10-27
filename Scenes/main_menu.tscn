@@ -1,15 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0uyxb63uruxm"]
+[gd_scene load_steps=8 format=3 uid="uid://b0uyxb63uruxm"]
 
 [ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="1_48xlc"]
 [ext_resource type="Script" uid="uid://bev04wp6nqb0u" path="res://Scripts/main_menu.gd" id="2_48xlc"]
 [ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="3_1ehe0"]
 [ext_resource type="LabelSettings" uid="uid://bcupll0lvff46" path="res://UI/Settings/MainMenuTopLabel.tres" id="3_n45e2"]
-[ext_resource type="PackedScene" uid="uid://d1fw2pm5ymbw2" path="res://Scenes/level_1.tscn" id="4_ce3w2"]
-[ext_resource type="PackedScene" uid="uid://c0wav3j8gt2h3" path="res://Scenes/level_2.tscn" id="6_opfnp"]
 [ext_resource type="Texture2D" uid="uid://dku85iohte2wg" path="res://Sprites/UI PACK PNG/UI Icons/Icon_Check.png" id="6_trj04"]
 [ext_resource type="AudioStream" uid="uid://bnjv4g0hsq6ii" path="res://Songs/Main Theme.mp3" id="7_cp0ys"]
-[ext_resource type="PackedScene" uid="uid://bcx7qgjgpabp3" path="res://Scenes/level_3.tscn" id="7_yhxw7"]
-[ext_resource type="PackedScene" uid="uid://chbthf28xvxkt" path="res://Scenes/level_4.tscn" id="8_16hvj"]
 [ext_resource type="Texture2D" uid="uid://bilbf8py5847o" path="res://Sprites/100_marker.png" id="10_vr1f0"]
 
 [node name="MainMenu" type="Control"]
@@ -65,7 +61,7 @@ offset_right = 719.0
 offset_bottom = 449.0
 text = "Start"
 script = ExtResource("3_1ehe0")
-scene_to_load = ExtResource("4_ce3w2")
+path_to_scene_to_load = "res://Scenes/level_1.tscn"
 
 [node name="LevelSelect" type="Button" parent="HomeScreen"]
 layout_mode = 0
@@ -120,7 +116,7 @@ offset_right = 294.0
 offset_bottom = 165.0
 text = "Sketching"
 script = ExtResource("3_1ehe0")
-scene_to_load = ExtResource("4_ce3w2")
+path_to_scene_to_load = "res://Scenes/level_1.tscn"
 
 [node name="ScoreLabel" type="Label" parent="MapScreen/Level1Button"]
 layout_mode = 0
@@ -160,7 +156,7 @@ offset_right = 294.0
 offset_bottom = 257.0
 text = "Painting"
 script = ExtResource("3_1ehe0")
-scene_to_load = ExtResource("6_opfnp")
+path_to_scene_to_load = "res://Scenes/level_2.tscn"
 
 [node name="ScoreLabel" type="Label" parent="MapScreen/LevelButton2"]
 layout_mode = 0
@@ -200,7 +196,7 @@ offset_right = 294.0
 offset_bottom = 349.0
 text = "Spriting"
 script = ExtResource("3_1ehe0")
-scene_to_load = ExtResource("7_yhxw7")
+path_to_scene_to_load = "res://Scenes/level_3.tscn"
 
 [node name="ScoreLabel" type="Label" parent="MapScreen/LevelButton3"]
 layout_mode = 0
@@ -240,7 +236,7 @@ offset_right = 294.0
 offset_bottom = 444.0
 text = "Photography"
 script = ExtResource("3_1ehe0")
-scene_to_load = ExtResource("8_16hvj")
+path_to_scene_to_load = "res://Scenes/level_4.tscn"
 
 [node name="ScoreLabel" type="Label" parent="MapScreen/LevelButton4"]
 layout_mode = 0

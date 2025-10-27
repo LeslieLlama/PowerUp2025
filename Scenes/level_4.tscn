@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://chbthf28xvxkt"]
+[gd_scene load_steps=31 format=3 uid="uid://chbthf28xvxkt"]
 
 [ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_o5257"]
 [ext_resource type="AudioStream" uid="uid://dxxjg3h84yq3v" path="res://Songs/Despacito-90bpm.mp3" id="2_2a174"]
@@ -6,13 +6,10 @@
 [ext_resource type="Script" uid="uid://bsb0ty77btptn" path="res://Scripts/kill_bar.gd" id="4_6vef0"]
 [ext_resource type="PackedScene" uid="uid://dqd15smav6in8" path="res://Scenes/aiming_worm.tscn" id="5_glsh0"]
 [ext_resource type="Script" uid="uid://b8ik6voe1b5cu" path="res://Scripts/camera.gd" id="6_j11ov"]
-[ext_resource type="Script" uid="uid://bejdq8t61ff5w" path="res://Scripts/through_obstacle.gd" id="7_gtxiy"]
-[ext_resource type="Texture2D" uid="uid://bjov3w1omsy1i" path="res://Sprites/Level-3/PixelMailbox.png.png" id="8_wfb3u"]
 [ext_resource type="Script" uid="uid://xo24uu0cw0o4" path="res://Scripts/SpinObstacle.gd" id="9_2a174"]
 [ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="9_sph7h"]
 [ext_resource type="Texture2D" uid="uid://dngm5l88d6ptl" path="res://Sprites/Level-4/Earworm_SpacePhotos_SHip.png" id="10_2a174"]
 [ext_resource type="Texture2D" uid="uid://blrp0l17mq5we" path="res://Sprites/Level-4/Earworm_SpacePhotos_rock.png" id="11_sw1t4"]
-[ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="13_m8cc7"]
 [ext_resource type="Texture2D" uid="uid://p40buipl1ll0" path="res://Sprites/Level-3/PixelHuman.png.png" id="14_owuw0"]
 [ext_resource type="Texture2D" uid="uid://ca63aj5ik204i" path="res://Sprites/Level-4/Earworm_SpacePhotos_hater.png" id="15_6vef0"]
 [ext_resource type="Texture2D" uid="uid://d1ko7vax2y6m1" path="res://Sprites/Level-4/Earworm_SpacePhotos_Astronaut.png" id="15_sw1t4"]
@@ -24,14 +21,12 @@
 [ext_resource type="FontFile" uid="uid://cu6xwrle4qenm" path="res://UI/Fonts/Gluten-ExtraBold.ttf" id="21_60kw1"]
 [ext_resource type="LabelSettings" uid="uid://c6nwraqkky545" path="res://UI/Settings/Win-Lose_overlayOverlay.tres" id="22_a6441"]
 [ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="23_ai5w8"]
-[ext_resource type="PackedScene" uid="uid://b0uyxb63uruxm" path="res://Scenes/main_menu.tscn" id="24_lg3ys"]
+[ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="24_lg3ys"]
 [ext_resource type="Texture2D" uid="uid://cbxj4xt4v3yvc" path="res://Sprites/Level-4/Earworm_SpacePhotos_bag.png" id="26_2a174"]
 [ext_resource type="AudioStream" uid="uid://ca0c7m4d6ed2w" path="res://Songs/SFX/Park bg.mp3" id="26_hnp5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oovug"]
 size = Vector2(3439, 76.5)
-
-[sub_resource type="AudioEffectHighPassFilter" id="AudioEffectHighPassFilter_af3po"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glsh0"]
 size = Vector2(86, 340)
@@ -152,90 +147,6 @@ position = Vector2(-1020, -215)
 [node name="Marker2D2" type="Marker2D" parent="LevelRectExtents"]
 position = Vector2(2047, 1584)
 
-[node name="Bush" type="Area2D" parent="."]
-position = Vector2(3183, 1446)
-script = ExtResource("7_gtxiy")
-effect = SubResource("AudioEffectHighPassFilter_af3po")
-
-[node name="Bush1" type="Sprite2D" parent="Bush"]
-position = Vector2(3.0000005, -42)
-scale = Vector2(0.2, 0.20152329)
-texture = ExtResource("8_wfb3u")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush"]
-scale = Vector2(0.2, 0.20152329)
-polygon = PackedVector2Array(140, 49.621582, -145, 44.659668, -140, -94.28223, -145, -233.22412, -135, -421.7876, 130, -396.97656, 140, -163.75293)
-
-[node name="Bush2" type="Area2D" parent="."]
-position = Vector2(3279, 1579)
-script = ExtResource("7_gtxiy")
-effect = SubResource("AudioEffectHighPassFilter_af3po")
-
-[node name="Bush1" type="Sprite2D" parent="Bush2"]
-position = Vector2(3.0000005, -42)
-scale = Vector2(0.2, 0.20152329)
-texture = ExtResource("8_wfb3u")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush2"]
-scale = Vector2(0.2, 0.20152329)
-polygon = PackedVector2Array(140, 49.621582, -145, 44.659668, -140, -94.28223, -145, -233.22412, -135, -421.7876, 130, -396.97656, 140, -163.75293)
-
-[node name="Bush3" type="Area2D" parent="."]
-position = Vector2(3797, 932)
-script = ExtResource("7_gtxiy")
-effect = SubResource("AudioEffectHighPassFilter_af3po")
-
-[node name="Bush1" type="Sprite2D" parent="Bush3"]
-position = Vector2(3.0000005, -42)
-scale = Vector2(0.2, 0.20152329)
-texture = ExtResource("8_wfb3u")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush3"]
-scale = Vector2(0.2, 0.20152329)
-polygon = PackedVector2Array(140, 49.621582, -145, 44.659668, -140, -94.28223, -145, -233.22412, -135, -421.7876, 130, -396.97656, 140, -163.75293)
-
-[node name="Bush4" type="Area2D" parent="."]
-position = Vector2(3343, 453)
-script = ExtResource("7_gtxiy")
-effect = SubResource("AudioEffectHighPassFilter_af3po")
-
-[node name="Bush1" type="Sprite2D" parent="Bush4"]
-position = Vector2(3.0000005, -42)
-scale = Vector2(0.2, 0.20152329)
-texture = ExtResource("8_wfb3u")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush4"]
-scale = Vector2(0.2, 0.20152329)
-polygon = PackedVector2Array(140, 49.621582, -145, 44.659668, -140, -94.28223, -145, -233.22412, -135, -421.7876, 130, -396.97656, 140, -163.75293)
-
-[node name="Bush5" type="Area2D" parent="."]
-position = Vector2(3456, 461)
-script = ExtResource("7_gtxiy")
-effect = SubResource("AudioEffectHighPassFilter_af3po")
-
-[node name="Bush1" type="Sprite2D" parent="Bush5"]
-position = Vector2(3.0000005, -42)
-scale = Vector2(0.2, 0.20152329)
-texture = ExtResource("8_wfb3u")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush5"]
-scale = Vector2(0.2, 0.20152329)
-polygon = PackedVector2Array(140, 49.621582, -145, 44.659668, -140, -94.28223, -145, -233.22412, -135, -421.7876, 130, -396.97656, 140, -163.75293)
-
-[node name="Bush6" type="Area2D" parent="."]
-position = Vector2(3528, 342)
-script = ExtResource("7_gtxiy")
-effect = SubResource("AudioEffectHighPassFilter_af3po")
-
-[node name="Bush1" type="Sprite2D" parent="Bush6"]
-position = Vector2(3.0000005, -42)
-scale = Vector2(0.2, 0.20152329)
-texture = ExtResource("8_wfb3u")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush6"]
-scale = Vector2(0.2, 0.20152329)
-polygon = PackedVector2Array(140, 49.621582, -145, 44.659668, -140, -94.28223, -145, -233.22412, -135, -421.7876, 130, -396.97656, 140, -163.75293)
-
 [node name="Streetlights" type="Node2D" parent="."]
 position = Vector2(19, 565)
 
@@ -298,7 +209,7 @@ texture = ExtResource("11_sw1t4")
 position = Vector2(-6.5, 45.5)
 shape = SubResource("RectangleShape2D_gmj2a")
 
-[node name="Human" parent="." instance=ExtResource("13_m8cc7")]
+[node name="Human" parent="." instance=ExtResource("24_lg3ys")]
 position = Vector2(12, 1400)
 rotation = 2.7202485
 sprite_option = 1
@@ -322,20 +233,18 @@ position = Vector2(-2.0000067, -43)
 [node name="CollisionShape2D" parent="Human" index="1"]
 position = Vector2(-1, 0)
 
-[node name="Human2" parent="." instance=ExtResource("13_m8cc7")]
+[node name="Human2" parent="." instance=ExtResource("24_lg3ys")]
 position = Vector2(450.00012, 1099)
 rotation = 0.3190179
 sprite_option = 1
 
 [node name="HumanSprite" parent="Human2/Sprites" index="0"]
-visible = false
 position = Vector2(-4.053116e-06, -2.0000267)
 scale = Vector2(0.18599027, 0.19456011)
 texture = ExtResource("14_owuw0")
 region_rect = Rect2(43, 0, 414, 511.5)
 
 [node name="NPCBlue" parent="Human2/Sprites" index="1"]
-visible = true
 position = Vector2(-2.0000067, -2.9094982)
 scale = Vector2(0.39834, 0.40953663)
 texture = ExtResource("15_sw1t4")
@@ -346,7 +255,7 @@ position = Vector2(-2.0000067, -43)
 [node name="CollisionShape2D" parent="Human2" index="1"]
 position = Vector2(-1, 0)
 
-[node name="Human3" parent="." instance=ExtResource("13_m8cc7")]
+[node name="Human3" parent="." instance=ExtResource("24_lg3ys")]
 position = Vector2(925.00006, 901.00006)
 rotation = -0.47168273
 sprite_option = 1
@@ -370,7 +279,7 @@ position = Vector2(-2.0000067, -43)
 [node name="CollisionShape2D" parent="Human3" index="1"]
 position = Vector2(-1, 0)
 
-[node name="Human4" parent="." instance=ExtResource("13_m8cc7")]
+[node name="Human4" parent="." instance=ExtResource("24_lg3ys")]
 position = Vector2(171.00002, 890)
 rotation = 1.3701838
 sprite_option = 1
@@ -394,7 +303,7 @@ position = Vector2(-2.0000067, -43)
 [node name="CollisionShape2D" parent="Human4" index="1"]
 position = Vector2(-1, 0)
 
-[node name="Human5" parent="." instance=ExtResource("13_m8cc7")]
+[node name="Human5" parent="." instance=ExtResource("24_lg3ys")]
 position = Vector2(77, 470)
 rotation = -0.7985162
 sprite_option = 1
@@ -418,7 +327,7 @@ position = Vector2(-2.0000067, -43)
 [node name="CollisionShape2D" parent="Human5" index="1"]
 position = Vector2(-1, 0)
 
-[node name="Human6" parent="." instance=ExtResource("13_m8cc7")]
+[node name="Human6" parent="." instance=ExtResource("24_lg3ys")]
 position = Vector2(821, 219)
 rotation = -0.22694841
 sprite_option = 1
@@ -442,7 +351,7 @@ position = Vector2(-2.0000067, -43)
 [node name="CollisionShape2D" parent="Human6" index="1"]
 position = Vector2(-1, 0)
 
-[node name="Human7" parent="." instance=ExtResource("13_m8cc7")]
+[node name="Human7" parent="." instance=ExtResource("24_lg3ys")]
 position = Vector2(846, 603.00006)
 rotation = 1.3701838
 sprite_option = 1
@@ -466,7 +375,7 @@ position = Vector2(-2.0000067, -43)
 [node name="CollisionShape2D" parent="Human7" index="1"]
 position = Vector2(-1, 0)
 
-[node name="Human8" parent="." instance=ExtResource("13_m8cc7")]
+[node name="Human8" parent="." instance=ExtResource("24_lg3ys")]
 position = Vector2(753, 1326.0001)
 rotation = -0.175663
 sprite_option = 1
@@ -490,7 +399,7 @@ position = Vector2(-2.0000067, -43)
 [node name="CollisionShape2D" parent="Human8" index="1"]
 position = Vector2(-1, 0)
 
-[node name="Hater" parent="." instance=ExtResource("13_m8cc7")]
+[node name="Hater" parent="." instance=ExtResource("24_lg3ys")]
 position = Vector2(552, 1430)
 sprite_option = 3
 
@@ -696,7 +605,7 @@ grow_vertical = 0
 theme = ExtResource("17_c040m")
 text = "Next Level"
 script = ExtResource("23_ai5w8")
-scene_to_load = ExtResource("24_lg3ys")
+path_to_scene_to_load = "res://Scenes/main_menu.tscn"
 
 [node name="DeathSCreen" type="Control" parent="HUD"]
 visible = false

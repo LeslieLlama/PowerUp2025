@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bcx7qgjgpabp3"]
+[gd_scene load_steps=32 format=3 uid="uid://bcx7qgjgpabp3"]
 
 [ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_8jhox"]
 [ext_resource type="AudioStream" uid="uid://bjdq6vdirbk05" path="res://Songs/call on me-80bpm.mp3" id="2_nrv0r"]
@@ -24,7 +24,6 @@
 [ext_resource type="LabelSettings" uid="uid://c6nwraqkky545" path="res://UI/Settings/Win-Lose_overlayOverlay.tres" id="17_s8di1"]
 [ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="18_2yced"]
 [ext_resource type="AudioStream" uid="uid://ca0c7m4d6ed2w" path="res://Songs/SFX/Park bg.mp3" id="21_r5kqc"]
-[ext_resource type="PackedScene" uid="uid://chbthf28xvxkt" path="res://Scenes/level_4.tscn" id="24_gmj2a"]
 [ext_resource type="Texture2D" uid="uid://bdb03jb8y36xu" path="res://Sprites/Level-3/PixelRadio.png" id="25_gmj2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oovug"]
@@ -723,7 +722,7 @@ grow_vertical = 0
 theme = ExtResource("12_tt48c")
 text = "Next Level"
 script = ExtResource("18_2yced")
-scene_to_load = ExtResource("24_gmj2a")
+path_to_scene_to_load = "res://Scenes/level_4.tscn"
 
 [node name="DeathSCreen" type="Control" parent="HUD"]
 visible = false
