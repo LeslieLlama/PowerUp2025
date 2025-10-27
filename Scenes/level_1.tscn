@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d1fw2pm5ymbw2"]
+[gd_scene load_steps=26 format=3 uid="uid://d1fw2pm5ymbw2"]
 
 [ext_resource type="Texture2D" uid="uid://clg7vgln2lh17" path="res://Sprites/Level-1/Baground_1.png" id="1_evi0p"]
 [ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_xrdnt"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bsb0ty77btptn" path="res://Scripts/kill_bar.gd" id="4_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://dqd15smav6in8" path="res://Scenes/aiming_worm.tscn" id="4_7p6j4"]
 [ext_resource type="Script" uid="uid://bejdq8t61ff5w" path="res://Scripts/through_obstacle.gd" id="5_chwpn"]
-[ext_resource type="Script" path="res://Scripts/bounce_obstacle.gd" id="5_evi0p"]
+[ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="5_evi0p"]
 [ext_resource type="Texture2D" uid="uid://d0nh5lnrphmqy" path="res://Sprites/Level-1/tree1.png" id="6_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="7_lsmp6"]
 [ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="9_wrinw"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://c2qu0xkm2tkj1" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_1.png" id="14_8i23i"]
 [ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="15_8i23i"]
 [ext_resource type="Texture2D" uid="uid://bnip747ywl77q" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_3.png" id="15_8yhm2"]
+[ext_resource type="FontFile" uid="uid://cu6xwrle4qenm" path="res://UI/Fonts/Gluten-ExtraBold.ttf" id="16_yltlr"]
+[ext_resource type="PackedScene" uid="uid://ba34ys0a5gqdt" path="res://Scenes/level_2.tscn" id="19_6ssoq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oovug"]
 size = Vector2(3439, 76.5)
@@ -294,13 +296,8 @@ offset_right = 645.5
 offset_bottom = 335.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.9647059, 0.6862745, 0.7137255, 1)
-theme_override_colors/font_shadow_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
-theme_override_colors/font_outline_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 8
-theme_override_constants/shadow_outline_size = 6
+theme_override_colors/font_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
+theme_override_fonts/font = ExtResource("16_yltlr")
 theme_override_font_sizes/font_size = 45
 text = "YOU WIN
 Song in target's Head!"
@@ -341,9 +338,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 265.0
-offset_top = 368.0
+offset_top = 394.0
 offset_right = 855.0
-offset_bottom = 431.0
+offset_bottom = 487.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.9647059, 0.6862745, 0.7137255, 1)
@@ -407,6 +404,7 @@ grow_vertical = 0
 theme = ExtResource("9_wrinw")
 text = "Next Level"
 script = ExtResource("15_8i23i")
+scene_to_load = ExtResource("19_6ssoq")
 
 [node name="DeathSCreen" type="Control" parent="HUD"]
 visible = false

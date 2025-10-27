@@ -44,7 +44,7 @@ texture_margin_top = 30.0
 texture_margin_right = 30.0
 texture_margin_bottom = 30.0
 
-[node name="Level1" type="Node2D" node_paths=PackedStringArray("humans", "main_target", "stream_player", "level_rect_extents", "cam")]
+[node name="Level2" type="Node2D" node_paths=PackedStringArray("humans", "main_target", "stream_player", "level_rect_extents", "cam")]
 rotation = 0.0009080721
 script = ExtResource("1_hj5x7")
 humans = [NodePath("Human"), NodePath("Human2"), NodePath("Human3"), NodePath("Human4"), NodePath("Human5"), NodePath("Hater")]
@@ -69,7 +69,7 @@ color = Color(0.05490196, 0.105882354, 0.11372549, 1)
 
 [node name="Baground1" type="Sprite2D" parent="Background"]
 texture_repeat = 2
-position = Vector2(-1127, -732)
+position = Vector2(-1126.6652, -731.97723)
 scale = Vector2(1.4303006, 1.3250722)
 texture = ExtResource("3_yvrk7")
 centered = false
@@ -292,8 +292,8 @@ scale = Vector2(0.2, 0.20152329)
 polygon = PackedVector2Array(236, 285, -280, 276, -394, 63, -257, -146, -43, -265, 285, -269, 393, -2)
 
 [node name="Tree" type="StaticBody2D" parent="."]
-position = Vector2(-48, 904)
-rotation = 0.6129691
+position = Vector2(-487.29153, 780.4429)
+rotation = 1.5664725
 script = ExtResource("9_4k5rq")
 
 [node name="Tree1" type="Sprite2D" parent="Tree"]
@@ -304,9 +304,22 @@ texture = ExtResource("11_fhuy1")
 position = Vector2(-4.5, 7.5)
 shape = SubResource("RectangleShape2D_evi0p")
 
+[node name="Tree2" type="StaticBody2D" parent="."]
+position = Vector2(-276.0065, 1094.2512)
+rotation = 1.5647068
+script = ExtResource("9_4k5rq")
+
+[node name="Tree1" type="Sprite2D" parent="Tree2"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_fhuy1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree2"]
+position = Vector2(-4.5, 7.5)
+shape = SubResource("RectangleShape2D_evi0p")
+
 [node name="Tree3" type="StaticBody2D" parent="."]
-position = Vector2(-117.00003, 1299)
-rotation = 2.0645237
+position = Vector2(-120.3979, 663.1096)
+rotation = 1.0486331
 script = ExtResource("9_4k5rq")
 
 [node name="Tree1" type="Sprite2D" parent="Tree3"]
@@ -330,8 +343,53 @@ texture = ExtResource("11_fhuy1")
 position = Vector2(-4.5, 7.5)
 shape = SubResource("RectangleShape2D_evi0p")
 
+[node name="Tree5" type="StaticBody2D" parent="."]
+position = Vector2(148.35663, 1493.866)
+rotation = 1.8164682
+script = ExtResource("9_4k5rq")
+
+[node name="Tree1" type="Sprite2D" parent="Tree5"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_fhuy1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree5"]
+position = Vector2(-4.5, 7.5)
+shape = SubResource("RectangleShape2D_evi0p")
+
+[node name="Tree6" type="StaticBody2D" parent="."]
+position = Vector2(679.3719, 1510.3837)
+rotation = 1.5811679
+script = ExtResource("9_4k5rq")
+
+[node name="Tree1" type="Sprite2D" parent="Tree6"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_fhuy1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6"]
+position = Vector2(-4.5, 7.5)
+shape = SubResource("RectangleShape2D_evi0p")
+
+[node name="Tree7" type="StaticBody2D" parent="."]
+position = Vector2(1078.348, 1484.0211)
+rotation = 1.3006804
+script = ExtResource("9_4k5rq")
+
+[node name="Tree1" type="Sprite2D" parent="Tree7"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_fhuy1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree7"]
+position = Vector2(-4.5, 7.5)
+shape = SubResource("RectangleShape2D_evi0p")
+
 [node name="Human" parent="." instance=ExtResource("11_d42f2")]
-position = Vector2(-394, 825)
+position = Vector2(-301.33334, 734.2739)
+
+[node name="HumanSprite" parent="Human/Sprites" index="0"]
+visible = false
+
+[node name="Diver" parent="Human/Sprites" index="4"]
+visible = true
 
 [node name="CollisionShape2D" parent="Human" index="1"]
 position = Vector2(2, -2)
@@ -342,6 +400,12 @@ position = Vector2(0, -25)
 [node name="Human2" parent="." instance=ExtResource("11_d42f2")]
 position = Vector2(117.58203, 640.8935)
 
+[node name="HumanSprite" parent="Human2/Sprites" index="0"]
+visible = false
+
+[node name="Diver" parent="Human2/Sprites" index="4"]
+visible = true
+
 [node name="CollisionShape2D" parent="Human2" index="1"]
 position = Vector2(2, -2)
 
@@ -350,6 +414,12 @@ position = Vector2(0, -25)
 
 [node name="Human3" parent="." instance=ExtResource("11_d42f2")]
 position = Vector2(257.05963, 1166.7671)
+
+[node name="HumanSprite" parent="Human3/Sprites" index="0"]
+visible = false
+
+[node name="Diver" parent="Human3/Sprites" index="4"]
+visible = true
 
 [node name="CollisionShape2D" parent="Human3" index="1"]
 position = Vector2(2, -2)
@@ -360,6 +430,12 @@ position = Vector2(0, -25)
 [node name="Human4" parent="." instance=ExtResource("11_d42f2")]
 position = Vector2(676.73254, 806.38574)
 
+[node name="HumanSprite" parent="Human4/Sprites" index="0"]
+visible = false
+
+[node name="Diver" parent="Human4/Sprites" index="4"]
+visible = true
+
 [node name="CollisionShape2D" parent="Human4" index="1"]
 position = Vector2(2, -2)
 
@@ -369,6 +445,12 @@ position = Vector2(0, -25)
 [node name="Human5" parent="." instance=ExtResource("11_d42f2")]
 position = Vector2(1169.6678, 734.9381)
 
+[node name="HumanSprite" parent="Human5/Sprites" index="0"]
+visible = false
+
+[node name="Diver" parent="Human5/Sprites" index="4"]
+visible = true
+
 [node name="CollisionShape2D" parent="Human5" index="1"]
 position = Vector2(2, -2)
 
@@ -376,7 +458,14 @@ position = Vector2(2, -2)
 position = Vector2(0, -25)
 
 [node name="Hater" parent="." instance=ExtResource("11_d42f2")]
-position = Vector2(1457.0719, 1179.6774)
+position = Vector2(1438.9623, -42.306763)
+
+[node name="HumanSprite" parent="Hater/Sprites" index="0"]
+visible = false
+
+[node name="WaterHater" parent="Hater/Sprites" index="5"]
+visible = true
+position = Vector2(9.029002, 31.991762)
 
 [node name="CollisionShape2D" parent="Hater" index="1"]
 position = Vector2(16.5, 67.5)
@@ -629,6 +718,21 @@ grow_vertical = 0
 theme = ExtResource("13_kjoi8")
 text = "Menu"
 
+[node name="WallRight" type="StaticBody2D" parent="."]
+position = Vector2(2307.7764, -247.09573)
+script = ExtResource("9_4k5rq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WallRight"]
+polygon = PackedVector2Array(-7.998291, 2.0072327, -163.66968, 364.14874, -110.61621, 1524.1011, -334.33362, 1835.3043, -0.3400879, 1828.0011)
+
+[node name="WallLeft" type="StaticBody2D" parent="."]
+position = Vector2(-28.008162, -8.974571)
+script = ExtResource("9_4k5rq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WallLeft"]
+position = Vector2(-1095.647, -712.0054)
+polygon = PackedVector2Array(-5.001953, -1.9954224, 427.98425, -17.38861, 106.201416, 221.90366, 193.3739, 411.8246, 37.518433, 570.9662, 71.97058, 1068.935, 31.132202, 1246.9722, 80.30109, 1432.9277, 274.51172, 1664.7515, 346.6978, 1869.6859, 691.8012, 1983.3727, 676.92834, 2123.3862, 711.05273, 2260.3552, -17.94336, 2265.017)
+
 [connection signal="body_entered" from="KillBar" to="KillBar" method="_on_body_entered"]
 [connection signal="body_entered" from="KillBar2" to="KillBar2" method="_on_body_entered"]
 [connection signal="body_entered" from="KillBar3" to="KillBar3" method="_on_body_entered"]
@@ -636,6 +740,8 @@ text = "Menu"
 [connection signal="pressed" from="HUD/WinScreen/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="HUD/WinScreen/HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="HUD/WinScreen/NextLevelButton" to="HUD/WinScreen/NextLevelButton" method="_on_pressed"]
+[connection signal="pressed" from="HUD/DeathSCreen/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="HUD/DeathSCreen/HomeButton" to="." method="_on_home_button_pressed"]
 
 [editable path="Human"]
 [editable path="Human2"]

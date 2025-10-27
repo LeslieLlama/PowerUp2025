@@ -9,7 +9,6 @@ var scout_mode:bool = true
 
 func _ready() -> void:
 	Signals.first_shot.connect(switch_to_follow)
-		#switch_to_follow()
 
 
 func update(approach: Vector2) -> void:
