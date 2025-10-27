@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0uyxb63uruxm"]
+[gd_scene load_steps=7 format=3 uid="uid://b0uyxb63uruxm"]
 
 [ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="1_48xlc"]
 [ext_resource type="Script" uid="uid://bev04wp6nqb0u" path="res://Scripts/main_menu.gd" id="2_48xlc"]
 [ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="3_1ehe0"]
 [ext_resource type="LabelSettings" uid="uid://bcupll0lvff46" path="res://UI/Settings/MainMenuTopLabel.tres" id="3_n45e2"]
 [ext_resource type="PackedScene" uid="uid://d1fw2pm5ymbw2" path="res://Scenes/level_1.tscn" id="4_ce3w2"]
+[ext_resource type="AudioStream" uid="uid://bnjv4g0hsq6ii" path="res://Songs/Main Theme.mp3" id="6_opfnp"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -140,6 +141,11 @@ offset_top = -91.0
 offset_right = 137.0
 grow_vertical = 0
 text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_opfnp")
+autoplay = true
+parameters/looping = false
 
 [connection signal="pressed" from="HomeScreen/StartGameButton2" to="HomeScreen/StartGameButton2" method="_on_pressed"]
 [connection signal="pressed" from="HomeScreen/LevelSelect" to="." method="_enter_level_select"]

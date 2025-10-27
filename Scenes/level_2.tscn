@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ba34ys0a5gqdt"]
+[gd_scene load_steps=25 format=3 uid="uid://ba34ys0a5gqdt"]
 
 [ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_hj5x7"]
 [ext_resource type="AudioStream" uid="uid://bs5edkabyba83" path="res://Songs/Beethoven-90bpm.mp3" id="2_yvrk7"]
@@ -6,9 +6,9 @@
 [ext_resource type="Script" uid="uid://bsb0ty77btptn" path="res://Scripts/kill_bar.gd" id="4_i6dbo"]
 [ext_resource type="PackedScene" uid="uid://dqd15smav6in8" path="res://Scenes/aiming_worm.tscn" id="5_e2piv"]
 [ext_resource type="Script" uid="uid://b8ik6voe1b5cu" path="res://Scripts/camera.gd" id="6_ijtdf"]
-[ext_resource type="Script" path="res://Scripts/through_obstacle.gd" id="7_c5xoi"]
+[ext_resource type="Script" uid="uid://bejdq8t61ff5w" path="res://Scripts/through_obstacle.gd" id="7_c5xoi"]
 [ext_resource type="Texture2D" uid="uid://d2b788mx26ubg" path="res://Sprites/Level-2/Dory.png" id="8_fhuy1"]
-[ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="9_4k5rq"]
+[ext_resource type="Script" path="res://Scripts/bounce_obstacle.gd" id="9_4k5rq"]
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="11_d42f2"]
 [ext_resource type="Texture2D" uid="uid://b8gepx1131b3" path="res://Sprites/Level-2/Botle.png" id="11_fhuy1"]
 [ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="13_kjoi8"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bnip747ywl77q" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_3.png" id="15_kwf64"]
 [ext_resource type="Texture2D" uid="uid://jng2c4g45ogc" path="res://Sprites/Level-1/Radio2Level1.png" id="16_5s1wx"]
 [ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="16_hj5x7"]
+[ext_resource type="LabelSettings" uid="uid://dnhgm6f445i8s" path="res://UI/Settings/LabelSettingsOverlay.tres" id="16_yvrk7"]
+[ext_resource type="LabelSettings" uid="uid://c6nwraqkky545" path="res://UI/Settings/Win-Lose_overlayOverlay.tres" id="17_fhuy1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oovug"]
 size = Vector2(3439, 76.5)
@@ -393,15 +395,15 @@ texture = ExtResource("16_5s1wx")
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="HUD"]
-offset_right = 169.0
+offset_right = 180.0
 offset_bottom = 56.0
 theme = ExtResource("13_kjoi8")
 theme_override_styles/panel = SubResource("StyleBoxTexture_yvrk7")
 
 [node name="Panel2" type="Panel" parent="HUD"]
 offset_top = 58.0
-offset_right = 170.0
-offset_bottom = 114.0
+offset_right = 178.0
+offset_bottom = 113.0
 theme = ExtResource("13_kjoi8")
 theme_override_styles/panel = SubResource("StyleBoxTexture_fhuy1")
 
@@ -414,6 +416,8 @@ theme = ExtResource("13_kjoi8")
 theme_override_colors/font_color = Color(0.9647059, 0.6862745, 0.7137255, 1)
 theme_override_font_sizes/font_size = 23
 text = "Time : 0.00"
+label_settings = ExtResource("16_yvrk7")
+vertical_alignment = 1
 
 [node name="Humans_Infected_Label" type="Label" parent="HUD"]
 offset_left = 12.0
@@ -423,6 +427,8 @@ offset_bottom = 101.0
 theme_override_colors/font_color = Color(1, 0.9764706, 0.96862745, 1)
 theme_override_font_sizes/font_size = 23
 text = "Humans : 0/3"
+label_settings = ExtResource("16_yvrk7")
+vertical_alignment = 1
 
 [node name="Bounces" type="Label" parent="HUD"]
 visible = false
@@ -461,7 +467,11 @@ theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 8
 theme_override_constants/shadow_outline_size = 6
 theme_override_font_sizes/font_size = 45
-text = "Song stuck in targets Head!"
+text = "YOU WIN
+Song stuck in 
+target's Head!"
+label_settings = ExtResource("17_fhuy1")
+horizontal_alignment = 1
 
 [node name="BestTimeText" type="Label" parent="HUD/WinScreen"]
 visible = false
@@ -585,6 +595,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.11764706, 0.078431375, 1)
 theme_override_font_sizes/font_size = 70
 text = "YOU DIED"
+label_settings = ExtResource("17_fhuy1")
 
 [node name="RetryButton" type="Button" parent="HUD/DeathSCreen"]
 layout_mode = 1
