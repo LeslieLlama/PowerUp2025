@@ -298,7 +298,7 @@ texture = ExtResource("10_vr1f0")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_cp0ys")
 autoplay = true
-parameters/looping = false
+parameters/looping = true
 
 [connection signal="pressed" from="HomeScreen/StartGameButton2" to="HomeScreen/StartGameButton2" method="_on_pressed"]
 [connection signal="pressed" from="HomeScreen/LevelSelect" to="." method="_enter_level_select"]

@@ -673,7 +673,7 @@ texture = ExtResource("26_2a174")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_nqprj")
-volume_db = -30.0
+volume_db = -10.0
 autoplay = true
 bus = &"SFX"
 parameters/looping = true
