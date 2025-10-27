@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 			var canvas_transform = get_global_transform_with_canvas()
 			aiming_line.points = [canvas_transform, clamp_vector(dir, Vector2(0,0), 140)]
 			dir = dir.normalized()
-	if Input.is_action_just_released("fire"):
+	if Input.is_action_just_released("fire") and dir != Vector2.ZERO:
 		if first_shot_taken == false:
 			Signals.emit_signal("first_shot")
 			first_shot_taken = true
