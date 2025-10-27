@@ -39,12 +39,14 @@ func _physics_process(delta: float) -> void:
 	if is_stopped == true:
 		velocity = Vector2(0.0,0.0)
 	if Input.is_action_just_pressed("fire"):
-		anchor_position = get_global_mouse_position()
+		anchor_position = get_viewport().get_mouse_position()
+		
 	if Input.is_action_pressed("fire"):
 		if is_stopped == true:
-			dir = (get_global_mouse_position() - anchor_position).normalized()
+			dir = (get_viewport().get_mouse_position() - anchor_position)
 			var canvas_transform = get_global_transform_with_canvas()
-			aiming_line.points = [canvas_transform, clamp_vector(get_global_mouse_position() - anchor_position, Vector2(0,0), 140)]
+			aiming_line.points = [canvas_transform, clamp_vector(dir, Vector2(0,0), 140)]
+			dir = dir.normalized()
 	if Input.is_action_just_released("fire"):
 		if first_shot_taken == false:
 			Signals.emit_signal("first_shot")

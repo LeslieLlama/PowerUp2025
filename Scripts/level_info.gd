@@ -30,8 +30,8 @@ func _ready() -> void:
 
 
 func _on_new_human_infected(human: Area2D):
-	for i in AudioServer.get_bus_effect_count(2):
-		AudioServer.remove_bus_effect(2, i)
+	reset_audio_effects()
+	
 	# Prevents adding two refs of same human to infected_humans
 	if not human in infected_humans:
 		infected_humans.append(human)
@@ -60,6 +60,7 @@ func _register_human(human : Area2D):
 	print(human)
 
 func start():
+	reset_audio_effects()
 	game_started = true
 	bounces_count = 0
 	obstacles_hit_count = 0
@@ -93,10 +94,17 @@ func UI_Update():
 	$HUD/Bounces.text = str("bounces : ",bounces_count)
 	
 func _on_retry_button_pressed() -> void:
+	reset_audio_effects()
 	get_tree().reload_current_scene()
 	
 func _on_home_button_pressed() -> void:
+	reset_audio_effects()
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	
 func _player_death():
+	reset_audio_effects()
 	$HUD/DeathSCreen.visible = true
+
+func reset_audio_effects():
+	for i in AudioServer.get_bus_effect_count(2):
+		AudioServer.remove_bus_effect(2, i)
