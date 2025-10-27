@@ -107,4 +107,4 @@ func _player_death():
 
 func reset_audio_effects():
 	for i in AudioServer.get_bus_effect_count(2):
-		AudioServer.remove_bus_effect(2, i)
+		AudioServer.remove_bus_effect(2, 0)
