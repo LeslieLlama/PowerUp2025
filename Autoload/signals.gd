@@ -11,7 +11,6 @@ signal register_human(human : Area2D)
 
 signal human_infected(human: Area2D)
 signal main_target_infected(level: LevelInfo)
-signal cactchiness_gone()
 
 #trigger when the player fires the first shot from the starting human, signal to start the level timer 
 signal first_shot()

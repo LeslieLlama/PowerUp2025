@@ -94,7 +94,7 @@ func change_catchiness(amnt: float):
 	
 	if catchiness == 0.0:
 		# Lose case
-		Signals.cactchiness_gone.emit()
+		Signals.emit_signal("player_death")
 
 func _on_click_buffer_timer_timeout() -> void:
 	lock_movement = false
