@@ -22,8 +22,8 @@
 [ext_resource type="LabelSettings" uid="uid://c6nwraqkky545" path="res://UI/Settings/Win-Lose_overlayOverlay.tres" id="22_a6441"]
 [ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="23_ai5w8"]
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="24_lg3ys"]
+[ext_resource type="AudioStream" uid="uid://b72aaoqnnw2mw" path="res://Songs/SFX/Space bg.mp3" id="24_nqprj"]
 [ext_resource type="Texture2D" uid="uid://cbxj4xt4v3yvc" path="res://Sprites/Level-4/Earworm_SpacePhotos_bag.png" id="26_2a174"]
-[ext_resource type="AudioStream" uid="uid://ca0c7m4d6ed2w" path="res://Songs/SFX/Park bg.mp3" id="26_hnp5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oovug"]
 size = Vector2(3439, 76.5)
@@ -672,7 +672,7 @@ scale = Vector2(0.36381635, 0.36381638)
 texture = ExtResource("26_2a174")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("26_hnp5w")
+stream = ExtResource("24_nqprj")
 volume_db = -30.0
 autoplay = true
 bus = &"SFX"
