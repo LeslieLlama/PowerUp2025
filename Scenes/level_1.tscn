@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bsb0ty77btptn" path="res://Scripts/kill_bar.gd" id="4_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://dqd15smav6in8" path="res://Scenes/aiming_worm.tscn" id="4_7p6j4"]
 [ext_resource type="Script" uid="uid://bejdq8t61ff5w" path="res://Scripts/through_obstacle.gd" id="5_chwpn"]
+[ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="5_evi0p"]
 [ext_resource type="Script" path="res://Scripts/bounce_obstacle.gd" id="5_evi0p"]
 [ext_resource type="Texture2D" uid="uid://d0nh5lnrphmqy" path="res://Sprites/Level-1/tree1.png" id="6_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="7_lsmp6"]
