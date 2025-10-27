@@ -106,6 +106,7 @@ func _on_home_button_pressed() -> void:
 func _player_death():
 	reset_audio_effects()
 	$HUD/DeathSCreen.visible = true
+	timer_running = false
 
 func reset_audio_effects():
 	for i in AudioServer.get_bus_effect_count(2):

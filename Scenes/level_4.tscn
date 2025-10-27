@@ -1,68 +1,72 @@
-[gd_scene load_steps=33 format=3 uid="uid://bcx7qgjgpabp3"]
+[gd_scene load_steps=35 format=3 uid="uid://chbthf28xvxkt"]
 
-[ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_8jhox"]
-[ext_resource type="AudioStream" uid="uid://bjdq6vdirbk05" path="res://Songs/call on me-80bpm.mp3" id="2_nrv0r"]
-[ext_resource type="Texture2D" uid="uid://clg7vgln2lh17" path="res://Sprites/Level-1/Baground_1.png" id="3_yykrm"]
-[ext_resource type="Script" uid="uid://bsb0ty77btptn" path="res://Scripts/kill_bar.gd" id="4_2awvy"]
-[ext_resource type="PackedScene" uid="uid://dqd15smav6in8" path="res://Scenes/aiming_worm.tscn" id="5_nrv0r"]
-[ext_resource type="Script" uid="uid://b8ik6voe1b5cu" path="res://Scripts/camera.gd" id="6_gmj2a"]
-[ext_resource type="Script" uid="uid://bejdq8t61ff5w" path="res://Scripts/through_obstacle.gd" id="7_n8e0l"]
-[ext_resource type="Texture2D" uid="uid://bjov3w1omsy1i" path="res://Sprites/Level-3/PixelMailbox.png.png" id="8_8jhox"]
-[ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="9_rybab"]
-[ext_resource type="Texture2D" uid="uid://cyh8i63878lsi" path="res://Sprites/Level-3/PixelLamp.png.png" id="10_hed5s"]
-[ext_resource type="Texture2D" uid="uid://cxy3weosgpg40" path="res://Sprites/Level-3/PixelTree.png.png" id="11_2awvy"]
-[ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="11_ds67j"]
-[ext_resource type="Texture2D" uid="uid://p40buipl1ll0" path="res://Sprites/Level-3/PixelHuman.png.png" id="12_hed5s"]
-[ext_resource type="Texture2D" uid="uid://buqs10tqk5gfd" path="res://Sprites/Level-3/PixelCar.png.png" id="12_nrv0r"]
-[ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="12_tt48c"]
-[ext_resource type="Texture2D" uid="uid://c2qu0xkm2tkj1" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_1.png" id="13_3sjjq"]
-[ext_resource type="Texture2D" uid="uid://bnip747ywl77q" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_3.png" id="14_mtnpm"]
-[ext_resource type="LabelSettings" uid="uid://dnhgm6f445i8s" path="res://UI/Settings/LabelSettingsOverlay.tres" id="15_f8et3"]
-[ext_resource type="Texture2D" uid="uid://chwgnu2t3cer5" path="res://Sprites/Level-3/PixelHaterNormal.png" id="15_nrv0r"]
-[ext_resource type="FontFile" uid="uid://cu6xwrle4qenm" path="res://UI/Fonts/Gluten-ExtraBold.ttf" id="16_acpig"]
-[ext_resource type="Texture2D" uid="uid://ckq82odo1hcqj" path="res://Sprites/Level-3/PixelHaterAngry.png.png" id="16_gmj2a"]
-[ext_resource type="LabelSettings" uid="uid://c6nwraqkky545" path="res://UI/Settings/Win-Lose_overlayOverlay.tres" id="17_s8di1"]
-[ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="18_2yced"]
-[ext_resource type="AudioStream" uid="uid://ca0c7m4d6ed2w" path="res://Songs/SFX/Park bg.mp3" id="21_r5kqc"]
-[ext_resource type="PackedScene" uid="uid://chbthf28xvxkt" path="res://Scenes/level_4.tscn" id="24_gmj2a"]
-[ext_resource type="Texture2D" uid="uid://bdb03jb8y36xu" path="res://Sprites/Level-3/PixelRadio.png" id="25_gmj2a"]
+[ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_o5257"]
+[ext_resource type="AudioStream" uid="uid://dxxjg3h84yq3v" path="res://Songs/Despacito-90bpm.mp3" id="2_2a174"]
+[ext_resource type="Texture2D" uid="uid://c8j3j7ymnds1a" path="res://Sprites/Level-4/Earworm_SpacePhotos_background.png" id="3_o5257"]
+[ext_resource type="Script" uid="uid://bsb0ty77btptn" path="res://Scripts/kill_bar.gd" id="4_6vef0"]
+[ext_resource type="PackedScene" uid="uid://dqd15smav6in8" path="res://Scenes/aiming_worm.tscn" id="5_glsh0"]
+[ext_resource type="Script" uid="uid://b8ik6voe1b5cu" path="res://Scripts/camera.gd" id="6_j11ov"]
+[ext_resource type="Script" uid="uid://bejdq8t61ff5w" path="res://Scripts/through_obstacle.gd" id="7_gtxiy"]
+[ext_resource type="Texture2D" uid="uid://bjov3w1omsy1i" path="res://Sprites/Level-3/PixelMailbox.png.png" id="8_wfb3u"]
+[ext_resource type="Script" uid="uid://xo24uu0cw0o4" path="res://Scripts/SpinObstacle.gd" id="9_2a174"]
+[ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="9_sph7h"]
+[ext_resource type="Texture2D" uid="uid://dngm5l88d6ptl" path="res://Sprites/Level-4/Earworm_SpacePhotos_SHip.png" id="10_2a174"]
+[ext_resource type="Texture2D" uid="uid://blrp0l17mq5we" path="res://Sprites/Level-4/Earworm_SpacePhotos_rock.png" id="11_sw1t4"]
+[ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="13_m8cc7"]
+[ext_resource type="Texture2D" uid="uid://p40buipl1ll0" path="res://Sprites/Level-3/PixelHuman.png.png" id="14_owuw0"]
+[ext_resource type="Texture2D" uid="uid://ca63aj5ik204i" path="res://Sprites/Level-4/Earworm_SpacePhotos_hater.png" id="15_6vef0"]
+[ext_resource type="Texture2D" uid="uid://d1ko7vax2y6m1" path="res://Sprites/Level-4/Earworm_SpacePhotos_Astronaut.png" id="15_sw1t4"]
+[ext_resource type="Texture2D" uid="uid://chwgnu2t3cer5" path="res://Sprites/Level-3/PixelHaterNormal.png" id="15_v78b6"]
+[ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="17_c040m"]
+[ext_resource type="Texture2D" uid="uid://c2qu0xkm2tkj1" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_1.png" id="18_koh4j"]
+[ext_resource type="Texture2D" uid="uid://bnip747ywl77q" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_3.png" id="19_wn4an"]
+[ext_resource type="LabelSettings" uid="uid://dnhgm6f445i8s" path="res://UI/Settings/LabelSettingsOverlay.tres" id="20_svydh"]
+[ext_resource type="FontFile" uid="uid://cu6xwrle4qenm" path="res://UI/Fonts/Gluten-ExtraBold.ttf" id="21_60kw1"]
+[ext_resource type="LabelSettings" uid="uid://c6nwraqkky545" path="res://UI/Settings/Win-Lose_overlayOverlay.tres" id="22_a6441"]
+[ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="23_ai5w8"]
+[ext_resource type="PackedScene" uid="uid://b0uyxb63uruxm" path="res://Scenes/main_menu.tscn" id="24_lg3ys"]
+[ext_resource type="Texture2D" uid="uid://cbxj4xt4v3yvc" path="res://Sprites/Level-4/Earworm_SpacePhotos_bag.png" id="26_2a174"]
+[ext_resource type="AudioStream" uid="uid://ca0c7m4d6ed2w" path="res://Songs/SFX/Park bg.mp3" id="26_hnp5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oovug"]
 size = Vector2(3439, 76.5)
 
 [sub_resource type="AudioEffectHighPassFilter" id="AudioEffectHighPassFilter_af3po"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_evi0p"]
-size = Vector2(16.5, 207)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glsh0"]
+size = Vector2(86, 340)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmj2a"]
 size = Vector2(163, 87)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j11ov"]
+size = Vector2(192, 169)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oovug"]
-texture = ExtResource("13_3sjjq")
+texture = ExtResource("18_koh4j")
 texture_margin_left = 30.0
 texture_margin_top = 30.0
 texture_margin_right = 30.0
 texture_margin_bottom = 30.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8i23i"]
-texture = ExtResource("14_mtnpm")
+texture = ExtResource("19_wn4an")
 texture_margin_left = 30.0
 texture_margin_top = 30.0
 texture_margin_right = 30.0
 texture_margin_bottom = 30.0
 
-[node name="Level3" type="Node2D" node_paths=PackedStringArray("humans", "main_target", "stream_player", "level_rect_extents", "cam")]
-script = ExtResource("1_8jhox")
-humans = [NodePath("Human"), NodePath("Human4"), NodePath("Human6"), NodePath("Hater"), NodePath("Human7"), NodePath("Human8")]
+[node name="Level4" type="Node2D" node_paths=PackedStringArray("humans", "main_target", "stream_player", "level_rect_extents", "cam")]
+script = ExtResource("1_o5257")
+humans = [NodePath("Human"), NodePath("Human2"), NodePath("Human3"), NodePath("Human4"), NodePath("Human5"), NodePath("Human6"), NodePath("Human7"), NodePath("Human8"), NodePath("Hater")]
 main_target = NodePath("Hater")
 stream_player = NodePath("AudioStreamPlayer")
 level_rect_extents = NodePath("LevelRectExtents")
 cam = NodePath("Camera2D")
-level_number = 2
+level_number = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_nrv0r")
+stream = ExtResource("2_2a174")
 volume_db = -8.0
 bus = &"Earworm"
 parameters/looping = true
@@ -75,153 +79,158 @@ offset_left = -2779.0
 offset_top = -2128.0
 offset_right = 4374.0
 offset_bottom = 3007.0
-color = Color(0.5890956, 0.5890956, 0.5890956, 1)
+color = Color(0, 0, 0, 1)
+
+[node name="Baground2" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+position = Vector2(-449.00003, -215)
+rotation = 3.0534863
+scale = Vector2(0.6140001, -0.6140001)
+texture = ExtResource("3_o5257")
+centered = false
+
+[node name="Baground3" type="Sprite2D" parent="Background"]
+texture_repeat = 2
+position = Vector2(3558.9995, 465)
+rotation = 3.479848
+scale = Vector2(0.6140001, -0.6140001)
+texture = ExtResource("3_o5257")
+centered = false
 
 [node name="Baground1" type="Sprite2D" parent="Background"]
-visible = false
 texture_repeat = 2
-position = Vector2(0, 11)
-scale = Vector2(0.48299712, 0.48299712)
-texture = ExtResource("3_yykrm")
+position = Vector2(-372, -215.00003)
+scale = Vector2(0.6137585, 0.6137585)
+texture = ExtResource("3_o5257")
 centered = false
 
 [node name="KillBar" type="Area2D" parent="."]
-position = Vector2(594, 1609)
-script = ExtResource("4_2awvy")
+position = Vector2(573, 1625)
+script = ExtResource("4_6vef0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillBar"]
 shape = SubResource("RectangleShape2D_oovug")
 
 [node name="KillBar2" type="Area2D" parent="."]
-position = Vector2(594, -215)
-script = ExtResource("4_2awvy")
+position = Vector2(559, -252)
+script = ExtResource("4_6vef0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillBar2"]
 shape = SubResource("RectangleShape2D_oovug")
 
 [node name="KillBar3" type="Area2D" parent="."]
-position = Vector2(-306.00012, 764)
+position = Vector2(-1070, 768.00006)
 rotation = -1.5708961
-script = ExtResource("4_2awvy")
+script = ExtResource("4_6vef0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillBar3"]
 shape = SubResource("RectangleShape2D_oovug")
 
 [node name="KillBar4" type="Area2D" parent="."]
-position = Vector2(1408, 778)
+position = Vector2(2091, 770)
 rotation = -1.5708961
-script = ExtResource("4_2awvy")
+script = ExtResource("4_6vef0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillBar4"]
 shape = SubResource("RectangleShape2D_oovug")
 
-[node name="AimingWorm" parent="." node_paths=PackedStringArray("level", "cam") instance=ExtResource("5_nrv0r")]
-position = Vector2(71, 1480)
+[node name="AimingWorm" parent="." node_paths=PackedStringArray("level", "cam") instance=ExtResource("5_glsh0")]
+position = Vector2(550, 7)
 level = NodePath("..")
 cam = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("follow_target")]
-script = ExtResource("6_gmj2a")
+script = ExtResource("6_j11ov")
 follow_target = NodePath("../AimingWorm")
 zoom_target = 1.0
-
-[node name="StreetMarking" type="Line2D" parent="."]
-position = Vector2(339, 21)
-points = PackedVector2Array(-2, 1564, 4, 2)
-default_color = Color(0.829196, 0.82022685, 1.540184e-06, 1)
-
-[node name="StreetMarking2" type="Line2D" parent="."]
-position = Vector2(798, 21)
-points = PackedVector2Array(-2, 1564, 4, 2)
-default_color = Color(0.829196, 0.82022685, 1.540184e-06, 1)
 
 [node name="LevelRectExtents" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="LevelRectExtents"]
-position = Vector2(-813, 36)
+position = Vector2(-1020, -215)
 
 [node name="Marker2D2" type="Marker2D" parent="LevelRectExtents"]
-position = Vector2(1956, 1561)
+position = Vector2(2047, 1584)
 
 [node name="Bush" type="Area2D" parent="."]
-position = Vector2(297, 1316)
-script = ExtResource("7_n8e0l")
+position = Vector2(3183, 1446)
+script = ExtResource("7_gtxiy")
 effect = SubResource("AudioEffectHighPassFilter_af3po")
 
 [node name="Bush1" type="Sprite2D" parent="Bush"]
 position = Vector2(3.0000005, -42)
 scale = Vector2(0.2, 0.20152329)
-texture = ExtResource("8_8jhox")
+texture = ExtResource("8_wfb3u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush"]
 scale = Vector2(0.2, 0.20152329)
 polygon = PackedVector2Array(140, 49.621582, -145, 44.659668, -140, -94.28223, -145, -233.22412, -135, -421.7876, 130, -396.97656, 140, -163.75293)
 
 [node name="Bush2" type="Area2D" parent="."]
-position = Vector2(393, 1449)
-script = ExtResource("7_n8e0l")
+position = Vector2(3279, 1579)
+script = ExtResource("7_gtxiy")
 effect = SubResource("AudioEffectHighPassFilter_af3po")
 
 [node name="Bush1" type="Sprite2D" parent="Bush2"]
 position = Vector2(3.0000005, -42)
 scale = Vector2(0.2, 0.20152329)
-texture = ExtResource("8_8jhox")
+texture = ExtResource("8_wfb3u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush2"]
 scale = Vector2(0.2, 0.20152329)
 polygon = PackedVector2Array(140, 49.621582, -145, 44.659668, -140, -94.28223, -145, -233.22412, -135, -421.7876, 130, -396.97656, 140, -163.75293)
 
 [node name="Bush3" type="Area2D" parent="."]
-position = Vector2(911, 802)
-script = ExtResource("7_n8e0l")
+position = Vector2(3797, 932)
+script = ExtResource("7_gtxiy")
 effect = SubResource("AudioEffectHighPassFilter_af3po")
 
 [node name="Bush1" type="Sprite2D" parent="Bush3"]
 position = Vector2(3.0000005, -42)
 scale = Vector2(0.2, 0.20152329)
-texture = ExtResource("8_8jhox")
+texture = ExtResource("8_wfb3u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush3"]
 scale = Vector2(0.2, 0.20152329)
 polygon = PackedVector2Array(140, 49.621582, -145, 44.659668, -140, -94.28223, -145, -233.22412, -135, -421.7876, 130, -396.97656, 140, -163.75293)
 
 [node name="Bush4" type="Area2D" parent="."]
-position = Vector2(457, 323)
-script = ExtResource("7_n8e0l")
+position = Vector2(3343, 453)
+script = ExtResource("7_gtxiy")
 effect = SubResource("AudioEffectHighPassFilter_af3po")
 
 [node name="Bush1" type="Sprite2D" parent="Bush4"]
 position = Vector2(3.0000005, -42)
 scale = Vector2(0.2, 0.20152329)
-texture = ExtResource("8_8jhox")
+texture = ExtResource("8_wfb3u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush4"]
 scale = Vector2(0.2, 0.20152329)
 polygon = PackedVector2Array(140, 49.621582, -145, 44.659668, -140, -94.28223, -145, -233.22412, -135, -421.7876, 130, -396.97656, 140, -163.75293)
 
 [node name="Bush5" type="Area2D" parent="."]
-position = Vector2(570, 331)
-script = ExtResource("7_n8e0l")
+position = Vector2(3456, 461)
+script = ExtResource("7_gtxiy")
 effect = SubResource("AudioEffectHighPassFilter_af3po")
 
 [node name="Bush1" type="Sprite2D" parent="Bush5"]
 position = Vector2(3.0000005, -42)
 scale = Vector2(0.2, 0.20152329)
-texture = ExtResource("8_8jhox")
+texture = ExtResource("8_wfb3u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush5"]
 scale = Vector2(0.2, 0.20152329)
 polygon = PackedVector2Array(140, 49.621582, -145, 44.659668, -140, -94.28223, -145, -233.22412, -135, -421.7876, 130, -396.97656, 140, -163.75293)
 
 [node name="Bush6" type="Area2D" parent="."]
-position = Vector2(642, 212)
-script = ExtResource("7_n8e0l")
+position = Vector2(3528, 342)
+script = ExtResource("7_gtxiy")
 effect = SubResource("AudioEffectHighPassFilter_af3po")
 
 [node name="Bush1" type="Sprite2D" parent="Bush6"]
 position = Vector2(3.0000005, -42)
 scale = Vector2(0.2, 0.20152329)
-texture = ExtResource("8_8jhox")
+texture = ExtResource("8_wfb3u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush6"]
 scale = Vector2(0.2, 0.20152329)
@@ -230,336 +239,300 @@ polygon = PackedVector2Array(140, 49.621582, -145, 44.659668, -140, -94.28223, -
 [node name="Streetlights" type="Node2D" parent="."]
 position = Vector2(19, 565)
 
-[node name="Tree2" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(1066, 901)
-script = ExtResource("9_rybab")
+[node name="SpinningDoohickey" type="RigidBody2D" parent="Streetlights"]
+position = Vector2(494, 202)
+rotation = -0.77790475
+gravity_scale = 0.0
+script = ExtResource("9_2a174")
+spinning = true
 
-[node name="Tree1" type="Sprite2D" parent="Streetlights/Tree2"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_hed5s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Tree2"]
-position = Vector2(-7.25, 2)
-shape = SubResource("RectangleShape2D_evi0p")
-
-[node name="Tree7" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(1066, 675)
-script = ExtResource("9_rybab")
-
-[node name="Tree1" type="Sprite2D" parent="Streetlights/Tree7"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_hed5s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Tree7"]
-position = Vector2(-7.25, 2)
-shape = SubResource("RectangleShape2D_evi0p")
-
-[node name="Tree8" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(1066, 451)
-script = ExtResource("9_rybab")
-
-[node name="Tree1" type="Sprite2D" parent="Streetlights/Tree8"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_hed5s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Tree8"]
-position = Vector2(-7.25, 2)
-shape = SubResource("RectangleShape2D_evi0p")
-
-[node name="Tree9" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(1066, 206)
-script = ExtResource("9_rybab")
-
-[node name="Tree1" type="Sprite2D" parent="Streetlights/Tree9"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_hed5s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Tree9"]
-position = Vector2(-7.25, 2)
-shape = SubResource("RectangleShape2D_evi0p")
-
-[node name="Tree10" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(1066, -13)
-script = ExtResource("9_rybab")
-
-[node name="Tree1" type="Sprite2D" parent="Streetlights/Tree10"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_hed5s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Tree10"]
-position = Vector2(-7.25, 2)
-shape = SubResource("RectangleShape2D_evi0p")
-
-[node name="Tree11" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(1066, -251)
-script = ExtResource("9_rybab")
-
-[node name="Tree1" type="Sprite2D" parent="Streetlights/Tree11"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_hed5s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Tree11"]
-position = Vector2(-7.25, 2)
-shape = SubResource("RectangleShape2D_evi0p")
-
-[node name="Tree" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(0, 889)
-script = ExtResource("9_rybab")
-
-[node name="Tree1" type="Sprite2D" parent="Streetlights/Tree"]
-position = Vector2(-15.999999, 3.9999998)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_hed5s")
+[node name="Tree1" type="Sprite2D" parent="Streetlights/SpinningDoohickey"]
+position = Vector2(-30, 35.999985)
+scale = Vector2(0.4404255, 0.4404255)
+texture = ExtResource("10_2a174")
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Tree"]
-position = Vector2(-4.5, 7.5)
-shape = SubResource("RectangleShape2D_evi0p")
-
-[node name="Tree3" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(0, 667)
-script = ExtResource("9_rybab")
-
-[node name="Tree1" type="Sprite2D" parent="Streetlights/Tree3"]
-position = Vector2(-15.999999, 3.9999998)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_hed5s")
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Tree3"]
-position = Vector2(-4.5, 7.5)
-shape = SubResource("RectangleShape2D_evi0p")
-
-[node name="Tree12" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(0, -217)
-script = ExtResource("9_rybab")
-
-[node name="Tree1" type="Sprite2D" parent="Streetlights/Tree12"]
-position = Vector2(-15.999999, 3.9999998)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_hed5s")
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Tree12"]
-position = Vector2(-4.5, 7.5)
-shape = SubResource("RectangleShape2D_evi0p")
-
-[node name="Tree4" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(0, 441)
-script = ExtResource("9_rybab")
-
-[node name="Tree1" type="Sprite2D" parent="Streetlights/Tree4"]
-position = Vector2(-15.999999, 3.9999998)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_hed5s")
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Tree4"]
-position = Vector2(-4.5, 7.5)
-shape = SubResource("RectangleShape2D_evi0p")
-
-[node name="Tree5" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(0, 215)
-script = ExtResource("9_rybab")
-
-[node name="Tree1" type="Sprite2D" parent="Streetlights/Tree5"]
-position = Vector2(-15.999999, 3.9999998)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_hed5s")
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Tree5"]
-position = Vector2(-4.5, 7.5)
-shape = SubResource("RectangleShape2D_evi0p")
-
-[node name="Tree6" type="StaticBody2D" parent="Streetlights"]
-script = ExtResource("9_rybab")
-
-[node name="Tree1" type="Sprite2D" parent="Streetlights/Tree6"]
-position = Vector2(-15.999999, 3.9999998)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_hed5s")
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Tree6"]
-position = Vector2(-4.5, 7.5)
-shape = SubResource("RectangleShape2D_evi0p")
-
-[node name="Tree13" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(258, -259)
-script = ExtResource("9_rybab")
-
-[node name="Tree1" type="Sprite2D" parent="Streetlights/Tree13"]
-position = Vector2(1.9999995, 10.999999)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("11_2awvy")
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Tree13"]
-position = Vector2(-4.5, 7.5)
-shape = SubResource("RectangleShape2D_evi0p")
-
-[node name="Tree14" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(699, 880)
-script = ExtResource("9_rybab")
-
-[node name="Tree1" type="Sprite2D" parent="Streetlights/Tree14"]
-position = Vector2(1.9999995, 10.999999)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("11_2awvy")
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Tree14"]
-position = Vector2(-4.5, 7.5)
-shape = SubResource("RectangleShape2D_evi0p")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/SpinningDoohickey"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_glsh0")
 
 [node name="Car" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(714, 475)
-script = ExtResource("9_rybab")
+position = Vector2(783, 634)
+rotation = 2.4555125
+script = ExtResource("9_sph7h")
 
 [node name="Tree1" type="Sprite2D" parent="Streetlights/Car"]
-position = Vector2(-15.999999, 3.9999998)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("12_nrv0r")
+position = Vector2(-5, 42)
+scale = Vector2(0.39411765, 0.39411765)
+texture = ExtResource("11_sw1t4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Car"]
 position = Vector2(-6.5, 45.5)
 shape = SubResource("RectangleShape2D_gmj2a")
 
 [node name="Car2" type="StaticBody2D" parent="Streetlights"]
-position = Vector2(419, -6)
-script = ExtResource("9_rybab")
+position = Vector2(-112, 508)
+rotation = 3.9238846
+script = ExtResource("9_sph7h")
 
 [node name="Tree1" type="Sprite2D" parent="Streetlights/Car2"]
-position = Vector2(-15.999999, 3.9999998)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("12_nrv0r")
-flip_h = true
+position = Vector2(-5, 42)
+scale = Vector2(0.39411765, 0.39411765)
+texture = ExtResource("11_sw1t4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Car2"]
 position = Vector2(-6.5, 45.5)
 shape = SubResource("RectangleShape2D_gmj2a")
 
-[node name="Human" parent="." instance=ExtResource("11_ds67j")]
-position = Vector2(501, 1244)
+[node name="Car3" type="StaticBody2D" parent="Streetlights"]
+position = Vector2(1108, 66)
+rotation = 5.989586
+script = ExtResource("9_sph7h")
+
+[node name="Tree1" type="Sprite2D" parent="Streetlights/Car3"]
+position = Vector2(-5, 42)
+scale = Vector2(0.39411765, 0.39411765)
+texture = ExtResource("11_sw1t4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Streetlights/Car3"]
+position = Vector2(-6.5, 45.5)
+shape = SubResource("RectangleShape2D_gmj2a")
+
+[node name="Human" parent="." instance=ExtResource("13_m8cc7")]
+position = Vector2(12, 1400)
+rotation = 2.7202485
 sprite_option = 1
 
 [node name="HumanSprite" parent="Human/Sprites" index="0"]
 visible = false
 position = Vector2(-4.053116e-06, -2.0000267)
 scale = Vector2(0.18599027, 0.19456011)
-texture = ExtResource("12_hed5s")
+texture = ExtResource("14_owuw0")
 region_rect = Rect2(43, 0, 414, 511.5)
 
 [node name="NPCBlue" parent="Human/Sprites" index="1"]
 visible = true
-position = Vector2(1.0967255e-05, -5.1498413e-05)
-scale = Vector2(0.17578126, 0.18072218)
-texture = ExtResource("12_hed5s")
+position = Vector2(-2.0000067, -2.9094982)
+scale = Vector2(0.39834, 0.40953663)
+texture = ExtResource("15_sw1t4")
 
-[node name="Human4" parent="." instance=ExtResource("11_ds67j")]
-position = Vector2(912, 1449)
+[node name="EarwormSprite" parent="Human/Sprites" index="8"]
+position = Vector2(-2.0000067, -43)
+
+[node name="CollisionShape2D" parent="Human" index="1"]
+position = Vector2(-1, 0)
+
+[node name="Human2" parent="." instance=ExtResource("13_m8cc7")]
+position = Vector2(450.00012, 1099)
+rotation = 0.3190179
+sprite_option = 1
+
+[node name="HumanSprite" parent="Human2/Sprites" index="0"]
+visible = false
+position = Vector2(-4.053116e-06, -2.0000267)
+scale = Vector2(0.18599027, 0.19456011)
+texture = ExtResource("14_owuw0")
+region_rect = Rect2(43, 0, 414, 511.5)
+
+[node name="NPCBlue" parent="Human2/Sprites" index="1"]
+visible = true
+position = Vector2(-2.0000067, -2.9094982)
+scale = Vector2(0.39834, 0.40953663)
+texture = ExtResource("15_sw1t4")
+
+[node name="EarwormSprite" parent="Human2/Sprites" index="8"]
+position = Vector2(-2.0000067, -43)
+
+[node name="CollisionShape2D" parent="Human2" index="1"]
+position = Vector2(-1, 0)
+
+[node name="Human3" parent="." instance=ExtResource("13_m8cc7")]
+position = Vector2(925.00006, 901.00006)
+rotation = -0.47168273
+sprite_option = 1
+
+[node name="HumanSprite" parent="Human3/Sprites" index="0"]
+visible = false
+position = Vector2(-4.053116e-06, -2.0000267)
+scale = Vector2(0.18599027, 0.19456011)
+texture = ExtResource("14_owuw0")
+region_rect = Rect2(43, 0, 414, 511.5)
+
+[node name="NPCBlue" parent="Human3/Sprites" index="1"]
+visible = true
+position = Vector2(-2.0000067, -2.9094982)
+scale = Vector2(0.39834, 0.40953663)
+texture = ExtResource("15_sw1t4")
+
+[node name="EarwormSprite" parent="Human3/Sprites" index="8"]
+position = Vector2(-2.0000067, -43)
+
+[node name="CollisionShape2D" parent="Human3" index="1"]
+position = Vector2(-1, 0)
+
+[node name="Human4" parent="." instance=ExtResource("13_m8cc7")]
+position = Vector2(171.00002, 890)
+rotation = 1.3701838
 sprite_option = 1
 
 [node name="HumanSprite" parent="Human4/Sprites" index="0"]
 visible = false
 position = Vector2(-4.053116e-06, -2.0000267)
 scale = Vector2(0.18599027, 0.19456011)
-texture = ExtResource("12_hed5s")
+texture = ExtResource("14_owuw0")
 region_rect = Rect2(43, 0, 414, 511.5)
 
 [node name="NPCBlue" parent="Human4/Sprites" index="1"]
 visible = true
-position = Vector2(1.0967255e-05, -5.1498413e-05)
-scale = Vector2(0.17578126, 0.18072218)
-texture = ExtResource("12_hed5s")
+position = Vector2(-2.0000067, -2.9094982)
+scale = Vector2(0.39834, 0.40953663)
+texture = ExtResource("15_sw1t4")
 
-[node name="Human6" parent="." instance=ExtResource("11_ds67j")]
-position = Vector2(915, 938)
+[node name="EarwormSprite" parent="Human4/Sprites" index="8"]
+position = Vector2(-2.0000067, -43)
+
+[node name="CollisionShape2D" parent="Human4" index="1"]
+position = Vector2(-1, 0)
+
+[node name="Human5" parent="." instance=ExtResource("13_m8cc7")]
+position = Vector2(77, 470)
+rotation = -0.7985162
+sprite_option = 1
+
+[node name="HumanSprite" parent="Human5/Sprites" index="0"]
+visible = false
+position = Vector2(-4.053116e-06, -2.0000267)
+scale = Vector2(0.18599027, 0.19456011)
+texture = ExtResource("14_owuw0")
+region_rect = Rect2(43, 0, 414, 511.5)
+
+[node name="NPCBlue" parent="Human5/Sprites" index="1"]
+visible = true
+position = Vector2(-2.0000067, -2.9094982)
+scale = Vector2(0.39834, 0.40953663)
+texture = ExtResource("15_sw1t4")
+
+[node name="EarwormSprite" parent="Human5/Sprites" index="8"]
+position = Vector2(-2.0000067, -43)
+
+[node name="CollisionShape2D" parent="Human5" index="1"]
+position = Vector2(-1, 0)
+
+[node name="Human6" parent="." instance=ExtResource("13_m8cc7")]
+position = Vector2(821, 219)
+rotation = -0.22694841
 sprite_option = 1
 
 [node name="HumanSprite" parent="Human6/Sprites" index="0"]
 visible = false
 position = Vector2(-4.053116e-06, -2.0000267)
 scale = Vector2(0.18599027, 0.19456011)
-texture = ExtResource("12_hed5s")
+texture = ExtResource("14_owuw0")
 region_rect = Rect2(43, 0, 414, 511.5)
 
 [node name="NPCBlue" parent="Human6/Sprites" index="1"]
 visible = true
-position = Vector2(1.0967255e-05, -5.1498413e-05)
-scale = Vector2(0.17578126, 0.18072218)
-texture = ExtResource("12_hed5s")
+position = Vector2(-2.0000067, -2.9094982)
+scale = Vector2(0.39834, 0.40953663)
+texture = ExtResource("15_sw1t4")
 
-[node name="Human7" parent="." instance=ExtResource("11_ds67j")]
-position = Vector2(235, 777)
+[node name="EarwormSprite" parent="Human6/Sprites" index="8"]
+position = Vector2(-2.0000067, -43)
+
+[node name="CollisionShape2D" parent="Human6" index="1"]
+position = Vector2(-1, 0)
+
+[node name="Human7" parent="." instance=ExtResource("13_m8cc7")]
+position = Vector2(846, 603.00006)
+rotation = 1.3701838
 sprite_option = 1
 
 [node name="HumanSprite" parent="Human7/Sprites" index="0"]
 visible = false
 position = Vector2(-4.053116e-06, -2.0000267)
 scale = Vector2(0.18599027, 0.19456011)
-texture = ExtResource("12_hed5s")
+texture = ExtResource("14_owuw0")
 region_rect = Rect2(43, 0, 414, 511.5)
 
 [node name="NPCBlue" parent="Human7/Sprites" index="1"]
 visible = true
-position = Vector2(1.0967255e-05, -5.1498413e-05)
-scale = Vector2(0.17578126, 0.18072218)
-texture = ExtResource("12_hed5s")
+position = Vector2(-2.0000067, -2.9094982)
+scale = Vector2(0.39834, 0.40953663)
+texture = ExtResource("15_sw1t4")
 
-[node name="Human8" parent="." instance=ExtResource("11_ds67j")]
-position = Vector2(750, 492)
+[node name="EarwormSprite" parent="Human7/Sprites" index="8"]
+position = Vector2(-2.0000067, -43)
+
+[node name="CollisionShape2D" parent="Human7" index="1"]
+position = Vector2(-1, 0)
+
+[node name="Human8" parent="." instance=ExtResource("13_m8cc7")]
+position = Vector2(753, 1326.0001)
+rotation = -0.175663
 sprite_option = 1
 
 [node name="HumanSprite" parent="Human8/Sprites" index="0"]
 visible = false
 position = Vector2(-4.053116e-06, -2.0000267)
 scale = Vector2(0.18599027, 0.19456011)
-texture = ExtResource("12_hed5s")
+texture = ExtResource("14_owuw0")
 region_rect = Rect2(43, 0, 414, 511.5)
 
 [node name="NPCBlue" parent="Human8/Sprites" index="1"]
 visible = true
-position = Vector2(1.0967255e-05, -5.1498413e-05)
-scale = Vector2(0.17578126, 0.18072218)
-texture = ExtResource("12_hed5s")
+position = Vector2(-2.0000067, -2.9094982)
+scale = Vector2(0.39834, 0.40953663)
+texture = ExtResource("15_sw1t4")
 
-[node name="Hater" parent="." instance=ExtResource("11_ds67j")]
-position = Vector2(540, 187)
+[node name="EarwormSprite" parent="Human8/Sprites" index="8"]
+position = Vector2(-2.0000067, -43)
+
+[node name="CollisionShape2D" parent="Human8" index="1"]
+position = Vector2(-1, 0)
+
+[node name="Hater" parent="." instance=ExtResource("13_m8cc7")]
+position = Vector2(552, 1430)
 sprite_option = 3
 
 [node name="HumanSprite" parent="Hater/Sprites" index="0"]
 visible = false
 position = Vector2(-2.670288e-05, 0)
 scale = Vector2(0.17632248, 0.18053436)
-texture = ExtResource("15_nrv0r")
+texture = ExtResource("15_v78b6")
 region_rect = Rect2(59, 0, 397, 512.5)
 
 [node name="ParkHater" parent="Hater/Sprites" index="3"]
 visible = true
-position = Vector2(0.9999976, -1.9999971)
-scale = Vector2(0.1833732, 0.18337321)
-texture = ExtResource("15_nrv0r")
+position = Vector2(78.000015, 18.000015)
+scale = Vector2(0.38284308, 0.3828431)
+texture = ExtResource("15_6vef0")
 
 [node name="ParkHaterAngry" parent="Hater/Sprites" index="7"]
-position = Vector2(1.0000048, -1.9999943)
-scale = Vector2(0.18476091, 0.18476093)
-texture = ExtResource("16_gmj2a")
+position = Vector2(77, 15.999979)
+rotation = -0.014825435
+scale = Vector2(0.38442615, 0.38442624)
+texture = ExtResource("15_6vef0")
+
+[node name="EarwormSprite" parent="Hater/Sprites" index="8"]
+position = Vector2(-42.000008, -4.999998)
+
+[node name="CollisionShape2D" parent="Hater" index="1"]
+position = Vector2(-27, 29.5)
+shape = SubResource("RectangleShape2D_j11ov")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="HUD"]
 offset_right = 180.0
 offset_bottom = 56.0
-theme = ExtResource("12_tt48c")
+theme = ExtResource("17_c040m")
 theme_override_styles/panel = SubResource("StyleBoxTexture_oovug")
 
 [node name="Panel2" type="Panel" parent="HUD"]
 offset_top = 58.0
 offset_right = 178.0
 offset_bottom = 114.0
-theme = ExtResource("12_tt48c")
+theme = ExtResource("17_c040m")
 theme_override_styles/panel = SubResource("StyleBoxTexture_8i23i")
 
 [node name="Level_Time_Label" type="Label" parent="HUD"]
@@ -567,11 +540,11 @@ offset_left = 19.0
 offset_top = 12.0
 offset_right = 147.0
 offset_bottom = 44.0
-theme = ExtResource("12_tt48c")
+theme = ExtResource("17_c040m")
 theme_override_colors/font_color = Color(0.9647059, 0.6862745, 0.7137255, 1)
 theme_override_font_sizes/font_size = 23
 text = "Time : 0.00"
-label_settings = ExtResource("15_f8et3")
+label_settings = ExtResource("20_svydh")
 vertical_alignment = 1
 
 [node name="Humans_Infected_Label" type="Label" parent="HUD"]
@@ -582,7 +555,7 @@ offset_bottom = 101.0
 theme_override_colors/font_color = Color(1, 0.9764706, 0.96862745, 1)
 theme_override_font_sizes/font_size = 23
 text = "Humans : 0/3"
-label_settings = ExtResource("15_f8et3")
+label_settings = ExtResource("20_svydh")
 vertical_alignment = 1
 
 [node name="Bounces" type="Label" parent="HUD"]
@@ -593,7 +566,7 @@ offset_bottom = 97.0
 theme_override_colors/font_color = Color(0.047058824, 0.09803922, 1, 1)
 theme_override_font_sizes/font_size = 23
 text = "Bounces : 0"
-label_settings = ExtResource("15_f8et3")
+label_settings = ExtResource("20_svydh")
 
 [node name="WinScreen" type="Control" parent="HUD"]
 visible = false
@@ -616,11 +589,11 @@ offset_bottom = 335.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.36862746, 0.16470589, 0.23137255, 1)
-theme_override_fonts/font = ExtResource("16_acpig")
+theme_override_fonts/font = ExtResource("21_60kw1")
 theme_override_font_sizes/font_size = 45
 text = "YOU WIN
 Song in target's Head!"
-label_settings = ExtResource("17_s8di1")
+label_settings = ExtResource("22_a6441")
 horizontal_alignment = 1
 
 [node name="BestTimeText" type="Label" parent="HUD/WinScreen"]
@@ -672,7 +645,7 @@ theme_override_constants/shadow_outline_size = 6
 theme_override_font_sizes/font_size = 30
 text = "Everyones
 Groovin!"
-label_settings = ExtResource("17_s8di1")
+label_settings = ExtResource("22_a6441")
 horizontal_alignment = 1
 
 [node name="RetryButton" type="Button" parent="HUD/WinScreen"]
@@ -688,7 +661,7 @@ offset_right = 1112.0
 offset_bottom = 526.0
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource("12_tt48c")
+theme = ExtResource("17_c040m")
 text = "Retry (R)"
 
 [node name="HomeButton" type="Button" parent="HUD/WinScreen"]
@@ -704,7 +677,7 @@ offset_right = 1112.0
 offset_bottom = 608.0
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource("12_tt48c")
+theme = ExtResource("17_c040m")
 text = "Menu"
 
 [node name="NextLevelButton" type="Button" parent="HUD/WinScreen"]
@@ -714,16 +687,16 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 886.0
-offset_top = 367.0
-offset_right = 1110.0
-offset_bottom = 444.0
+offset_left = 2740.0
+offset_top = 398.0
+offset_right = 2964.0
+offset_bottom = 475.0
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource("12_tt48c")
+theme = ExtResource("17_c040m")
 text = "Next Level"
-script = ExtResource("18_2yced")
-scene_to_load = ExtResource("24_gmj2a")
+script = ExtResource("23_ai5w8")
+scene_to_load = ExtResource("24_lg3ys")
 
 [node name="DeathSCreen" type="Control" parent="HUD"]
 visible = false
@@ -748,7 +721,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.11764706, 0.078431375, 1)
 theme_override_font_sizes/font_size = 70
 text = "YOU DIED"
-label_settings = ExtResource("17_s8di1")
+label_settings = ExtResource("22_a6441")
 horizontal_alignment = 1
 
 [node name="RetryButton" type="Button" parent="HUD/DeathSCreen"]
@@ -764,7 +737,7 @@ offset_right = 1112.0
 offset_bottom = 526.0
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource("12_tt48c")
+theme = ExtResource("17_c040m")
 text = "Retry (R)"
 
 [node name="HomeButton" type="Button" parent="HUD/DeathSCreen"]
@@ -780,17 +753,17 @@ offset_right = 1112.0
 offset_bottom = 608.0
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource("12_tt48c")
+theme = ExtResource("17_c040m")
 text = "Menu"
 
 [node name="Radio2Level1" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(63, 1479)
-scale = Vector2(0.16075376, 0.16075377)
-texture = ExtResource("25_gmj2a")
+position = Vector2(550, 9)
+scale = Vector2(0.36381635, 0.36381638)
+texture = ExtResource("26_2a174")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_r5kqc")
+stream = ExtResource("26_hnp5w")
 volume_db = -30.0
 autoplay = true
 bus = &"SFX"
@@ -807,7 +780,10 @@ parameters/looping = true
 [connection signal="pressed" from="HUD/DeathSCreen/HomeButton" to="." method="_on_home_button_pressed"]
 
 [editable path="Human"]
+[editable path="Human2"]
+[editable path="Human3"]
 [editable path="Human4"]
+[editable path="Human5"]
 [editable path="Human6"]
 [editable path="Human7"]
 [editable path="Human8"]

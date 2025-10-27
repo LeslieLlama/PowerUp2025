@@ -11,10 +11,10 @@
 [ext_resource type="Script" uid="uid://73slbrv2bbbg" path="res://Scripts/bounce_obstacle.gd" id="9_4k5rq"]
 [ext_resource type="PackedScene" uid="uid://bewilwety7of5" path="res://Scenes/human.tscn" id="11_d42f2"]
 [ext_resource type="Texture2D" uid="uid://b8gepx1131b3" path="res://Sprites/Level-2/Botle.png" id="11_fhuy1"]
+[ext_resource type="Texture2D" uid="uid://tl30ce3a14cb" path="res://Sprites/Level-2/Radio in the water.png" id="12_e2piv"]
 [ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="13_kjoi8"]
 [ext_resource type="Texture2D" uid="uid://c2qu0xkm2tkj1" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_1.png" id="14_nuasi"]
 [ext_resource type="Texture2D" uid="uid://bnip747ywl77q" path="res://Sprites/UI PACK PNG/Buttons/button_roundsquare_line_3.png" id="15_kwf64"]
-[ext_resource type="Texture2D" uid="uid://jng2c4g45ogc" path="res://Sprites/Level-1/Radio2Level1.png" id="16_5s1wx"]
 [ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="16_hj5x7"]
 [ext_resource type="LabelSettings" uid="uid://dnhgm6f445i8s" path="res://UI/Settings/LabelSettingsOverlay.tres" id="16_yvrk7"]
 [ext_resource type="LabelSettings" uid="uid://c6nwraqkky545" path="res://UI/Settings/Win-Lose_overlayOverlay.tres" id="17_fhuy1"]
@@ -386,6 +386,32 @@ texture = ExtResource("11_fhuy1")
 position = Vector2(-4.5, 7.5)
 shape = SubResource("RectangleShape2D_evi0p")
 
+[node name="Tree8" type="StaticBody2D" parent="."]
+position = Vector2(1091.3529, 388.00912)
+rotation = 0.027386814
+script = ExtResource("9_4k5rq")
+
+[node name="Tree1" type="Sprite2D" parent="Tree8"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_fhuy1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree8"]
+position = Vector2(-4.5, 7.5)
+shape = SubResource("RectangleShape2D_evi0p")
+
+[node name="Tree9" type="StaticBody2D" parent="."]
+position = Vector2(1407.4236, 465.7221)
+rotation = 0.5191359
+script = ExtResource("9_4k5rq")
+
+[node name="Tree1" type="Sprite2D" parent="Tree9"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_fhuy1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree9"]
+position = Vector2(-4.5, 7.5)
+shape = SubResource("RectangleShape2D_evi0p")
+
 [node name="Human" parent="." instance=ExtResource("11_d42f2")]
 position = Vector2(-301.33334, 734.2739)
 sprite_option = 4
@@ -427,10 +453,10 @@ position = Vector2(35.04345, 47.968254)
 
 [node name="Radio2Level1" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(-730.00006, 1089.0001)
-rotation = -0.57751703
-scale = Vector2(0.07118696, 0.07118697)
-texture = ExtResource("16_5s1wx")
+position = Vector2(-710.04083, 1056.6451)
+rotation = -0.15892673
+scale = Vector2(0.12944326, 0.12944327)
+texture = ExtResource("12_e2piv")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

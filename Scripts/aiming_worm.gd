@@ -68,6 +68,11 @@ func _physics_process(delta: float) -> void:
 			# "bounce" is a handy function that reflects the velocity perfectly
 			velocity = velocity.bounce(collision.get_normal())
 			collision.get_collider().apply_effect(self)
+		if collision.get_collider() is SpinObstacle:
+			level.bounces_count += 1
+			# "bounce" is a handy function that reflects the velocity perfectly
+			velocity = velocity.bounce(collision.get_normal())
+			collision.get_collider().apply_effect(self)
 			
 	
 #funcion called by a human object, stops movement and tweens the worm to inside the humans head

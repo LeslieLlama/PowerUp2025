@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0uyxb63uruxm"]
+[gd_scene load_steps=12 format=3 uid="uid://b0uyxb63uruxm"]
 
 [ext_resource type="Theme" uid="uid://1qosuosdvyqd" path="res://simple_pink_theme.tres" id="1_48xlc"]
 [ext_resource type="Script" uid="uid://bev04wp6nqb0u" path="res://Scripts/main_menu.gd" id="2_48xlc"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dku85iohte2wg" path="res://Sprites/UI PACK PNG/UI Icons/Icon_Check.png" id="6_trj04"]
 [ext_resource type="AudioStream" uid="uid://bnjv4g0hsq6ii" path="res://Songs/Main Theme.mp3" id="7_cp0ys"]
 [ext_resource type="PackedScene" uid="uid://bcx7qgjgpabp3" path="res://Scenes/level_3.tscn" id="7_yhxw7"]
+[ext_resource type="PackedScene" uid="uid://chbthf28xvxkt" path="res://Scenes/level_4.tscn" id="8_16hvj"]
+[ext_resource type="Texture2D" uid="uid://bilbf8py5847o" path="res://Sprites/100_marker.png" id="10_vr1f0"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -80,6 +82,19 @@ offset_top = 554.0
 offset_right = 719.0
 offset_bottom = 632.0
 text = "Clear Save"
+
+[node name="CreditsLabel" type="Label" parent="HomeScreen"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 470.0
+offset_right = 258.0
+offset_bottom = 641.0
+text = "A Game by:
+LeslieLlama - Programming
+thegozde - Music & Sound
+SIFZapata - Art
+mulldrifter - Programing
+gabrielamelian - Production"
 
 [node name="MapScreen" type="Control" parent="."]
 visible = false
@@ -225,7 +240,7 @@ offset_right = 294.0
 offset_bottom = 444.0
 text = "Photography"
 script = ExtResource("3_1ehe0")
-scene_to_load = ExtResource("7_yhxw7")
+scene_to_load = ExtResource("8_16hvj")
 
 [node name="ScoreLabel" type="Label" parent="MapScreen/LevelButton4"]
 layout_mode = 0
@@ -266,6 +281,23 @@ offset_top = -91.0
 offset_right = 137.0
 grow_vertical = 0
 text = "Back"
+
+[node name="100_marker" type="TextureRect" parent="MapScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -410.36823
+offset_top = -325.5229
+offset_right = -61.458496
+offset_bottom = 46.03003
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.270358
+texture = ExtResource("10_vr1f0")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_cp0ys")

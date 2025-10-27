@@ -20,7 +20,7 @@ func clear_save():
 	level_times = [60,60,60,60,60,60,60]
 	level_number_of_infected_humans = [0,0,0,0,0,0,0,0]
 	#This figure never changes and is hardcoded based on the number of humans in the level, but needs to be set up when the game is first initialized
-	level_number_of_humans = [4,6,6,5,4,4,4,4,4,4]
+	level_number_of_humans = [4,6,6,9,4,4,4,4,4,4]
 	save_game()
 
 #don't call this, it's used by the actual save function save_game

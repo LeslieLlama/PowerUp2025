@@ -7,6 +7,7 @@ enum Sprites {
 	ParkHater = 3,
 	Diver = 4,
 	WaterHater = 5,
+	pixel = 6
 }
 @export var sprite_option := Sprites.Human
 @export var show_earworm_sprite: bool = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bewilwety7of5"]
+[gd_scene load_steps=13 format=3 uid="uid://bewilwety7of5"]
 
 [ext_resource type="Script" uid="uid://dx20nfrkb0sqn" path="res://Scripts/human.gd" id="1_073c6"]
 [ext_resource type="Texture2D" uid="uid://dm2kuj5uh82b4" path="res://Sprites/PlaceholderGuys.png" id="2_42mg8"]
@@ -9,10 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://bshmuiwmrjop8" path="res://Sprites/Level-1/Character_Hater_Anger.png" id="6_uwpdh"]
 [ext_resource type="Texture2D" uid="uid://bgmyl136uhw0t" path="res://Sprites/Level-Water/DiverNPC.png" id="7_s6v5g"]
 [ext_resource type="Texture2D" uid="uid://oieefhn1ygbj" path="res://Sprites/Level-Water/YellowSubmarine.png" id="8_lq0mj"]
+[ext_resource type="Texture2D" uid="uid://p40buipl1ll0" path="res://Sprites/Level-3/PixelHuman.png.png" id="8_uwpdh"]
 [ext_resource type="AudioStream" uid="uid://bg4rid3pmruyl" path="res://Songs/SFX/Catching a Human.mp3" id="10_p0utn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuftd"]
-size = Vector2(68, 108)
+size = Vector2(70, 108)
 
 [node name="Human" type="Area2D"]
 script = ExtResource("1_073c6")
@@ -52,6 +53,12 @@ visible = false
 position = Vector2(-25.229918, -37.499985)
 scale = Vector2(0.21408181, 0.21408184)
 texture = ExtResource("8_lq0mj")
+
+[node name="PixelHuman" type="Sprite2D" parent="Sprites"]
+visible = false
+position = Vector2(-0.7500012, -0.71703327)
+scale = Vector2(0.17480469, 0.16712096)
+texture = ExtResource("8_uwpdh")
 
 [node name="ParkHaterAngry" type="Sprite2D" parent="Sprites"]
 visible = false
