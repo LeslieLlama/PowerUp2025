@@ -120,7 +120,9 @@ func _process(_delta: float) -> void:
 
 
 func _draw() -> void:
-	if pts.size() == 0:
+	if point_count == 0:
+		return
+	if pts.size() == 0.0:
 		pts.resize(point_count)
 		pts.fill(Vector2.ZERO)
 	var draw_pts: PackedVector2Array = pts.duplicate()
@@ -151,7 +153,7 @@ func _draw() -> void:
 
 func death_anim(time: float):
 	var t := get_tree().create_tween()
-	t.tween_property(self, "worm_length", 0, time)
+	t.tween_property(self, "point_count", 0, time)
 
 
 func move_source(distance: Vector2):

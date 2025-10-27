@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * speed * delta)
 	visual.move_source(velocity * speed * delta)
 	cam.update(global_position + velocity * speed * delta)
-	if velocity:
+	if not is_stopped:
 		change_catchiness(-CATCHINESS_DECAY * delta)
 	if collision:
 		level.obstacles_hit_count += 1
@@ -105,4 +105,6 @@ func _player_death():
 	$DeathSFX.play()
 	
 func _on_main_target_infected():
+	visual.death_anim(0.2)
+	lock_movement = true
 	$WinSFX.play()
