@@ -1,4 +1,5 @@
-[gd_scene load_steps=25 format=3 uid="uid://c0wav3j8gt2h3"]
+
+[gd_scene load_steps=26 format=3 uid="uid://c0wav3j8gt2h3"]
 
 [ext_resource type="Script" uid="uid://cpigge14curxl" path="res://Scripts/level_info.gd" id="1_hj5x7"]
 [ext_resource type="AudioStream" uid="uid://bs5edkabyba83" path="res://Songs/Beethoven-90bpm.mp3" id="2_yvrk7"]
@@ -18,6 +19,7 @@
 [ext_resource type="Script" uid="uid://k8h2e7f6tgkc" path="res://Scripts/level_button.gd" id="16_hj5x7"]
 [ext_resource type="LabelSettings" uid="uid://dnhgm6f445i8s" path="res://UI/Settings/LabelSettingsOverlay.tres" id="16_yvrk7"]
 [ext_resource type="LabelSettings" uid="uid://c6nwraqkky545" path="res://UI/Settings/Win-Lose_overlayOverlay.tres" id="17_fhuy1"]
+[ext_resource type="AudioStream" uid="uid://d2ic21xpgc0ui" path="res://Songs/SFX/Submarine bg.mp3" id="19_i6dbo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oovug"]
 size = Vector2(3439, 76.5)
@@ -681,6 +683,13 @@ script = ExtResource("9_4k5rq")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WallLeft"]
 position = Vector2(-1095.647, -712.0054)
 polygon = PackedVector2Array(-5.001953, -1.9954224, 427.98425, -17.38861, 106.201416, 221.90366, 193.3739, 411.8246, 37.518433, 570.9662, 71.97058, 1068.935, 31.132202, 1246.9722, 80.30109, 1432.9277, 274.51172, 1664.7515, 346.6978, 1869.6859, 691.8012, 1983.3727, 676.92834, 2123.3862, 711.05273, 2260.3552, -17.94336, 2265.017)
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_i6dbo")
+volume_db = -5.0
+autoplay = true
+bus = &"SFX"
+parameters/looping = true
 
 [connection signal="body_entered" from="KillBar" to="KillBar" method="_on_body_entered"]
 [connection signal="body_entered" from="KillBar2" to="KillBar2" method="_on_body_entered"]
